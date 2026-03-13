@@ -30,8 +30,10 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files - .example 파일만 커밋, 실제 .env는 제외
+.env
+.env.local
+.env.*.local
 
 # vercel
 .vercel
@@ -39,3 +41,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.ts-out/
