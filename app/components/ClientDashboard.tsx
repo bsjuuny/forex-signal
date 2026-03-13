@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { StoredRateData } from '@/lib/signals';
+import { useLiveRates } from '@/app/hooks/useLiveRates';
 import SignalCard from './SignalCard';
 import DetailPanel from './DetailPanel';
 
@@ -9,7 +10,6 @@ interface Props {
   data: StoredRateData[];
 }
 
-// 신호 타입 순서: 강력 매수 → 매수 → 중립 → 매도 → 강력 매도
 function signalScore(d: StoredRateData) {
   return d.signal.score;
 }
@@ -17,6 +17,7 @@ function signalScore(d: StoredRateData) {
 export default function ClientDashboard({ data }: Props) {
   const sorted = [...data].sort((a, b) => signalScore(b) - signalScore(a));
   const [selected, setSelected] = useState<string>(sorted[0]?.currency ?? '');
+  const { rates: liveRates, updatedAt, error } = useLiveRates();
 
   const selectedData = data.find(d => d.currency === selected);
 
@@ -42,6 +43,33 @@ export default function ClientDashboard({ data }: Props) {
         </div>
       </div>
 
+      {/* 실시간 데이터 상태 표시 */}
+      <div className="flex items-center gap-2 text-xs">
+        {liveRates ? (
+          <>
+            <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-zinc-400">
+              실시간 환율 연결됨
+              {updatedAt && (
+                <span className="text-zinc-600 ml-1">
+                  · {updatedAt.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit', second: '2-digit' })} 갱신
+                </span>
+              )}
+            </span>
+          </>
+        ) : error ? (
+          <>
+            <span className="inline-block w-2 h-2 rounded-full bg-rose-400" />
+            <span className="text-zinc-500">실시간 연결 실패 · 저장된 데이터 표시 중</span>
+          </>
+        ) : (
+          <>
+            <span className="inline-block w-2 h-2 rounded-full bg-zinc-500 animate-pulse" />
+            <span className="text-zinc-500">실시간 데이터 로딩 중...</span>
+          </>
+        )}
+      </div>
+
       {/* 메인 레이아웃 */}
       <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-4">
         {/* 왼쪽: 통화 목록 */}
@@ -53,6 +81,7 @@ export default function ClientDashboard({ data }: Props) {
             <SignalCard
               key={d.currency}
               signal={d.signal}
+              liveRate={liveRates?.[d.currency]}
               isSelected={d.currency === selected}
               onClick={() => setSelected(d.currency)}
             />
@@ -62,7 +91,10 @@ export default function ClientDashboard({ data }: Props) {
         {/* 오른쪽: 상세 패널 */}
         <div>
           {selectedData ? (
-            <DetailPanel data={selectedData} />
+            <DetailPanel
+              data={selectedData}
+              liveRate={liveRates?.[selected]}
+            />
           ) : (
             <div className="flex items-center justify-center h-64 text-zinc-600">
               왼쪽에서 통화를 선택하세요

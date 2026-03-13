@@ -5,6 +5,7 @@ import { SUPPORTED_CURRENCIES } from '@/lib/koreaexim-api';
 
 interface Props {
   signal: TradingSignal;
+  liveRate?: number;
   isSelected: boolean;
   onClick: () => void;
 }
@@ -39,9 +40,13 @@ const STRENGTH_LABEL = {
   WEAK: '약함',
 };
 
-export default function SignalCard({ signal, isSelected, onClick }: Props) {
+export default function SignalCard({ signal, liveRate, isSelected, onClick }: Props) {
   const colors = SIGNAL_COLORS[signal.signal];
   const currency = SUPPORTED_CURRENCIES.find(c => c.code === signal.currency);
+  const displayRate = liveRate ?? signal.currentRate;
+  const change = liveRate != null
+    ? ((liveRate - signal.currentRate) / signal.currentRate) * 100
+    : null;
 
   return (
     <button
@@ -65,14 +70,28 @@ export default function SignalCard({ signal, isSelected, onClick }: Props) {
 
       <div className="flex items-end justify-between">
         <div>
-          <div className="text-2xl font-mono font-bold text-white">
-            {signal.currentRate.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
+          <div className="flex items-baseline gap-2">
+            <div className="text-2xl font-mono font-bold text-white">
+              {displayRate.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
+            </div>
+            {liveRate != null && (
+              <span className="flex items-center gap-1 text-xs text-emerald-400">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                실시간
+              </span>
+            )}
           </div>
-          <div className="text-xs text-zinc-500 mt-0.5">
-            {new Date(signal.calculatedAt).toLocaleString('ko-KR', {
-              month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit',
-            })}
-          </div>
+          {change != null ? (
+            <div className={`text-xs mt-0.5 font-mono ${change >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+              {change >= 0 ? '+' : ''}{change.toFixed(2)}% (전일 종가 대비)
+            </div>
+          ) : (
+            <div className="text-xs text-zinc-500 mt-0.5">
+              {new Date(signal.calculatedAt).toLocaleString('ko-KR', {
+                month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit',
+              })}
+            </div>
+          )}
         </div>
 
         {/* 점수 게이지 */}

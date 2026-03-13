@@ -12,11 +12,13 @@ const SIGNAL_COLORS = {
 
 interface Props {
   data: StoredRateData;
+  liveRate?: number;
 }
 
-export default function DetailPanel({ data }: Props) {
+export default function DetailPanel({ data, liveRate }: Props) {
   const { signal, rates } = data;
   const colors = SIGNAL_COLORS[signal.signal];
+  const displayRate = liveRate ?? signal.currentRate;
 
   return (
     <div className="flex flex-col gap-4">
@@ -44,9 +46,14 @@ export default function DetailPanel({ data }: Props) {
           </div>
         </div>
         <div className="rounded-lg bg-zinc-800/60 p-3 text-center">
-          <div className="text-xs text-zinc-500 mb-1">현재가</div>
+          <div className="flex items-center justify-center gap-1 mb-1">
+            <span className="text-xs text-zinc-500">현재가</span>
+            {liveRate != null && (
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            )}
+          </div>
           <div className="font-mono font-bold text-white">
-            {signal.currentRate.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
+            {displayRate.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
           </div>
         </div>
         <div className="rounded-lg bg-zinc-800/60 p-3 text-center">
