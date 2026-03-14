@@ -16,48 +16,60 @@ async function getData(): Promise<StoredRateData[]> {
 
 export default async function Home() {
   const data = await getData();
+  const lastUpdated = data[0]?.updatedAt;
 
   return (
     <WeekendGate>
-    <main className="min-h-screen bg-zinc-950 text-white">
-      {/* 헤더 */}
-      <header className="border-b border-zinc-800 bg-zinc-900/80 backdrop-blur sticky top-0 z-10">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="text-2xl">💱</span>
-            <div>
-              <h1 className="font-black text-lg leading-none">FX Signal</h1>
-              <p className="text-xs text-zinc-500">환율 매수/매도 기술적 분석</p>
+      <main className="min-h-screen bg-zinc-950 text-white">
+        {/* 헤더 */}
+        <header className="border-b border-zinc-800/80 bg-zinc-950/90 backdrop-blur-md sticky top-0 z-10">
+          <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            {/* 워드마크 로고 */}
+            <div className="flex items-center gap-2.5">
+              <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-white/10 border border-white/10">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 11 L8 5 L13 11" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M3 5 L8 11 L13 5" stroke="#f43f5e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.5"/>
+                </svg>
+              </div>
+              <div>
+                <span className="font-bold text-white text-sm tracking-tight">FX Signal</span>
+                <span className="hidden sm:inline text-zinc-600 text-xs ml-2">환율 기술적 분석</span>
+              </div>
             </div>
+
+            {lastUpdated && (
+              <div className="text-xs text-zinc-600">
+                업데이트{' '}
+                <span className="text-zinc-500">
+                  {new Date(lastUpdated).toLocaleString('ko-KR', {
+                    month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit',
+                  })}
+                </span>
+              </div>
+            )}
           </div>
-          {data.length > 0 && (
-            <div className="text-xs text-zinc-600">
-              마지막 업데이트:{' '}
-              {new Date(data[0].updatedAt).toLocaleString('ko-KR', {
-                month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit',
-              })}
+        </header>
+
+        <div className="max-w-6xl mx-auto px-4 py-6">
+          {data.length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-32 gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-2xl">
+                📭
+              </div>
+              <p className="text-zinc-500 text-sm text-center">
+                아직 데이터가 없습니다.
+                <br />
+                <code className="text-zinc-400 bg-zinc-900 px-2 py-0.5 rounded text-xs mt-1 inline-block">
+                  npm run data:update
+                </code>
+              </p>
             </div>
+          ) : (
+            <ClientDashboard data={data} />
           )}
         </div>
-      </header>
-
-      <div className="max-w-6xl mx-auto px-4 py-6">
-        {data.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-32 gap-4">
-            <div className="text-5xl">📭</div>
-            <p className="text-zinc-400 text-center">
-              아직 데이터가 없습니다.<br />
-              <code className="text-zinc-300 bg-zinc-800 px-2 py-0.5 rounded text-sm">
-                npm run data:update
-              </code>
-              를 실행해 데이터를 수집하세요.
-            </p>
-          </div>
-        ) : (
-          <ClientDashboard data={data} />
-        )}
-      </div>
-    </main>
+      </main>
     </WeekendGate>
   );
 }

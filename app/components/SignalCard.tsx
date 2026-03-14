@@ -2,6 +2,13 @@
 
 import { TradingSignal, IndicatorSignal } from '@/lib/signals';
 import { SUPPORTED_CURRENCIES } from '@/lib/koreaexim-api';
+import { SIGNAL_COLORS } from '@/lib/signal-colors';
+
+const STRENGTH_LABEL = {
+  STRONG: '강력',
+  MODERATE: '보통',
+  WEAK: '약함',
+};
 
 interface Props {
   signal: TradingSignal;
@@ -9,36 +16,6 @@ interface Props {
   isSelected: boolean;
   onClick: () => void;
 }
-
-const SIGNAL_COLORS = {
-  BUY: {
-    bg: 'bg-emerald-950/60',
-    border: 'border-emerald-500',
-    badge: 'bg-emerald-500 text-white',
-    text: 'text-emerald-400',
-    label: '매 수',
-  },
-  SELL: {
-    bg: 'bg-rose-950/60',
-    border: 'border-rose-500',
-    badge: 'bg-rose-500 text-white',
-    text: 'text-rose-400',
-    label: '매 도',
-  },
-  NEUTRAL: {
-    bg: 'bg-zinc-900/60',
-    border: 'border-zinc-600',
-    badge: 'bg-zinc-600 text-white',
-    text: 'text-zinc-400',
-    label: '중 립',
-  },
-};
-
-const STRENGTH_LABEL = {
-  STRONG: '강력',
-  MODERATE: '보통',
-  WEAK: '약함',
-};
 
 export default function SignalCard({ signal, liveRate, isSelected, onClick }: Props) {
   const colors = SIGNAL_COLORS[signal.signal];
@@ -51,42 +28,42 @@ export default function SignalCard({ signal, liveRate, isSelected, onClick }: Pr
   return (
     <button
       onClick={onClick}
-      className={`w-full text-left rounded-xl border-2 p-4 transition-all
-        ${colors.bg} ${isSelected ? colors.border : 'border-zinc-700'}
-        hover:border-opacity-80 hover:scale-[1.01]`}
+      className={`w-full text-left rounded-xl border-2 p-4 transition-all duration-200
+        ${colors.bg} ${isSelected ? colors.border : 'border-zinc-700/60'}
+        hover:border-zinc-500 hover:scale-[1.015] active:scale-[0.995]`}
     >
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
           <span className="text-xl">{currency?.flag}</span>
-          <span className="font-bold text-white">{currency?.label ?? signal.currency}</span>
+          <span className="font-semibold text-white text-sm">{currency?.label ?? signal.currency}</span>
         </div>
         <div className="flex items-center gap-2">
-          <span className={`text-xs px-2 py-0.5 rounded-full ${colors.badge} font-bold tracking-wide`}>
+          <span className={`text-xs px-2 py-0.5 rounded-full ${colors.badge} font-semibold tracking-wide`}>
             {colors.label}
           </span>
-          <span className="text-xs text-zinc-400">{STRENGTH_LABEL[signal.strength]}</span>
+          <span className="text-xs text-zinc-500">{STRENGTH_LABEL[signal.strength]}</span>
         </div>
       </div>
 
       <div className="flex items-end justify-between">
-        <div>
+        <div className="min-w-0 flex-1">
           <div className="flex items-baseline gap-2">
-            <div className="text-2xl font-mono font-bold text-white">
+            <div className="text-xl font-mono font-bold text-white tabular-nums">
               {displayRate.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
             </div>
             {liveRate != null && (
-              <span className="flex items-center gap-1 text-xs text-emerald-400">
+              <span className="flex items-center gap-1 text-xs text-emerald-400 shrink-0">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 실시간
               </span>
             )}
           </div>
           {change != null ? (
-            <div className={`text-xs mt-0.5 font-mono ${change >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
-              {change >= 0 ? '+' : ''}{change.toFixed(2)}% (전일 종가 대비)
+            <div className={`text-xs mt-0.5 font-mono tabular-nums ${change >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+              {change >= 0 ? '+' : ''}{change.toFixed(2)}% 전일比
             </div>
           ) : (
-            <div className="text-xs text-zinc-500 mt-0.5">
+            <div className="text-xs text-zinc-600 mt-0.5">
               {new Date(signal.calculatedAt).toLocaleString('ko-KR', {
                 month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit',
               })}
@@ -95,17 +72,17 @@ export default function SignalCard({ signal, liveRate, isSelected, onClick }: Pr
         </div>
 
         {/* 점수 게이지 */}
-        <div className="flex flex-col items-end gap-1">
-          <span className={`text-sm font-bold ${colors.text}`}>
-            {signal.score > 0 ? '+' : ''}{signal.score}점
+        <div className="flex flex-col items-end gap-1 ml-3 shrink-0">
+          <span className={`text-sm font-bold tabular-nums ${colors.text}`}>
+            {signal.score > 0 ? '+' : ''}{signal.score}
           </span>
-          <div className="w-24 h-2 bg-zinc-700 rounded-full overflow-hidden">
+          <div className="w-20 h-1.5 bg-zinc-800 rounded-full overflow-hidden">
             <div
-              className={`h-full rounded-full transition-all ${
+              className={`h-full rounded-full transition-all duration-500 ${
                 signal.signal === 'BUY' ? 'bg-emerald-500' :
                 signal.signal === 'SELL' ? 'bg-rose-500' : 'bg-zinc-500'
               }`}
-              style={{ width: `${Math.abs(signal.score)}%` }}
+              style={{ width: `${Math.min(100, Math.abs(signal.score))}%` }}
             />
           </div>
         </div>
@@ -117,14 +94,12 @@ export default function SignalCard({ signal, liveRate, isSelected, onClick }: Pr
 export function IndicatorRow({ indicator }: { indicator: IndicatorSignal }) {
   const colors = SIGNAL_COLORS[indicator.signal];
   return (
-    <div className="flex items-center justify-between py-2 border-b border-zinc-800 last:border-0">
-      <span className="text-sm text-zinc-400 font-mono">{indicator.name}</span>
-      <div className="flex items-center gap-2">
-        <span className="text-sm text-zinc-300">{indicator.description}</span>
-        <span className={`text-xs px-2 py-0.5 rounded-full ${colors.badge}`}>
-          {colors.label}
-        </span>
-      </div>
+    <div className="flex items-center justify-between py-2.5 border-b border-zinc-800/80 last:border-0 gap-3">
+      <span className="text-xs text-zinc-500 font-mono shrink-0">{indicator.name}</span>
+      <span className="text-xs text-zinc-400 min-w-0 truncate text-right">{indicator.description}</span>
+      <span className={`text-xs px-2 py-0.5 rounded-full shrink-0 ${colors.badge}`}>
+        {colors.label}
+      </span>
     </div>
   );
 }

@@ -53,7 +53,7 @@ export default function WeekendGate({ children }: Props) {
     setIsWeekend(day === 0 || day === 6);
   }, []);
 
-  if (isWeekend === null) return null;
+  if (isWeekend === null) return <div className="min-h-screen bg-zinc-950" />;
   if (isWeekend) return <WeekendNotice />;
   return <>{children}</>;
 }
