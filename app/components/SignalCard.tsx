@@ -88,6 +88,39 @@ export default function SignalCard({ signal, liveRate, isSelected, onClick }: Pr
   );
 }
 
+interface SwipeTabProps {
+  signal: TradingSignal;
+  liveRate?: number;
+  isSelected: boolean;
+  onClick: () => void;
+}
+
+export function SwipeTab({ signal, liveRate, isSelected, onClick }: SwipeTabProps) {
+  const colors = SIGNAL_COLORS[signal.signal];
+  const currency = SUPPORTED_CURRENCIES.find(c => c.code === signal.currency);
+  const displayRate = liveRate ?? signal.currentRate;
+
+  return (
+    <button
+      onClick={onClick}
+      className={`snap-start shrink-0 flex flex-col items-center gap-1.5 px-3 py-2.5 rounded-xl border-2 transition-all duration-200 min-w-[88px]
+        ${isSelected ? `${colors.bg} ${colors.border}` : 'bg-zinc-900 border-zinc-800'}
+        active:scale-95`}
+    >
+      <span className="text-lg leading-none">{currency?.flag}</span>
+      <span className={`text-xs font-bold leading-none ${isSelected ? colors.text : 'text-zinc-400'}`}>
+        {signal.currency.replace('KRW', '')}
+      </span>
+      <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-semibold leading-none ${colors.badge}`}>
+        {colors.label}
+      </span>
+      <span className="text-[11px] font-mono tabular-nums text-zinc-300 leading-none">
+        {displayRate.toLocaleString('ko-KR', { maximumFractionDigits: 0 })}
+      </span>
+    </button>
+  );
+}
+
 export function IndicatorRow({ indicator }: { indicator: IndicatorSignal }) {
   const colors = SIGNAL_COLORS[indicator.signal];
   return (
