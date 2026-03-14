@@ -44,7 +44,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main
+          git pull --rebase --autostash origin main
           git add public/data/exchange_rates.json
           git diff --staged --quiet && exit 0
           git commit -m "data: update fx signals [skip ci]"
