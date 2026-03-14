@@ -3,7 +3,7 @@
  * 여러 지표를 종합해 신호 강도를 점수화
  */
 
-import { OHLCCandle } from './kis-api';
+import { OHLCCandle } from './koreaexim-api';
 import { rsi, ema, macd, bollingerBands } from './indicators';
 
 export type SignalType = 'BUY' | 'SELL' | 'NEUTRAL';

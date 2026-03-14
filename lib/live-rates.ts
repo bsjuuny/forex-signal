@@ -28,7 +28,9 @@ export async function fetchLiveRates(): Promise<LiveRates> {
   const result: LiveRates = {};
   for (const [code, calc] of Object.entries(CALC)) {
     const val = calc(r);
-    result[code] = Math.round(val * 100) / 100;
+    if (isFinite(val) && val > 0) {
+      result[code] = Math.round(val * 100) / 100;
+    }
   }
   return result;
 }

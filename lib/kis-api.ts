@@ -144,8 +144,6 @@ export async function getExchangeRateHistory(
   }
   const json = await res.json();
 
-  console.log('[DEBUG] raw response:', JSON.stringify(json, null, 2).slice(0, 2000));
-
   const output2: Array<Record<string, string>> = json.output2 || [];
   return output2
     .filter(d => {
