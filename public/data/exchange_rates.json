@@ -451,9 +451,9 @@
       "targetBuy": 1460.45,
       "targetSell": 1505.6,
       "stopLoss": 1492.7,
-      "calculatedAt": "2026-03-14T04:47:41.362Z"
+      "calculatedAt": "2026-03-14T15:28:16.873Z"
     },
-    "updatedAt": "2026-03-14T04:47:41.362Z"
+    "updatedAt": "2026-03-14T15:28:16.873Z"
   },
   {
     "currency": "EURKRW",
@@ -907,9 +907,9 @@
       "targetBuy": 1683.12,
       "targetSell": 1733.55,
       "stopLoss": 1719.14,
-      "calculatedAt": "2026-03-14T04:47:43.286Z"
+      "calculatedAt": "2026-03-14T15:28:19.035Z"
     },
-    "updatedAt": "2026-03-14T04:47:43.286Z"
+    "updatedAt": "2026-03-14T15:28:19.035Z"
   },
   {
     "currency": "JPYKRW",
@@ -1363,9 +1363,9 @@
       "targetBuy": 916.14,
       "targetSell": 946,
       "stopLoss": 937.47,
-      "calculatedAt": "2026-03-14T04:47:45.206Z"
+      "calculatedAt": "2026-03-14T15:28:21.159Z"
     },
-    "updatedAt": "2026-03-14T04:47:45.206Z"
+    "updatedAt": "2026-03-14T15:28:21.159Z"
   },
   {
     "currency": "GBPKRW",
@@ -1819,9 +1819,9 @@
       "targetBuy": 1949.25,
       "targetSell": 2010.41,
       "stopLoss": 1957.98,
-      "calculatedAt": "2026-03-14T04:47:49.042Z"
+      "calculatedAt": "2026-03-14T15:28:25.416Z"
     },
-    "updatedAt": "2026-03-14T04:47:49.042Z"
+    "updatedAt": "2026-03-14T15:28:25.416Z"
   },
   {
     "currency": "CADKRW",
@@ -2275,9 +2275,9 @@
       "targetBuy": 1069.99,
       "targetSell": 1105.97,
       "stopLoss": 1095.69,
-      "calculatedAt": "2026-03-14T04:47:50.971Z"
+      "calculatedAt": "2026-03-14T15:28:27.538Z"
     },
-    "updatedAt": "2026-03-14T04:47:50.971Z"
+    "updatedAt": "2026-03-14T15:28:27.538Z"
   },
   {
     "currency": "HKDKRW",
@@ -2731,9 +2731,9 @@
       "targetBuy": 186.56,
       "targetSell": 192.42,
       "stopLoss": 190.74,
-      "calculatedAt": "2026-03-14T04:47:52.899Z"
+      "calculatedAt": "2026-03-14T15:28:29.687Z"
     },
-    "updatedAt": "2026-03-14T04:47:52.899Z"
+    "updatedAt": "2026-03-14T15:28:29.687Z"
   },
   {
     "currency": "CNYKRW",
@@ -3187,8 +3187,8 @@
       "targetBuy": 213.36,
       "targetSell": 217.56,
       "stopLoss": 216.36,
-      "calculatedAt": "2026-03-14T04:47:47.126Z"
+      "calculatedAt": "2026-03-14T15:28:23.292Z"
     },
-    "updatedAt": "2026-03-14T04:47:47.126Z"
+    "updatedAt": "2026-03-14T15:28:23.292Z"
   }
 ]
