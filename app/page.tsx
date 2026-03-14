@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import ClientDashboard from './components/ClientDashboard';
+import WeekendRedirect from './components/WeekendRedirect';
 import { StoredRateData } from '@/lib/signals';
 
 async function getData(): Promise<StoredRateData[]> {
@@ -18,6 +19,7 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen bg-zinc-950 text-white">
+      <WeekendRedirect />
       {/* 헤더 */}
       <header className="border-b border-zinc-800 bg-zinc-900/80 backdrop-blur sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
