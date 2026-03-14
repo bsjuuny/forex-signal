@@ -4,6 +4,7 @@ import { StoredRateData } from '@/lib/signals';
 import { SIGNAL_COLORS } from '@/lib/signal-colors';
 import { IndicatorRow } from './SignalCard';
 import RateChart from './RateChart';
+import Calculator from './Calculator';
 
 interface Props {
   data: StoredRateData;
@@ -81,6 +82,9 @@ export default function DetailPanel({ data, liveRate }: Props) {
           <IndicatorRow key={ind.name} indicator={ind} />
         ))}
       </div>
+
+      {/* 계산기 */}
+      <Calculator signal={signal} liveRate={liveRate} />
 
       {/* 주의사항 */}
       <div className="rounded-lg bg-zinc-900/40 border border-zinc-800/50 p-3">
