@@ -108,6 +108,78 @@ export function macd(
   return { macdLine, signalLine, histogram };
 }
 
+/** ADX (Average Directional Index) — Wilder smoothing */
+export function adx(
+  highs: number[],
+  lows: number[],
+  closes: number[],
+  period = 14
+): { adx: number[]; plusDI: number[]; minusDI: number[] } {
+  const len = closes.length;
+  const adxArr: number[] = new Array(len).fill(NaN);
+  const plusDIArr: number[] = new Array(len).fill(NaN);
+  const minusDIArr: number[] = new Array(len).fill(NaN);
+
+  if (len < period * 2) return { adx: adxArr, plusDI: plusDIArr, minusDI: minusDIArr };
+
+  // True Range, +DM, -DM
+  const tr: number[] = [NaN];
+  const plusDM: number[] = [NaN];
+  const minusDM: number[] = [NaN];
+
+  for (let i = 1; i < len; i++) {
+    const upMove = highs[i] - highs[i - 1];
+    const downMove = lows[i - 1] - lows[i];
+    const trueRange = Math.max(
+      highs[i] - lows[i],
+      Math.abs(highs[i] - closes[i - 1]),
+      Math.abs(lows[i] - closes[i - 1])
+    );
+    tr.push(trueRange);
+    plusDM.push(upMove > downMove && upMove > 0 ? upMove : 0);
+    minusDM.push(downMove > upMove && downMove > 0 ? downMove : 0);
+  }
+
+  // Wilder smoothed ATR, +DM14, -DM14
+  let smoothTR = tr.slice(1, period + 1).reduce((a, b) => a + b, 0);
+  let smoothPlus = plusDM.slice(1, period + 1).reduce((a, b) => a + b, 0);
+  let smoothMinus = minusDM.slice(1, period + 1).reduce((a, b) => a + b, 0);
+
+  const calcDX = (p: number, m: number, t: number) => {
+    const pdi = t === 0 ? 0 : (p / t) * 100;
+    const mdi = t === 0 ? 0 : (m / t) * 100;
+    const sum = pdi + mdi;
+    return { pdi, mdi, dx: sum === 0 ? 0 : (Math.abs(pdi - mdi) / sum) * 100 };
+  };
+
+  const dxValues: number[] = [];
+
+  for (let i = period; i < len; i++) {
+    if (i > period) {
+      smoothTR = smoothTR - smoothTR / period + tr[i];
+      smoothPlus = smoothPlus - smoothPlus / period + plusDM[i];
+      smoothMinus = smoothMinus - smoothMinus / period + minusDM[i];
+    }
+    const { pdi, mdi, dx } = calcDX(smoothPlus, smoothMinus, smoothTR);
+    plusDIArr[i] = parseFloat(pdi.toFixed(4));
+    minusDIArr[i] = parseFloat(mdi.toFixed(4));
+    dxValues.push(dx);
+  }
+
+  // ADX = Wilder smoothed DX
+  if (dxValues.length < period) return { adx: adxArr, plusDI: plusDIArr, minusDI: minusDIArr };
+
+  let adxVal = dxValues.slice(0, period).reduce((a, b) => a + b, 0) / period;
+  adxArr[period * 2 - 1] = parseFloat(adxVal.toFixed(4));
+
+  for (let i = period; i < dxValues.length; i++) {
+    adxVal = (adxVal * (period - 1) + dxValues[i]) / period;
+    adxArr[period + i] = parseFloat(adxVal.toFixed(4));
+  }
+
+  return { adx: adxArr, plusDI: plusDIArr, minusDI: minusDIArr };
+}
+
 /** 볼린저 밴드 (period=20, stdDev=2) */
 export function bollingerBands(
   values: number[],

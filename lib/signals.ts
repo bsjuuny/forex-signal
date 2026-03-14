@@ -4,7 +4,8 @@
  */
 
 import { OHLCCandle } from './koreaexim-api';
-import { rsi, ema, macd, bollingerBands } from './indicators';
+import { rsi, ema, macd, bollingerBands, adx } from './indicators';
+import { MacroData } from './macro-api';
 
 export type SignalType = 'BUY' | 'SELL' | 'NEUTRAL';
 export type SignalStrength = 'STRONG' | 'MODERATE' | 'WEAK';
@@ -39,8 +40,11 @@ export interface StoredRateData {
     close: number;
   }>;
   signal: TradingSignal;
+  macro?: MacroData;
   updatedAt: string;
 }
+
+export type { MacroData };
 
 /** 종가 배열 추출 */
 function closes(candles: OHLCCandle[]): number[] {
@@ -55,12 +59,37 @@ function scoreToSignal(score: number): { signal: SignalType; strength: SignalStr
   return { signal, strength };
 }
 
+/** 일봉 → 주봉 집계 */
+function toWeeklyCandles(candles: OHLCCandle[]): OHLCCandle[] {
+  if (candles.length === 0) return [];
+  const weeks: OHLCCandle[] = [];
+  let week: OHLCCandle | null = null;
+
+  for (const c of candles) {
+    const date = new Date(c.date);
+    const day = date.getDay(); // 0=일, 1=월, ..., 5=금
+
+    if (!week || day === 1) {
+      if (week) weeks.push(week);
+      week = { date: c.date, open: c.open, high: c.high, low: c.low, close: c.close };
+    } else {
+      week.high = Math.max(week.high, c.high);
+      week.low = Math.min(week.low, c.low);
+      week.close = c.close;
+    }
+  }
+  if (week) weeks.push(week);
+  return weeks;
+}
+
 /**
  * 캔들 데이터로 매수/매도 신호 계산
  */
-export function calculateSignal(currency: string, candles: OHLCCandle[]): TradingSignal {
+export function calculateSignal(currency: string, candles: OHLCCandle[], macro?: MacroData | null): TradingSignal {
   const prices = closes(candles);
   const current = prices[prices.length - 1];
+  const highs = candles.map(c => c.high);
+  const lows = candles.map(c => c.low);
   const indicators: IndicatorSignal[] = [];
   let score = 0;
 
@@ -176,6 +205,238 @@ export function calculateSignal(currency: string, candles: OHLCCandle[]): Tradin
 
     indicators.push({ name: 'Bollinger(20/2)', value: position, signal: bbSignal, description: bbDesc });
     score += bbScore;
+  }
+
+  // ── 5. ADX (14) — 추세 강도 필터 ──────────────
+  // ADX < 20: 횡보장 → 기존 점수 감쇄 (추세 신호 신뢰도 낮음)
+  const { adx: adxValues, plusDI, minusDI } = adx(highs, lows, prices, 14);
+  const adxNow = adxValues.filter(v => !isNaN(v)).slice(-1)[0];
+  if (!isNaN(adxNow)) {
+    let adxSignal: SignalType;
+    let adxDesc: string;
+    let adxDampener = 1.0;
+
+    if (adxNow < 20) {
+      adxSignal = 'NEUTRAL';
+      adxDesc = `횡보 (ADX ${adxNow.toFixed(1)} < 20) — 추세 신호 신뢰도 낮음`;
+      adxDampener = 0.6; // 횡보장에서 기존 점수 40% 감쇄
+    } else if (adxNow < 35) {
+      adxSignal = 'NEUTRAL';
+      adxDesc = `보통 추세 (ADX ${adxNow.toFixed(1)})`;
+    } else {
+      adxSignal = plusDI[plusDI.length - 1] > minusDI[minusDI.length - 1] ? 'BUY' : 'SELL';
+      adxDesc = `강한 추세 (ADX ${adxNow.toFixed(1)}, +DI ${(plusDI[plusDI.length - 1] ?? 0).toFixed(1)} / -DI ${(minusDI[minusDI.length - 1] ?? 0).toFixed(1)})`;
+    }
+
+    // 횡보장이면 지금까지의 score를 감쇄
+    if (adxDampener < 1.0) {
+      score = Math.round(score * adxDampener);
+    }
+
+    indicators.push({ name: 'ADX(14)', value: adxNow, signal: adxSignal, description: adxDesc });
+  }
+
+  // ── 6. EMA(60) 장기 추세 필터 ─────────────────
+  // (데이터가 ~90일이므로 EMA(200) 대신 EMA(60) 사용)
+  const ema60 = ema(prices, 60);
+  const e60 = ema60[ema60.length - 1];
+  if (!isNaN(e60)) {
+    const aboveLong = current > e60;
+    const gap = ((current - e60) / e60) * 100;
+
+    let e60Signal: SignalType;
+    let e60Desc: string;
+    let e60Score: number;
+
+    if (aboveLong) {
+      e60Signal = 'BUY';
+      e60Score = 15;
+      e60Desc = `장기 상승 추세 (현재 ${gap.toFixed(2)}% > EMA60)`;
+    } else {
+      e60Signal = 'SELL';
+      e60Score = -15;
+      e60Desc = `장기 하락 추세 (현재 ${Math.abs(gap).toFixed(2)}% < EMA60)`;
+    }
+
+    indicators.push({ name: 'EMA(60) 추세', value: gap, signal: e60Signal, description: e60Desc });
+    score += e60Score;
+  }
+
+  // ── 7. 주봉 EMA(5/20) 다중 시간대 ───────────────
+  const weekly = toWeeklyCandles(candles);
+  if (weekly.length >= 20) {
+    const wPrices = weekly.map(c => c.close);
+    const wEma5 = ema(wPrices, 5);
+    const wEma20 = ema(wPrices, 20);
+    const we5 = wEma5[wEma5.length - 1];
+    const we20 = wEma20[wEma20.length - 1];
+    const we5Prev = wEma5[wEma5.length - 2];
+    const we20Prev = wEma20[wEma20.length - 2];
+
+    if (!isNaN(we5) && !isNaN(we20)) {
+      const wCrossUp = we5Prev < we20Prev && we5 > we20;
+      const wCrossDn = we5Prev > we20Prev && we5 < we20;
+      const wAbove = we5 > we20;
+
+      let wSignal: SignalType;
+      let wDesc: string;
+      let wScore: number;
+
+      if (wCrossUp) {
+        wSignal = 'BUY'; wScore = 25; wDesc = '주봉 골든크로스';
+      } else if (wCrossDn) {
+        wSignal = 'SELL'; wScore = -25; wDesc = '주봉 데드크로스';
+      } else if (wAbove) {
+        wSignal = 'BUY'; wScore = 15; wDesc = `주봉 단기 > 장기 (${we5.toFixed(1)} > ${we20.toFixed(1)})`;
+      } else {
+        wSignal = 'SELL'; wScore = -15; wDesc = `주봉 단기 < 장기 (${we5.toFixed(1)} < ${we20.toFixed(1)})`;
+      }
+
+      indicators.push({ name: 'Weekly EMA(5/20)', value: we5 - we20, signal: wSignal, description: wDesc });
+      score += wScore;
+    }
+  }
+
+  // ── 8. 신호 연속성 — 전일 방향 일치 보정 ──────────
+  // 전일(마지막-1)을 기준으로 기본 지표(RSI+EMA+MACD+BB) 방향이 같으면 +10, 반대면 -10
+  if (prices.length >= 2) {
+    const prevPrices = prices.slice(0, -1);
+    const prevHighs = highs.slice(0, -1);
+    const prevLows = lows.slice(0, -1);
+
+    let prevScore = 0;
+
+    const prevRsi = rsi(prevPrices, 14);
+    const prevRsiNow = prevRsi[prevRsi.length - 1];
+    if (!isNaN(prevRsiNow)) {
+      if (prevRsiNow < 30) prevScore += 30;
+      else if (prevRsiNow < 40) prevScore += 15;
+      else if (prevRsiNow > 70) prevScore -= 30;
+      else if (prevRsiNow > 60) prevScore -= 15;
+    }
+
+    const pe5 = ema(prevPrices, 5);
+    const pe20 = ema(prevPrices, 20);
+    if (!isNaN(pe5[pe5.length - 1]) && !isNaN(pe20[pe20.length - 1])) {
+      prevScore += pe5[pe5.length - 1] > pe20[pe20.length - 1] ? 10 : -10;
+    }
+
+    const { histogram: prevHist } = macd(prevPrices);
+    const prevHistNow = prevHist[prevHist.length - 1];
+    if (!isNaN(prevHistNow)) {
+      prevScore += prevHistNow > 0 ? 10 : -10;
+    }
+
+    const sameDirection = (score > 0 && prevScore > 0) || (score < 0 && prevScore < 0);
+    const continuityScore = sameDirection ? 10 : -10;
+    const contSignal: SignalType = sameDirection ? (score > 0 ? 'BUY' : 'SELL') : 'NEUTRAL';
+
+    indicators.push({
+      name: '신호 연속성',
+      value: prevScore,
+      signal: contSignal,
+      description: sameDirection
+        ? `전일 방향 일치 (+${continuityScore})`
+        : `전일 방향 반전 (${continuityScore})`,
+    });
+    score += continuityScore;
+  }
+
+  // ── 9. 거시 지표 (VIX / US10Y) ───────────────
+  if (macro) {
+    // VIX: 글로벌 공포지수 → KRW 약세/강세 판단
+    let vixSignal: SignalType;
+    let vixDesc: string;
+    let vixScore: number;
+
+    if (macro.vix > 30) {
+      vixSignal = 'BUY'; vixScore = 20;
+      vixDesc = `공포 구간 (VIX ${macro.vix.toFixed(1)}) — KRW 약세 압력`;
+    } else if (macro.vix > 20) {
+      vixSignal = 'BUY'; vixScore = 10;
+      vixDesc = `리스크 오프 (VIX ${macro.vix.toFixed(1)}) — 외화 강세 우위`;
+    } else if (macro.vix < 15) {
+      vixSignal = 'SELL'; vixScore = -15;
+      vixDesc = `리스크 온 (VIX ${macro.vix.toFixed(1)}) — KRW 강세 압력`;
+    } else {
+      vixSignal = 'NEUTRAL'; vixScore = 0;
+      vixDesc = `VIX 중립 (${macro.vix.toFixed(1)})`;
+    }
+
+    indicators.push({ name: 'VIX 공포지수', value: macro.vix, signal: vixSignal, description: vixDesc });
+    score += vixScore;
+
+    // 미국채 10Y: USD/KRW 전용 (금리 ↑ = USD 강세)
+    if (currency === 'USDKRW') {
+      const yieldChange = macro.us10y - macro.us10yPrev;
+      let yieldSignal: SignalType;
+      let yieldDesc: string;
+      let yieldScore: number;
+
+      if (yieldChange > 0.1) {
+        yieldSignal = 'BUY'; yieldScore = 15;
+        yieldDesc = `미국채 10Y 금리 상승 (+${yieldChange.toFixed(2)}%) → USD 강세`;
+      } else if (yieldChange < -0.1) {
+        yieldSignal = 'SELL'; yieldScore = -15;
+        yieldDesc = `미국채 10Y 금리 하락 (${yieldChange.toFixed(2)}%) → USD 약세`;
+      } else {
+        yieldSignal = 'NEUTRAL'; yieldScore = 0;
+        yieldDesc = `미국채 10Y 보합 (현재 ${macro.us10y.toFixed(2)}%)`;
+      }
+
+      indicators.push({ name: 'US10Y 국채금리', value: macro.us10y, signal: yieldSignal, description: yieldDesc });
+      score += yieldScore;
+    }
+  }
+
+  // ── 10. 갭 감지 (주말/공휴일 후 시가 괴리) ────────
+  if (candles.length >= 2) {
+    const today = candles[candles.length - 1];
+    const prev  = candles[candles.length - 2];
+
+    // 날짜 차이(일) 계산
+    const todayDate = new Date(
+      `${today.date.slice(0,4)}-${today.date.slice(4,6)}-${today.date.slice(6,8)}`
+    );
+    const prevDate = new Date(
+      `${prev.date.slice(0,4)}-${prev.date.slice(4,6)}-${prev.date.slice(6,8)}`
+    );
+    const dayDiff = Math.round((todayDate.getTime() - prevDate.getTime()) / 86400000);
+    const isWeekendGap = dayDiff >= 3; // 금요일→월요일(3일) 또는 공휴일 연휴
+
+    const gapPct = prev.close > 0 ? ((today.open - prev.close) / prev.close) * 100 : 0;
+
+    let gapSignal: SignalType = 'NEUTRAL';
+    let gapScore = 0;
+    let gapDesc = '';
+
+    const gapLabel = isWeekendGap ? '주말 갭' : '갭';
+
+    if (gapPct > 1.0) {
+      gapSignal = 'BUY'; gapScore = 20;
+      gapDesc = `${gapLabel} 상승 +${gapPct.toFixed(2)}% — 강한 매수 압력`;
+    } else if (gapPct > 0.5) {
+      gapSignal = 'BUY'; gapScore = 10;
+      gapDesc = `${gapLabel} 상승 +${gapPct.toFixed(2)}%`;
+    } else if (gapPct < -1.0) {
+      gapSignal = 'SELL'; gapScore = -20;
+      gapDesc = `${gapLabel} 하락 ${gapPct.toFixed(2)}% — 강한 매도 압력`;
+    } else if (gapPct < -0.5) {
+      gapSignal = 'SELL'; gapScore = -10;
+      gapDesc = `${gapLabel} 하락 ${gapPct.toFixed(2)}%`;
+    } else {
+      gapDesc = `갭 없음 (${gapPct >= 0 ? '+' : ''}${gapPct.toFixed(2)}%)`;
+    }
+
+    if (gapScore !== 0 || isWeekendGap) {
+      indicators.push({
+        name: isWeekendGap ? '주말 갭' : '갭',
+        value: gapPct,
+        signal: gapSignal,
+        description: gapDesc,
+      });
+      score += gapScore;
+    }
   }
 
   // ── 목표가 계산 ──────────────────────────────

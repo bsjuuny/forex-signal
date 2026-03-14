@@ -13,6 +13,7 @@ import fs from 'fs';
 import path from 'path';
 import { getExchangeRateHistory, SUPPORTED_CURRENCIES } from '../lib/koreaexim-api';
 import { calculateSignal, StoredRateData } from '../lib/signals';
+import { fetchMacroData, MacroData } from '../lib/macro-api';
 
 const OUTPUT_PATH = path.join(process.cwd(), 'public', 'data', 'exchange_rates.json');
 
@@ -28,6 +29,15 @@ async function main() {
   }
 
   console.log('[collect-data] 환율 데이터 수집 시작...');
+
+  // 거시 지표 수집 (실패해도 계속 진행)
+  console.log('  [매크로] VIX / 미국채 10Y 수집 중...');
+  const macro: MacroData | null = await fetchMacroData();
+  if (macro) {
+    console.log(`  [매크로] VIX ${macro.vix.toFixed(1)}, US10Y ${macro.us10y.toFixed(2)}%`);
+  } else {
+    console.warn('  [매크로] 거시 지표 수집 실패 — 기술적 분석만 사용');
+  }
 
   const endDate = formatDate(new Date());
   const startDate = formatDate(new Date(Date.now() - 90 * 24 * 60 * 60 * 1000));
@@ -57,12 +67,13 @@ async function main() {
         continue;
       }
 
-      const signal = calculateSignal(code, history);
+      const signal = calculateSignal(code, history, macro);
 
       results.push({
         currency: code,
         rates: history,
         signal,
+        ...(macro ? { macro } : {}),
         updatedAt: new Date().toISOString(),
       });
 
