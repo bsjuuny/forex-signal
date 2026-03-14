@@ -10,12 +10,8 @@ interface Props {
   data: StoredRateData[];
 }
 
-function signalScore(d: StoredRateData) {
-  return d.signal.score;
-}
-
 export default function ClientDashboard({ data }: Props) {
-  const sorted = [...data].sort((a, b) => signalScore(b) - signalScore(a));
+  const sorted = [...data].sort((a, b) => Math.abs(b.signal.score) - Math.abs(a.signal.score));
   const [selected, setSelected] = useState<string>(sorted[0]?.currency ?? '');
   const { rates: liveRates, updatedAt, error } = useLiveRates();
   const selectedData = data.find(d => d.currency === selected);
