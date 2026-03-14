@@ -11,7 +11,7 @@ function WeekendNotice() {
         <div>
           <h1 className="text-2xl font-black mb-2">주말에는 쉬어가요</h1>
           <p className="text-zinc-400 leading-relaxed">
-            한국수출입은행 환율 API는 영업일(월~금)에만 데이터를 제공합니다.
+            영업일(월~금)에만 데이터를 제공합니다.
             <br />
             주말에는 데이터 수집 및 신호 분석을 하지 않습니다.
           </p>
@@ -45,10 +45,13 @@ interface Props {
   children: React.ReactNode;
 }
 
+const IS_DEV = process.env.NEXT_PUBLIC_IS_DEV === 'true';
+
 export default function WeekendGate({ children }: Props) {
   const [isWeekend, setIsWeekend] = useState<boolean | null>(null);
 
   useEffect(() => {
+    if (IS_DEV) { setIsWeekend(false); return; }
     const day = new Date().getDay(); // 0=일, 6=토
     setIsWeekend(day === 0 || day === 6);
   }, []);

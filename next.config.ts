@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
   // 커스텀 도메인 사용 시 아래 두 줄 제거
   basePath: isProd ? '/forex-signal' : '',
   assetPrefix: isProd ? '/forex-signal/' : '',
+  env: {
+    NEXT_PUBLIC_IS_DEV: isProd ? '' : 'true',
+  },
 };
 
 export default nextConfig;
