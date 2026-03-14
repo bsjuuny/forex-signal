@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { StoredRateData } from '@/lib/signals';
 import { useLiveRates } from '@/app/hooks/useLiveRates';
 import SignalCard, { SwipeTab } from './SignalCard';
@@ -18,8 +18,6 @@ export default function ClientDashboard({ data }: Props) {
   const sorted = [...data].sort((a, b) => signalScore(b) - signalScore(a));
   const [selected, setSelected] = useState<string>(sorted[0]?.currency ?? '');
   const { rates: liveRates, updatedAt, error } = useLiveRates();
-  const detailRef = useRef<HTMLDivElement>(null);
-
   const selectedData = data.find(d => d.currency === selected);
 
   const buyCount = data.filter(d => d.signal.signal === 'BUY').length;
@@ -28,11 +26,6 @@ export default function ClientDashboard({ data }: Props) {
 
   function handleSelect(currency: string) {
     setSelected(currency);
-    if (window.innerWidth < 1024) {
-      setTimeout(() => {
-        detailRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 60);
-    }
   }
 
   /* 실시간 연결 상태 표시 (공통) */
@@ -129,7 +122,7 @@ export default function ClientDashboard({ data }: Props) {
       </div>
 
       {/* ── 모바일: 상세 패널 ── */}
-      <div ref={detailRef} className="lg:hidden scroll-mt-4">
+      <div className="lg:hidden">
         {selectedData ? (
           <DetailPanel data={selectedData} liveRate={liveRates?.[selected]} />
         ) : (
