@@ -65,16 +65,16 @@ export default function ClientDashboard({ data }: Props) {
     <div className="flex flex-col gap-5">
       {/* 시장 요약 */}
       <div className="grid grid-cols-3 gap-3">
-        <div className="rounded-xl bg-emerald-950/40 border border-emerald-900/50 p-3 text-center">
-          <div className="text-2xl font-black text-emerald-400 tabular-nums">{buyCount}</div>
+        <div className="rounded-xl bg-rose-950/40 border border-rose-900/50 p-3 text-center">
+          <div className="text-2xl font-black text-rose-400 tabular-nums">{buyCount}</div>
           <div className="text-xs text-zinc-500 mt-0.5">매수 신호</div>
         </div>
         <div className="rounded-xl bg-zinc-900 border border-zinc-800 p-3 text-center">
           <div className="text-2xl font-black text-zinc-400 tabular-nums">{neutralCount}</div>
           <div className="text-xs text-zinc-500 mt-0.5">중립</div>
         </div>
-        <div className="rounded-xl bg-rose-950/40 border border-rose-900/50 p-3 text-center">
-          <div className="text-2xl font-black text-rose-400 tabular-nums">{sellCount}</div>
+        <div className="rounded-xl bg-blue-950/40 border border-blue-900/50 p-3 text-center">
+          <div className="text-2xl font-black text-blue-400 tabular-nums">{sellCount}</div>
           <div className="text-xs text-zinc-500 mt-0.5">매도 신호</div>
         </div>
       </div>

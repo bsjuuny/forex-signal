@@ -76,8 +76,8 @@ export default function SignalCard({ signal, liveRate, isSelected, onClick }: Pr
           <div className="w-20 h-1.5 bg-zinc-800 rounded-full overflow-hidden">
             <div
               className={`h-full rounded-full transition-all duration-500 ${
-                signal.signal === 'BUY' ? 'bg-emerald-500' :
-                signal.signal === 'SELL' ? 'bg-rose-500' : 'bg-zinc-500'
+                signal.signal === 'BUY' ? 'bg-rose-500' :
+                signal.signal === 'SELL' ? 'bg-blue-500' : 'bg-zinc-500'
               }`}
               style={{ width: `${Math.min(100, Math.abs(signal.score))}%` }}
             />

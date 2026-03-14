@@ -40,7 +40,7 @@ export default function DetailPanel({ data, liveRate }: Props) {
       <div className="grid grid-cols-2 gap-2">
         <div className="rounded-lg bg-zinc-900 border border-zinc-800 p-3 text-center">
           <div className="text-xs text-zinc-500 mb-1.5">목표 매수가</div>
-          <div className="font-mono font-bold text-emerald-400 tabular-nums">
+          <div className="font-mono font-bold text-rose-400 tabular-nums">
             {signal.targetBuy.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
           </div>
         </div>
@@ -57,7 +57,7 @@ export default function DetailPanel({ data, liveRate }: Props) {
         </div>
         <div className="rounded-lg bg-zinc-900 border border-zinc-800 p-3 text-center">
           <div className="text-xs text-zinc-500 mb-1.5">목표 매도가</div>
-          <div className="font-mono font-bold text-rose-400 tabular-nums">
+          <div className="font-mono font-bold text-blue-400 tabular-nums">
             {signal.targetSell.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
           </div>
         </div>
