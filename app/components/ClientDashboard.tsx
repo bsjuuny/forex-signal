@@ -67,14 +67,11 @@ export default function ClientDashboard({ data }: Props) {
               {liveRates ? (
                 <>
                   <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-xs text-zinc-500">
-                    실시간
-                    {updatedAt && (
-                      <span className="text-zinc-600 ml-1">
-                        {updatedAt.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })}
-                      </span>
-                    )}
-                  </span>
+                  {updatedAt && (
+                    <span className="text-xs text-zinc-600">
+                      {updatedAt.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })}
+                    </span>
+                  )}
                 </>
               ) : error ? (
                 <>

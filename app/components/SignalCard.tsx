@@ -52,10 +52,7 @@ export default function SignalCard({ signal, liveRate, isSelected, onClick }: Pr
               {displayRate.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
             </div>
             {liveRate != null && (
-              <span className="flex items-center gap-1 text-xs text-emerald-400 shrink-0">
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                실시간
-              </span>
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
             )}
           </div>
           {change != null ? (
