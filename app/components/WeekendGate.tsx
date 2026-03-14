@@ -1,4 +1,8 @@
-export default function WeekendPage() {
+'use client';
+
+import { useState, useEffect } from 'react';
+
+function WeekendNotice() {
   return (
     <main className="min-h-screen bg-zinc-950 text-white flex flex-col items-center justify-center px-4">
       <div className="max-w-md w-full text-center flex flex-col items-center gap-6">
@@ -35,4 +39,21 @@ export default function WeekendPage() {
       </div>
     </main>
   );
+}
+
+interface Props {
+  children: React.ReactNode;
+}
+
+export default function WeekendGate({ children }: Props) {
+  const [isWeekend, setIsWeekend] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const day = new Date().getDay(); // 0=일, 6=토
+    setIsWeekend(day === 0 || day === 6);
+  }, []);
+
+  if (isWeekend === null) return null;
+  if (isWeekend) return <WeekendNotice />;
+  return <>{children}</>;
 }
