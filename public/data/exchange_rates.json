@@ -474,21 +474,24 @@
       "currentRate": 1479.8,
       "targetBuy": 1460.45,
       "targetSell": 1505.6,
+      "targetBuyEffective": 1486.01,
+      "targetSellEffective": 1479.25,
       "stopLoss": 1466.9,
       "spreadPct": 1.75,
       "effectiveBuyRate": 1505.7,
       "effectiveSellRate": 1453.9,
       "breakEvenPct": 3.5,
-      "calculatedAt": "2026-03-15T23:02:31.168Z"
+      "netProfitPct": -0.45,
+      "calculatedAt": "2026-03-15T23:14:17.873Z"
     },
     "macro": {
       "vix": 27.190000534057617,
       "vixPrev": 21.440000534057617,
       "us10y": 4.284999847412109,
       "us10yPrev": 4.047999858856201,
-      "fetchedAt": "2026-03-15T23:02:28.157Z"
+      "fetchedAt": "2026-03-15T23:14:14.865Z"
     },
-    "updatedAt": "2026-03-15T23:02:31.168Z"
+    "updatedAt": "2026-03-15T23:14:17.873Z"
   },
   {
     "currency": "EURKRW",
@@ -959,21 +962,24 @@
       "currentRate": 1704.73,
       "targetBuy": 1683.12,
       "targetSell": 1733.55,
+      "targetBuyEffective": 1712.57,
+      "targetSellEffective": 1703.21,
       "stopLoss": 1719.14,
       "spreadPct": 1.75,
       "effectiveBuyRate": 1734.56,
       "effectiveSellRate": 1674.9,
       "breakEvenPct": 3.5,
-      "calculatedAt": "2026-03-15T23:02:33.276Z"
+      "netProfitPct": -0.55,
+      "calculatedAt": "2026-03-15T23:14:20.057Z"
     },
     "macro": {
       "vix": 27.190000534057617,
       "vixPrev": 21.440000534057617,
       "us10y": 4.284999847412109,
       "us10yPrev": 4.047999858856201,
-      "fetchedAt": "2026-03-15T23:02:28.157Z"
+      "fetchedAt": "2026-03-15T23:14:14.865Z"
     },
-    "updatedAt": "2026-03-15T23:02:33.276Z"
+    "updatedAt": "2026-03-15T23:14:20.057Z"
   },
   {
     "currency": "JPYKRW",
@@ -1444,21 +1450,24 @@
       "currentRate": 928.94,
       "targetBuy": 916.14,
       "targetSell": 946,
+      "targetBuyEffective": 932.18,
+      "targetSellEffective": 929.45,
       "stopLoss": 937.47,
       "spreadPct": 1.75,
       "effectiveBuyRate": 945.2,
       "effectiveSellRate": 912.68,
       "breakEvenPct": 3.5,
-      "calculatedAt": "2026-03-15T23:02:35.426Z"
+      "netProfitPct": -0.29,
+      "calculatedAt": "2026-03-15T23:14:22.177Z"
     },
     "macro": {
       "vix": 27.190000534057617,
       "vixPrev": 21.440000534057617,
       "us10y": 4.284999847412109,
       "us10yPrev": 4.047999858856201,
-      "fetchedAt": "2026-03-15T23:02:28.157Z"
+      "fetchedAt": "2026-03-15T23:14:14.865Z"
     },
-    "updatedAt": "2026-03-15T23:02:35.426Z"
+    "updatedAt": "2026-03-15T23:14:22.177Z"
   },
   {
     "currency": "GBPKRW",
@@ -1929,21 +1938,24 @@
       "currentRate": 1975.46,
       "targetBuy": 1949.25,
       "targetSell": 2010.41,
+      "targetBuyEffective": 1983.36,
+      "targetSellEffective": 1975.23,
       "stopLoss": 1957.98,
       "spreadPct": 1.75,
       "effectiveBuyRate": 2010.03,
       "effectiveSellRate": 1940.89,
       "breakEvenPct": 3.5,
-      "calculatedAt": "2026-03-15T23:02:39.669Z"
+      "netProfitPct": -0.41,
+      "calculatedAt": "2026-03-15T23:14:26.420Z"
     },
     "macro": {
       "vix": 27.190000534057617,
       "vixPrev": 21.440000534057617,
       "us10y": 4.284999847412109,
       "us10yPrev": 4.047999858856201,
-      "fetchedAt": "2026-03-15T23:02:28.157Z"
+      "fetchedAt": "2026-03-15T23:14:14.865Z"
     },
-    "updatedAt": "2026-03-15T23:02:39.670Z"
+    "updatedAt": "2026-03-15T23:14:26.420Z"
   },
   {
     "currency": "CADKRW",
@@ -2414,21 +2426,24 @@
       "currentRate": 1085.41,
       "targetBuy": 1069.99,
       "targetSell": 1105.97,
+      "targetBuyEffective": 1088.71,
+      "targetSellEffective": 1086.62,
       "stopLoss": 1075.13,
       "spreadPct": 1.75,
       "effectiveBuyRate": 1104.4,
       "effectiveSellRate": 1066.42,
       "breakEvenPct": 3.5,
-      "calculatedAt": "2026-03-15T23:02:41.769Z"
+      "netProfitPct": -0.19,
+      "calculatedAt": "2026-03-15T23:14:28.531Z"
     },
     "macro": {
       "vix": 27.190000534057617,
       "vixPrev": 21.440000534057617,
       "us10y": 4.284999847412109,
       "us10yPrev": 4.047999858856201,
-      "fetchedAt": "2026-03-15T23:02:28.157Z"
+      "fetchedAt": "2026-03-15T23:14:14.865Z"
     },
-    "updatedAt": "2026-03-15T23:02:41.769Z"
+    "updatedAt": "2026-03-15T23:14:28.531Z"
   },
   {
     "currency": "HKDKRW",
@@ -2899,21 +2914,24 @@
       "currentRate": 189.07,
       "targetBuy": 186.56,
       "targetSell": 192.42,
+      "targetBuyEffective": 190.29,
+      "targetSellEffective": 188.57,
       "stopLoss": 187.4,
       "spreadPct": 2,
       "effectiveBuyRate": 192.85,
       "effectiveSellRate": 185.29,
       "breakEvenPct": 4,
-      "calculatedAt": "2026-03-15T23:02:43.895Z"
+      "netProfitPct": -0.91,
+      "calculatedAt": "2026-03-15T23:14:30.648Z"
     },
     "macro": {
       "vix": 27.190000534057617,
       "vixPrev": 21.440000534057617,
       "us10y": 4.284999847412109,
       "us10yPrev": 4.047999858856201,
-      "fetchedAt": "2026-03-15T23:02:28.157Z"
+      "fetchedAt": "2026-03-15T23:14:14.865Z"
     },
-    "updatedAt": "2026-03-15T23:02:43.895Z"
+    "updatedAt": "2026-03-15T23:14:30.648Z"
   },
   {
     "currency": "CNYKRW",
@@ -3384,20 +3402,23 @@
       "currentRate": 215.16,
       "targetBuy": 213.36,
       "targetSell": 217.56,
+      "targetBuyEffective": 217.63,
+      "targetSellEffective": 213.21,
       "stopLoss": 216.36,
       "spreadPct": 2,
       "effectiveBuyRate": 219.46,
       "effectiveSellRate": 210.86,
       "breakEvenPct": 4,
-      "calculatedAt": "2026-03-15T23:02:37.554Z"
+      "netProfitPct": -2.03,
+      "calculatedAt": "2026-03-15T23:14:24.303Z"
     },
     "macro": {
       "vix": 27.190000534057617,
       "vixPrev": 21.440000534057617,
       "us10y": 4.284999847412109,
       "us10yPrev": 4.047999858856201,
-      "fetchedAt": "2026-03-15T23:02:28.157Z"
+      "fetchedAt": "2026-03-15T23:14:14.865Z"
     },
-    "updatedAt": "2026-03-15T23:02:37.554Z"
+    "updatedAt": "2026-03-15T23:14:24.303Z"
   }
 ]
