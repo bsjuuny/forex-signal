@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
   assetPrefix: isProd ? '/forex-signal/' : '',
   env: {
     NEXT_PUBLIC_IS_DEV: isProd ? '' : 'true',
+    NEXT_PUBLIC_BUILD_TIME: new Date().toISOString(),
   },
 };
 

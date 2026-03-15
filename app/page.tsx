@@ -16,7 +16,7 @@ async function getData(): Promise<StoredRateData[]> {
 
 export default async function Home() {
   const data = await getData();
-  const lastUpdated = data[0]?.updatedAt;
+  const lastUpdated = process.env.NEXT_PUBLIC_BUILD_TIME;
 
   return (
     <WeekendGate>
