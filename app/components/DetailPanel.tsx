@@ -88,6 +88,33 @@ export default function DetailPanel({ data, liveRate }: Props) {
         </div>
       </div>
 
+      {/* 환전 수수료 정보 */}
+      <div className="rounded-xl bg-zinc-900/60 border border-zinc-700/50 p-4">
+        <div className="flex items-center justify-between mb-3">
+          <h3 className="text-xs font-semibold text-zinc-400 uppercase tracking-widest">환전 수수료 반영</h3>
+          <span className="text-xs text-zinc-500 font-mono">스프레드 {signal.spreadPct}%</span>
+        </div>
+        <div className="grid grid-cols-2 gap-2 mb-3">
+          <div className="rounded-lg bg-zinc-800/60 p-2.5 text-center">
+            <div className="text-[10px] text-zinc-500 mb-1">실매수 환율 <span className="text-zinc-600">(살 때)</span></div>
+            <div className="font-mono font-bold text-rose-300 text-sm tabular-nums">
+              {signal.effectiveBuyRate.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
+            </div>
+          </div>
+          <div className="rounded-lg bg-zinc-800/60 p-2.5 text-center">
+            <div className="text-[10px] text-zinc-500 mb-1">실매도 환율 <span className="text-zinc-600">(팔 때)</span></div>
+            <div className="font-mono font-bold text-blue-300 text-sm tabular-nums">
+              {signal.effectiveSellRate.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
+            </div>
+          </div>
+        </div>
+        <p className="text-[11px] text-zinc-500 leading-relaxed">
+          왕복 수수료 <span className="text-zinc-300 font-semibold">{signal.breakEvenPct}%</span> — 매매기준율이{' '}
+          <span className="text-zinc-300 font-semibold">{signal.breakEvenPct}% 이상</span> 움직여야 손익분기점을 넘습니다.
+          은행·시간대에 따라 스프레드가 달라질 수 있습니다.
+        </p>
+      </div>
+
       {/* 차트 */}
       <div className="rounded-xl bg-zinc-900/60 border border-zinc-800 overflow-hidden">
         <RateChart candles={rates} signal={signal} />

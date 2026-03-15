@@ -10,6 +10,17 @@ import { MacroData } from './macro-api';
 export type SignalType = 'BUY' | 'SELL' | 'NEUTRAL';
 export type SignalStrength = 'STRONG' | 'MODERATE' | 'WEAK';
 
+/** 통화별 은행 환전 스프레드 (단방향 %, 매매기준율 대비) */
+const CURRENCY_SPREAD: Record<string, number> = {
+  USDKRW: 1.75,
+  EURKRW: 1.75,
+  JPYKRW: 1.75,
+  GBPKRW: 1.75,
+  CADKRW: 1.75,
+  CNYKRW: 2.00,
+  HKDKRW: 2.00,
+};
+
 export interface IndicatorSignal {
   name: string;
   value: number;
@@ -24,9 +35,13 @@ export interface TradingSignal {
   score: number;          // -100 ~ +100 (양수 = 매수, 음수 = 매도)
   indicators: IndicatorSignal[];
   currentRate: number;
-  targetBuy: number;      // 목표 매수가
-  targetSell: number;     // 목표 매도가
+  targetBuy: number;      // 목표 매수가 (매매기준율 기준)
+  targetSell: number;     // 목표 매도가 (매매기준율 기준)
   stopLoss: number;       // 손절가
+  spreadPct: number;      // 환전 스프레드 (단방향 %)
+  effectiveBuyRate: number;   // 실제 매수 시 지불 환율 (수수료 포함)
+  effectiveSellRate: number;  // 실제 매도 시 수령 환율 (수수료 포함)
+  breakEvenPct: number;   // 손익분기 이동 필요량 (%)
   calculatedAt: string;
 }
 
@@ -450,6 +465,15 @@ export function calculateSignal(currency: string, candles: OHLCCandle[], macro?:
   const targetSell = current + atr * 2.0;
   const stopLoss = signal === 'BUY' ? current - atr * 1.0 : current + atr * 1.0;
 
+  // ── 환전 수수료 계산 ──────────────────────────
+  const spreadPct = CURRENCY_SPREAD[currency] ?? 1.75;
+  // 매수 시: 은행이 기준율보다 높게 팔므로 (기준율 × (1 + spread))
+  const effectiveBuyRate = current * (1 + spreadPct / 100);
+  // 매도 시: 은행이 기준율보다 낮게 사므로 (기준율 × (1 - spread))
+  const effectiveSellRate = current * (1 - spreadPct / 100);
+  // 손익분기: 왕복 수수료를 넘어야 이익 (단방향 spread × 2)
+  const breakEvenPct = spreadPct * 2;
+
   return {
     currency,
     signal,
@@ -460,6 +484,10 @@ export function calculateSignal(currency: string, candles: OHLCCandle[], macro?:
     targetBuy: parseFloat(targetBuy.toFixed(2)),
     targetSell: parseFloat(targetSell.toFixed(2)),
     stopLoss: parseFloat(stopLoss.toFixed(2)),
+    spreadPct,
+    effectiveBuyRate: parseFloat(effectiveBuyRate.toFixed(2)),
+    effectiveSellRate: parseFloat(effectiveSellRate.toFixed(2)),
+    breakEvenPct: parseFloat(breakEvenPct.toFixed(2)),
     calculatedAt: new Date().toISOString(),
   };
 }
