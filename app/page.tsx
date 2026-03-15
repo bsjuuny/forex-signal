@@ -43,6 +43,7 @@ export default async function Home() {
                 업데이트{' '}
                 <span className="text-zinc-500">
                   {new Date(lastUpdated).toLocaleString('ko-KR', {
+                    timeZone: 'Asia/Seoul',
                     month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit',
                   })}
                 </span>
