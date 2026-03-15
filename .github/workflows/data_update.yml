@@ -5,6 +5,10 @@ on:
     # 평일 매시 45분 실행 (KST 기준 = UTC 기준 동일 분, 평일 UTC Mon-Fri)
     - cron: '45 * * * 1-5'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'public/data/**'
 
 permissions:
   contents: write
