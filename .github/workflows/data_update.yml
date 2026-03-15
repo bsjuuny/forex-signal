@@ -2,9 +2,8 @@ name: FX Data Update & Deploy
 
 on:
   schedule:
-    # 3시간 간격 8회/일 (UTC 기준, KST = UTC+9), 평일(월~금)만 실행
-    # UTC 00,03,06,09,12,15,18,21 → KST 09,12,15,18,21,00,03,06
-    - cron: '0 0,3,6,9,12,15,18,21 * * 1-5'
+    # 평일 매시 45분 실행 (KST 기준 = UTC 기준 동일 분, 평일 UTC Mon-Fri)
+    - cron: '45 * * * 1-5'
   workflow_dispatch:
 
 permissions:
