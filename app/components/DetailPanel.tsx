@@ -58,26 +58,35 @@ export default function DetailPanel({ data, liveRate }: Props) {
       {/* 가격 정보 — 2×2 그리드 */}
       <div className="grid grid-cols-2 gap-2">
         <div className="rounded-lg bg-zinc-900 border border-zinc-800 p-3 text-center">
-          <div className="text-xs text-zinc-500 mb-1.5">목표 매수가</div>
+          <div className="text-xs text-zinc-500 mb-0.5">목표 매수가</div>
+          <div className="text-[10px] text-zinc-600 mb-1">기준율</div>
           <div className="font-mono font-bold text-rose-400 tabular-nums">
             {signal.targetBuy.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
           </div>
+          <div className="text-[10px] text-rose-300/70 font-mono tabular-nums mt-1">
+            실지불 {signal.targetBuyEffective.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
+          </div>
         </div>
         <div className="rounded-lg bg-zinc-900 border border-zinc-800 p-3 text-center">
-          <div className="flex items-center justify-center gap-1.5 mb-1.5">
+          <div className="flex items-center justify-center gap-1.5 mb-0.5">
             <span className="text-xs text-zinc-500">현재가</span>
             {liveRate != null && (
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             )}
           </div>
+          <div className="text-[10px] text-zinc-600 mb-1">기준율</div>
           <div className="font-mono font-bold text-white tabular-nums">
             {displayRate.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
           </div>
         </div>
         <div className="rounded-lg bg-zinc-900 border border-zinc-800 p-3 text-center">
-          <div className="text-xs text-zinc-500 mb-1.5">목표 매도가</div>
+          <div className="text-xs text-zinc-500 mb-0.5">목표 매도가</div>
+          <div className="text-[10px] text-zinc-600 mb-1">기준율</div>
           <div className="font-mono font-bold text-blue-400 tabular-nums">
             {signal.targetSell.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
+          </div>
+          <div className="text-[10px] text-blue-300/70 font-mono tabular-nums mt-1">
+            실수령 {signal.targetSellEffective.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
           </div>
         </div>
         <div className="rounded-lg bg-amber-950/40 border border-amber-800/30 p-3 text-center">
@@ -91,27 +100,34 @@ export default function DetailPanel({ data, liveRate }: Props) {
       {/* 환전 수수료 정보 */}
       <div className="rounded-xl bg-zinc-900/60 border border-zinc-700/50 p-4">
         <div className="flex items-center justify-between mb-3">
-          <h3 className="text-xs font-semibold text-zinc-400 uppercase tracking-widest">환전 수수료 반영</h3>
+          <h3 className="text-xs font-semibold text-zinc-400 uppercase tracking-widest">수수료 반영 손익</h3>
           <span className="text-xs text-zinc-500 font-mono">스프레드 {signal.spreadPct}%</span>
         </div>
-        <div className="grid grid-cols-2 gap-2 mb-3">
+        <div className="grid grid-cols-3 gap-2 mb-3">
           <div className="rounded-lg bg-zinc-800/60 p-2.5 text-center">
-            <div className="text-[10px] text-zinc-500 mb-1">실매수 환율 <span className="text-zinc-600">(살 때)</span></div>
-            <div className="font-mono font-bold text-rose-300 text-sm tabular-nums">
-              {signal.effectiveBuyRate.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
+            <div className="text-[10px] text-zinc-500 mb-1">왕복 수수료</div>
+            <div className="font-mono font-bold text-zinc-300 text-sm tabular-nums">
+              {signal.breakEvenPct}%
             </div>
           </div>
           <div className="rounded-lg bg-zinc-800/60 p-2.5 text-center">
-            <div className="text-[10px] text-zinc-500 mb-1">실매도 환율 <span className="text-zinc-600">(팔 때)</span></div>
-            <div className="font-mono font-bold text-blue-300 text-sm tabular-nums">
-              {signal.effectiveSellRate.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
+            <div className="text-[10px] text-zinc-500 mb-1">목표 순수익</div>
+            <div className={`font-mono font-bold text-sm tabular-nums ${signal.netProfitPct >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+              {signal.netProfitPct >= 0 ? '+' : ''}{signal.netProfitPct}%
+            </div>
+          </div>
+          <div className="rounded-lg bg-zinc-800/60 p-2.5 text-center">
+            <div className="text-[10px] text-zinc-500 mb-1">손익 여부</div>
+            <div className={`font-bold text-sm ${signal.netProfitPct >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+              {signal.netProfitPct >= 0 ? '이익' : '손실'}
             </div>
           </div>
         </div>
         <p className="text-[11px] text-zinc-500 leading-relaxed">
-          왕복 수수료 <span className="text-zinc-300 font-semibold">{signal.breakEvenPct}%</span> — 매매기준율이{' '}
-          <span className="text-zinc-300 font-semibold">{signal.breakEvenPct}% 이상</span> 움직여야 손익분기점을 넘습니다.
-          은행·시간대에 따라 스프레드가 달라질 수 있습니다.
+          목표가 달성 시 수수료({signal.spreadPct}% × 2) 차감 후 순수익{' '}
+          <span className={`font-semibold ${signal.netProfitPct >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+            {signal.netProfitPct >= 0 ? '+' : ''}{signal.netProfitPct}%
+          </span>. 은행·시간대에 따라 스프레드가 달라질 수 있습니다.
         </p>
       </div>
 
