@@ -473,9 +473,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 26.149999618530273,
+          "value": 26.239999771118164,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 26.1) — 외화 강세 우위"
+          "description": "리스크 오프 (VIX 26.2) — 외화 강세 우위"
         },
         {
           "name": "US10Y 국채금리",
@@ -501,16 +501,16 @@
       "effectiveSellRate": 1463.43,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.42,
-      "calculatedAt": "2026-03-16T07:58:49.036Z"
+      "calculatedAt": "2026-03-16T09:48:06.833Z"
     },
     "macro": {
-      "vix": 26.149999618530273,
+      "vix": 26.239999771118164,
       "vixPrev": 23.56999969482422,
       "us10y": 4.284999847412109,
       "us10yPrev": 4.047999858856201,
-      "fetchedAt": "2026-03-16T07:58:46.169Z"
+      "fetchedAt": "2026-03-16T09:48:03.640Z"
     },
-    "updatedAt": "2026-03-16T07:58:49.036Z"
+    "updatedAt": "2026-03-16T09:48:06.833Z"
   },
   {
     "currency": "EURKRW",
@@ -986,9 +986,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 26.149999618530273,
+          "value": 26.239999771118164,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 26.1) — 외화 강세 우위"
+          "description": "리스크 오프 (VIX 26.2) — 외화 강세 우위"
         },
         {
           "name": "주말 갭",
@@ -1008,16 +1008,16 @@
       "effectiveSellRate": 1672.92,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.66,
-      "calculatedAt": "2026-03-16T07:58:50.814Z"
+      "calculatedAt": "2026-03-16T09:48:08.988Z"
     },
     "macro": {
-      "vix": 26.149999618530273,
+      "vix": 26.239999771118164,
       "vixPrev": 23.56999969482422,
       "us10y": 4.284999847412109,
       "us10yPrev": 4.047999858856201,
-      "fetchedAt": "2026-03-16T07:58:46.169Z"
+      "fetchedAt": "2026-03-16T09:48:03.640Z"
     },
-    "updatedAt": "2026-03-16T07:58:50.814Z"
+    "updatedAt": "2026-03-16T09:48:08.988Z"
   },
   {
     "currency": "JPYKRW",
@@ -1493,9 +1493,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 26.149999618530273,
+          "value": 26.239999771118164,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 26.1) — 외화 강세 우위"
+          "description": "리스크 오프 (VIX 26.2) — 외화 강세 우위"
         },
         {
           "name": "주말 갭",
@@ -1515,16 +1515,16 @@
       "effectiveSellRate": 917.28,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.25,
-      "calculatedAt": "2026-03-16T07:58:52.588Z"
+      "calculatedAt": "2026-03-16T09:48:11.109Z"
     },
     "macro": {
-      "vix": 26.149999618530273,
+      "vix": 26.239999771118164,
       "vixPrev": 23.56999969482422,
       "us10y": 4.284999847412109,
       "us10yPrev": 4.047999858856201,
-      "fetchedAt": "2026-03-16T07:58:46.169Z"
+      "fetchedAt": "2026-03-16T09:48:03.640Z"
     },
-    "updatedAt": "2026-03-16T07:58:52.588Z"
+    "updatedAt": "2026-03-16T09:48:11.109Z"
   },
   {
     "currency": "GBPKRW",
@@ -2000,9 +2000,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 26.149999618530273,
+          "value": 26.239999771118164,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 26.1) — 외화 강세 우위"
+          "description": "리스크 오프 (VIX 26.2) — 외화 강세 우위"
         },
         {
           "name": "주말 갭",
@@ -2022,16 +2022,16 @@
       "effectiveSellRate": 1937.66,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.49,
-      "calculatedAt": "2026-03-16T07:58:56.128Z"
+      "calculatedAt": "2026-03-16T09:48:15.358Z"
     },
     "macro": {
-      "vix": 26.149999618530273,
+      "vix": 26.239999771118164,
       "vixPrev": 23.56999969482422,
       "us10y": 4.284999847412109,
       "us10yPrev": 4.047999858856201,
-      "fetchedAt": "2026-03-16T07:58:46.169Z"
+      "fetchedAt": "2026-03-16T09:48:03.640Z"
     },
-    "updatedAt": "2026-03-16T07:58:56.128Z"
+    "updatedAt": "2026-03-16T09:48:15.358Z"
   },
   {
     "currency": "CADKRW",
@@ -2507,9 +2507,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 26.149999618530273,
+          "value": 26.239999771118164,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 26.1) — 외화 강세 우위"
+          "description": "리스크 오프 (VIX 26.2) — 외화 강세 우위"
         },
         {
           "name": "주말 갭",
@@ -2529,16 +2529,16 @@
       "effectiveSellRate": 1067.23,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.34,
-      "calculatedAt": "2026-03-16T07:58:57.899Z"
+      "calculatedAt": "2026-03-16T09:48:17.471Z"
     },
     "macro": {
-      "vix": 26.149999618530273,
+      "vix": 26.239999771118164,
       "vixPrev": 23.56999969482422,
       "us10y": 4.284999847412109,
       "us10yPrev": 4.047999858856201,
-      "fetchedAt": "2026-03-16T07:58:46.169Z"
+      "fetchedAt": "2026-03-16T09:48:03.640Z"
     },
-    "updatedAt": "2026-03-16T07:58:57.899Z"
+    "updatedAt": "2026-03-16T09:48:17.471Z"
   },
   {
     "currency": "HKDKRW",
@@ -3014,9 +3014,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 26.149999618530273,
+          "value": 26.239999771118164,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 26.1) — 외화 강세 우위"
+          "description": "리스크 오프 (VIX 26.2) — 외화 강세 우위"
         },
         {
           "name": "주말 갭",
@@ -3036,16 +3036,16 @@
       "effectiveSellRate": 186.48,
       "breakEvenPct": 4,
       "netProfitPct": -0.89,
-      "calculatedAt": "2026-03-16T07:58:59.663Z"
+      "calculatedAt": "2026-03-16T09:48:19.588Z"
     },
     "macro": {
-      "vix": 26.149999618530273,
+      "vix": 26.239999771118164,
       "vixPrev": 23.56999969482422,
       "us10y": 4.284999847412109,
       "us10yPrev": 4.047999858856201,
-      "fetchedAt": "2026-03-16T07:58:46.169Z"
+      "fetchedAt": "2026-03-16T09:48:03.640Z"
     },
-    "updatedAt": "2026-03-16T07:58:59.663Z"
+    "updatedAt": "2026-03-16T09:48:19.588Z"
   },
   {
     "currency": "CNYKRW",
@@ -3521,9 +3521,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 26.149999618530273,
+          "value": 26.239999771118164,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 26.1) — 외화 강세 우위"
+          "description": "리스크 오프 (VIX 26.2) — 외화 강세 우위"
         },
         {
           "name": "주말 갭",
@@ -3543,15 +3543,15 @@
       "effectiveSellRate": 211.9,
       "breakEvenPct": 4,
       "netProfitPct": -1.97,
-      "calculatedAt": "2026-03-16T07:58:54.357Z"
+      "calculatedAt": "2026-03-16T09:48:13.226Z"
     },
     "macro": {
-      "vix": 26.149999618530273,
+      "vix": 26.239999771118164,
       "vixPrev": 23.56999969482422,
       "us10y": 4.284999847412109,
       "us10yPrev": 4.047999858856201,
-      "fetchedAt": "2026-03-16T07:58:46.169Z"
+      "fetchedAt": "2026-03-16T09:48:03.640Z"
     },
-    "updatedAt": "2026-03-16T07:58:54.357Z"
+    "updatedAt": "2026-03-16T09:48:13.226Z"
   }
 ]
