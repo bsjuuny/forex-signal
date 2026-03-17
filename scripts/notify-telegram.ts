@@ -79,7 +79,7 @@ function buildMessage(data: StoredRateData[]): string {
   return lines.join('\n');
 }
 
-async function sendTelegram(text: string): Promise<void> {
+async function sendTelegram(text: string, attempt = 1): Promise<void> {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
 
@@ -89,22 +89,34 @@ async function sendTelegram(text: string): Promise<void> {
   }
 
   const url = `https://api.telegram.org/bot${token}/sendMessage`;
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      chat_id: chatId,
-      text,
-      parse_mode: 'HTML',
-    }),
-  });
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000); // 15초 timeout
 
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`Telegram API 오류 ${res.status}: ${body}`);
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML' }),
+      signal: controller.signal,
+    });
+
+    if (!res.ok) {
+      const body = await res.text();
+      throw new Error(`Telegram API 오류 ${res.status}: ${body}`);
+    }
+
+    console.log('[notify] 텔레그램 알림 전송 완료');
+  } catch (err) {
+    if (attempt < 3) {
+      const delay = attempt * 5000; // 5초, 10초
+      console.warn(`[notify] 전송 실패 (${attempt}회차), ${delay / 1000}초 후 재시도...`);
+      await new Promise(r => setTimeout(r, delay));
+      return sendTelegram(text, attempt + 1);
+    }
+    throw err;
+  } finally {
+    clearTimeout(timeout);
   }
-
-  console.log('[notify] 텔레그램 알림 전송 완료');
 }
 
 async function main() {
