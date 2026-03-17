@@ -24,10 +24,14 @@ env:
 
 jobs:
   update-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
+    defaults:
+      run:
+        shell: powershell -ExecutionPolicy Bypass -NonInteractive -File "{0}"
 
     steps:
       - uses: actions/checkout@v4
@@ -52,7 +56,11 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase --autostash origin main
           git add public/data/exchange_rates.json
-          git diff --staged --quiet && exit 0
+          git diff --staged --quiet
+          if ($LASTEXITCODE -eq 0) {
+            Write-Host "No data changes to commit."
+            exit 0
+          }
           git commit -m "data: update fx signals [skip ci]"
           git push
 
