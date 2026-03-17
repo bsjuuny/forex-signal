@@ -464,9 +464,9 @@ export function calculateSignal(currency: string, candles: OHLCCandle[], macro?:
   }, 0) / 13; // 14일 평균 변동폭(ATR 근사)
 
   const { signal, strength } = scoreToSignal(score);
-  const targetBuy = current - atr * 1.5;
-  const targetSell = current + atr * 2.0;
-  const stopLoss = signal === 'BUY' ? current - atr * 1.0 : current + atr * 1.0;
+  const targetBuy = current - atr * 2.5;
+  const targetSell = current + atr * 3.5;
+  const stopLoss = signal === 'BUY' ? current - atr * 1.5 : current + atr * 1.5;
 
   // ── 환전 수수료 계산 ──────────────────────────
   const spreadPct = CURRENCY_SPREAD[currency] ?? 1.75;
