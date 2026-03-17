@@ -460,7 +460,7 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 24.229999542236328,
+          "value": 24.239999771118164,
           "signal": "BUY",
           "description": "리스크 오프 (VIX 24.2) — 외화 강세 우위"
         },
@@ -482,16 +482,16 @@
       "effectiveSellRate": 1469.82,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.39,
-      "calculatedAt": "2026-03-17T07:52:17.422Z"
+      "calculatedAt": "2026-03-17T08:22:51.275Z"
     },
     "macro": {
-      "vix": 24.229999542236328,
+      "vix": 24.239999771118164,
       "vixPrev": 21.149999618530273,
       "us10y": 4.220000267028809,
       "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:52:05.414Z"
+      "fetchedAt": "2026-03-17T08:22:50.110Z"
     },
-    "updatedAt": "2026-03-17T07:52:17.422Z"
+    "updatedAt": "2026-03-17T08:22:51.275Z"
   },
   {
     "currency": "EURKRW",
@@ -954,7 +954,7 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 24.229999542236328,
+          "value": 24.239999771118164,
           "signal": "BUY",
           "description": "리스크 오프 (VIX 24.2) — 외화 강세 우위"
         }
@@ -970,16 +970,16 @@
       "effectiveSellRate": 1689.93,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.45,
-      "calculatedAt": "2026-03-17T07:52:29.419Z"
+      "calculatedAt": "2026-03-17T08:22:52.292Z"
     },
     "macro": {
-      "vix": 24.229999542236328,
+      "vix": 24.239999771118164,
       "vixPrev": 21.149999618530273,
       "us10y": 4.220000267028809,
       "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:52:05.414Z"
+      "fetchedAt": "2026-03-17T08:22:50.110Z"
     },
-    "updatedAt": "2026-03-17T07:52:29.419Z"
+    "updatedAt": "2026-03-17T08:22:52.292Z"
   },
   {
     "currency": "JPYKRW",
@@ -1442,7 +1442,7 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 24.229999542236328,
+          "value": 24.239999771118164,
           "signal": "BUY",
           "description": "리스크 오프 (VIX 24.2) — 외화 강세 우위"
         }
@@ -1458,16 +1458,16 @@
       "effectiveSellRate": 923.37,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.24,
-      "calculatedAt": "2026-03-17T07:52:41.377Z"
+      "calculatedAt": "2026-03-17T08:22:53.315Z"
     },
     "macro": {
-      "vix": 24.229999542236328,
+      "vix": 24.239999771118164,
       "vixPrev": 21.149999618530273,
       "us10y": 4.220000267028809,
       "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:52:05.414Z"
+      "fetchedAt": "2026-03-17T08:22:50.110Z"
     },
-    "updatedAt": "2026-03-17T07:52:41.377Z"
+    "updatedAt": "2026-03-17T08:22:53.315Z"
   },
   {
     "currency": "CNYKRW",
@@ -1930,7 +1930,7 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 24.229999542236328,
+          "value": 24.239999771118164,
           "signal": "BUY",
           "description": "리스크 오프 (VIX 24.2) — 외화 강세 우위"
         }
@@ -1946,16 +1946,16 @@
       "effectiveSellRate": 212.63,
       "breakEvenPct": 4,
       "netProfitPct": -1.91,
-      "calculatedAt": "2026-03-17T07:52:53.490Z"
+      "calculatedAt": "2026-03-17T08:22:54.338Z"
     },
     "macro": {
-      "vix": 24.229999542236328,
+      "vix": 24.239999771118164,
       "vixPrev": 21.149999618530273,
       "us10y": 4.220000267028809,
       "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:52:05.414Z"
+      "fetchedAt": "2026-03-17T08:22:50.110Z"
     },
-    "updatedAt": "2026-03-17T07:52:53.490Z"
+    "updatedAt": "2026-03-17T08:22:54.338Z"
   },
   {
     "currency": "GBPKRW",
@@ -2418,7 +2418,7 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 24.229999542236328,
+          "value": 24.239999771118164,
           "signal": "BUY",
           "description": "리스크 오프 (VIX 24.2) — 외화 강세 우위"
         }
@@ -2434,16 +2434,16 @@
       "effectiveSellRate": 1956.63,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.33,
-      "calculatedAt": "2026-03-17T07:53:05.459Z"
+      "calculatedAt": "2026-03-17T08:22:55.361Z"
     },
     "macro": {
-      "vix": 24.229999542236328,
+      "vix": 24.239999771118164,
       "vixPrev": 21.149999618530273,
       "us10y": 4.220000267028809,
       "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:52:05.414Z"
+      "fetchedAt": "2026-03-17T08:22:50.110Z"
     },
-    "updatedAt": "2026-03-17T07:53:05.459Z"
+    "updatedAt": "2026-03-17T08:22:55.361Z"
   },
   {
     "currency": "CADKRW",
@@ -2906,7 +2906,7 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 24.229999542236328,
+          "value": 24.239999771118164,
           "signal": "BUY",
           "description": "리스크 오프 (VIX 24.2) — 외화 강세 우위"
         }
@@ -2922,16 +2922,16 @@
       "effectiveSellRate": 1073.84,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.25,
-      "calculatedAt": "2026-03-17T07:53:17.489Z"
+      "calculatedAt": "2026-03-17T08:22:56.380Z"
     },
     "macro": {
-      "vix": 24.229999542236328,
+      "vix": 24.239999771118164,
       "vixPrev": 21.149999618530273,
       "us10y": 4.220000267028809,
       "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:52:05.414Z"
+      "fetchedAt": "2026-03-17T08:22:50.110Z"
     },
-    "updatedAt": "2026-03-17T07:53:17.489Z"
+    "updatedAt": "2026-03-17T08:22:56.380Z"
   },
   {
     "currency": "HKDKRW",
@@ -3296,7 +3296,7 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 24.229999542236328,
+          "value": 24.239999771118164,
           "signal": "BUY",
           "description": "리스크 오프 (VIX 24.2) — 외화 강세 우위"
         }
@@ -3312,15 +3312,15 @@
       "effectiveSellRate": 180.73,
       "breakEvenPct": 4,
       "netProfitPct": -2.2,
-      "calculatedAt": "2026-03-17T07:53:29.209Z"
+      "calculatedAt": "2026-03-17T08:22:59.782Z"
     },
     "macro": {
-      "vix": 24.229999542236328,
+      "vix": 24.239999771118164,
       "vixPrev": 21.149999618530273,
       "us10y": 4.220000267028809,
       "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:52:05.414Z"
+      "fetchedAt": "2026-03-17T08:22:50.110Z"
     },
-    "updatedAt": "2026-03-17T07:53:29.209Z"
+    "updatedAt": "2026-03-17T08:22:59.782Z"
   }
 ]
