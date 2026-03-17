@@ -10,6 +10,7 @@ dotenv.config({ path: '.env.local' });
 import fs from 'fs';
 import path from 'path';
 import { StoredRateData } from '../lib/signals';
+import { fetchLiveRates, LiveRates } from '../lib/live-rates';
 
 const DATA_PATH = path.join(process.cwd(), 'public', 'data', 'exchange_rates.json');
 
@@ -33,7 +34,7 @@ function formatRate(n: number): string {
   return n.toLocaleString('ko-KR', { maximumFractionDigits: 2 });
 }
 
-function buildMessage(data: StoredRateData[]): string {
+function buildMessage(data: StoredRateData[], liveRates: LiveRates): string {
   const now = new Date();
   const kst = new Intl.DateTimeFormat('ko-KR', {
     timeZone: 'Asia/Seoul',
@@ -56,7 +57,8 @@ function buildMessage(data: StoredRateData[]): string {
     const s = d.signal;
     const score = s.score > 0 ? `+${s.score}` : `${s.score}`;
     const strength = STRENGTH_LABEL[s.strength];
-    return `${info?.flag ?? ''} <b>${info?.label ?? d.currency}</b>  ${formatRate(s.currentRate)}  <code>${score}점</code> [${strength}]`;
+    const rate = liveRates[d.currency] ?? s.currentRate;
+    return `${info?.flag ?? ''} <b>${info?.label ?? d.currency}</b>  ${formatRate(rate)}  <code>${score}점</code> [${strength}]`;
   }
 
   if (buys.length > 0) {
@@ -131,7 +133,15 @@ async function main() {
     process.exit(1);
   }
 
-  const message = buildMessage(data);
+  let liveRates: LiveRates = {};
+  try {
+    liveRates = await fetchLiveRates();
+    console.log('[notify] 실시간 환율 조회 완료');
+  } catch {
+    console.warn('[notify] 실시간 환율 조회 실패 — 시그널 기준 환율 사용');
+  }
+
+  const message = buildMessage(data, liveRates);
   console.log('[notify] 발송 메시지:\n' + message);
   await sendTelegram(message);
 }
