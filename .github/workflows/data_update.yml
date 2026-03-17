@@ -54,13 +54,6 @@ jobs:
           git commit -m "data: update fx signals [skip ci]"
           git push
 
-      - name: Send Telegram notification
-        continue-on-error: true
-        run: npm run notify
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-
       - name: Build static site
         run: npm run build
 
@@ -69,3 +62,10 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
+
+      - name: Send Telegram notification
+        continue-on-error: true
+        run: npm run notify
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
