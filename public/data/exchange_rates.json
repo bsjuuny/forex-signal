@@ -3,22 +3,8 @@
     "currency": "USDKRW",
     "rates": [
       {
-        "date": "20251215",
-        "open": 1472.5,
-        "high": 1487.22,
-        "low": 1457.77,
-        "close": 1472.5
-      },
-      {
-        "date": "20251216",
-        "open": 1472.5,
-        "high": 1488.84,
-        "low": 1459.35,
-        "close": 1474.1
-      },
-      {
         "date": "20251217",
-        "open": 1474.1,
+        "open": 1472.4,
         "high": 1487.12,
         "low": 1457.67,
         "close": 1472.4
@@ -432,27 +418,27 @@
     ],
     "signal": {
       "currency": "USDKRW",
-      "signal": "BUY",
-      "strength": "MODERATE",
-      "score": 41,
+      "signal": "NEUTRAL",
+      "strength": "WEAK",
+      "score": 6,
       "indicators": [
         {
           "name": "RSI(14)",
-          "value": 61.37564297790599,
+          "value": 61.30621268810911,
           "signal": "SELL",
-          "description": "약한 과매수 (61.4)"
+          "description": "약한 과매수 (61.3)"
         },
         {
           "name": "EMA(5/20)",
-          "value": 17.101369105039794,
+          "value": 17.158347924303143,
           "signal": "BUY",
-          "description": "단기 > 장기 (1484.9 > 1467.8)"
+          "description": "단기 > 장기 (1484.9 > 1467.7)"
         },
         {
           "name": "MACD(12/26/9)",
-          "value": 4.283959777408606,
+          "value": 4.231506281386439,
           "signal": "BUY",
-          "description": "히스토그램 양(+4.28)"
+          "description": "히스토그램 양(+4.23)"
         },
         {
           "name": "Bollinger(20/2)",
@@ -462,29 +448,19 @@
         },
         {
           "name": "ADX(14)",
-          "value": 15.152,
+          "value": 14.8228,
           "signal": "NEUTRAL",
-          "description": "횡보 (ADX 15.2 < 20) — 추세 신호 신뢰도 낮음"
-        },
-        {
-          "name": "EMA(60) 추세",
-          "value": 2.460073981227371,
-          "signal": "BUY",
-          "description": "장기 상승 추세 (현재 2.46% > EMA60)"
+          "description": "횡보 (ADX 14.8 < 20) — 추세 신호 신뢰도 낮음"
         },
         {
           "name": "신호 연속성",
           "value": 20,
-          "signal": "BUY",
-          "description": "전일 방향 일치 (+10)"
+          "signal": "NEUTRAL",
+          "description": "전일 방향 반전 (-10)"
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
-          "value": 24.239999771118164,
-=======
-          "value": 24.209999084472656,
->>>>>>> Stashed changes
+          "value": 24.229999542236328,
           "signal": "BUY",
           "description": "리스크 오프 (VIX 24.2) — 외화 강세 우위"
         },
@@ -500,56 +476,29 @@
       "targetSell": 1522.68,
       "targetBuyEffective": 1501.82,
       "targetSellEffective": 1496.03,
-      "stopLoss": 1482.66,
+      "stopLoss": 1509.34,
       "spreadPct": 1.75,
       "effectiveBuyRate": 1522.18,
       "effectiveSellRate": 1469.82,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.39,
-<<<<<<< Updated upstream
-      "calculatedAt": "2026-03-17T07:44:41.647Z"
+      "calculatedAt": "2026-03-17T07:52:17.422Z"
     },
     "macro": {
-      "vix": 24.239999771118164,
+      "vix": 24.229999542236328,
       "vixPrev": 21.149999618530273,
       "us10y": 4.220000267028809,
       "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:44:39.053Z"
+      "fetchedAt": "2026-03-17T07:52:05.414Z"
     },
-    "updatedAt": "2026-03-17T07:44:41.647Z"
-=======
-      "calculatedAt": "2026-03-17T07:48:38.419Z"
-    },
-    "macro": {
-      "vix": 24.209999084472656,
-      "vixPrev": 21.149999618530273,
-      "us10y": 4.220000267028809,
-      "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:48:35.561Z"
-    },
-    "updatedAt": "2026-03-17T07:48:38.419Z"
->>>>>>> Stashed changes
+    "updatedAt": "2026-03-17T07:52:17.422Z"
   },
   {
     "currency": "EURKRW",
     "rates": [
       {
-        "date": "20251215",
-        "open": 1728.72,
-        "high": 1746,
-        "low": 1711.43,
-        "close": 1728.72
-      },
-      {
-        "date": "20251216",
-        "open": 1728.72,
-        "high": 1750.05,
-        "low": 1715.4,
-        "close": 1732.73
-      },
-      {
         "date": "20251217",
-        "open": 1732.73,
+        "open": 1730,
         "high": 1747.3,
         "low": 1712.7,
         "close": 1730
@@ -964,26 +913,26 @@
     "signal": {
       "currency": "EURKRW",
       "signal": "BUY",
-      "strength": "MODERATE",
-      "score": 30,
+      "strength": "WEAK",
+      "score": 15,
       "indicators": [
         {
           "name": "RSI(14)",
-          "value": 53.1581373155226,
+          "value": 53.08584549760151,
           "signal": "NEUTRAL",
-          "description": "중립 (53.2)"
+          "description": "중립 (53.1)"
         },
         {
           "name": "EMA(5/20)",
-          "value": 1.4524709594070373,
+          "value": 1.5045551903269825,
           "signal": "BUY",
           "description": "골든크로스 발생"
         },
         {
           "name": "MACD(12/26/9)",
-          "value": 1.39161416610288,
+          "value": 1.3049710247837094,
           "signal": "BUY",
-          "description": "히스토그램 양(+1.39)"
+          "description": "히스토그램 양(+1.30)"
         },
         {
           "name": "Bollinger(20/2)",
@@ -993,15 +942,9 @@
         },
         {
           "name": "ADX(14)",
-          "value": 8.9902,
+          "value": 8.9059,
           "signal": "NEUTRAL",
-          "description": "횡보 (ADX 9.0 < 20) — 추세 신호 신뢰도 낮음"
-        },
-        {
-          "name": "EMA(60) 추세",
-          "value": 0.42477637787057526,
-          "signal": "BUY",
-          "description": "장기 상승 추세 (현재 0.42% > EMA60)"
+          "description": "횡보 (ADX 8.9 < 20) — 추세 신호 신뢰도 낮음"
         },
         {
           "name": "신호 연속성",
@@ -1011,11 +954,7 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
-          "value": 24.239999771118164,
-=======
-          "value": 24.209999084472656,
->>>>>>> Stashed changes
+          "value": 24.229999542236328,
           "signal": "BUY",
           "description": "리스크 오프 (VIX 24.2) — 외화 강세 우위"
         }
@@ -1031,50 +970,23 @@
       "effectiveSellRate": 1689.93,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.45,
-<<<<<<< Updated upstream
-      "calculatedAt": "2026-03-17T07:44:43.417Z"
+      "calculatedAt": "2026-03-17T07:52:29.419Z"
     },
     "macro": {
-      "vix": 24.239999771118164,
+      "vix": 24.229999542236328,
       "vixPrev": 21.149999618530273,
       "us10y": 4.220000267028809,
       "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:44:39.053Z"
+      "fetchedAt": "2026-03-17T07:52:05.414Z"
     },
-    "updatedAt": "2026-03-17T07:44:43.417Z"
-=======
-      "calculatedAt": "2026-03-17T07:48:40.396Z"
-    },
-    "macro": {
-      "vix": 24.209999084472656,
-      "vixPrev": 21.149999618530273,
-      "us10y": 4.220000267028809,
-      "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:48:35.561Z"
-    },
-    "updatedAt": "2026-03-17T07:48:40.396Z"
->>>>>>> Stashed changes
+    "updatedAt": "2026-03-17T07:52:29.419Z"
   },
   {
     "currency": "JPYKRW",
     "rates": [
       {
-        "date": "20251215",
-        "open": 945.3,
-        "high": 954.75,
-        "low": 935.84,
-        "close": 945.3
-      },
-      {
-        "date": "20251216",
-        "open": 945.3,
-        "high": 959.89,
-        "low": 940.88,
-        "close": 950.39
-      },
-      {
         "date": "20251217",
-        "open": 950.39,
+        "open": 951.47,
         "high": 960.98,
         "low": 941.95,
         "close": 951.47
@@ -1489,26 +1401,26 @@
     "signal": {
       "currency": "JPYKRW",
       "signal": "BUY",
-      "strength": "MODERATE",
-      "score": 30,
+      "strength": "WEAK",
+      "score": 15,
       "indicators": [
         {
           "name": "RSI(14)",
-          "value": 53.76420017980591,
+          "value": 53.59282141016623,
           "signal": "NEUTRAL",
-          "description": "중립 (53.8)"
+          "description": "중립 (53.6)"
         },
         {
           "name": "EMA(5/20)",
-          "value": 1.9222672440781707,
+          "value": 1.9489557627842942,
           "signal": "BUY",
           "description": "골든크로스 발생"
         },
         {
           "name": "MACD(12/26/9)",
-          "value": 0.8379194985279662,
+          "value": 0.7996775987093574,
           "signal": "BUY",
-          "description": "히스토그램 양(+0.84)"
+          "description": "히스토그램 양(+0.80)"
         },
         {
           "name": "Bollinger(20/2)",
@@ -1518,15 +1430,9 @@
         },
         {
           "name": "ADX(14)",
-          "value": 7.9416,
+          "value": 8.668,
           "signal": "NEUTRAL",
-          "description": "횡보 (ADX 7.9 < 20) — 추세 신호 신뢰도 낮음"
-        },
-        {
-          "name": "EMA(60) 추세",
-          "value": 0.7521933864998257,
-          "signal": "BUY",
-          "description": "장기 상승 추세 (현재 0.75% > EMA60)"
+          "description": "횡보 (ADX 8.7 < 20) — 추세 신호 신뢰도 낮음"
         },
         {
           "name": "신호 연속성",
@@ -1536,11 +1442,7 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
-          "value": 24.239999771118164,
-=======
-          "value": 24.209999084472656,
->>>>>>> Stashed changes
+          "value": 24.229999542236328,
           "signal": "BUY",
           "description": "리스크 오프 (VIX 24.2) — 외화 강세 우위"
         }
@@ -1556,50 +1458,511 @@
       "effectiveSellRate": 923.37,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.24,
-<<<<<<< Updated upstream
-      "calculatedAt": "2026-03-17T07:44:45.186Z"
+      "calculatedAt": "2026-03-17T07:52:41.377Z"
     },
     "macro": {
-      "vix": 24.239999771118164,
+      "vix": 24.229999542236328,
       "vixPrev": 21.149999618530273,
       "us10y": 4.220000267028809,
       "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:44:39.053Z"
+      "fetchedAt": "2026-03-17T07:52:05.414Z"
     },
-    "updatedAt": "2026-03-17T07:44:45.186Z"
-=======
-      "calculatedAt": "2026-03-17T07:48:42.381Z"
+    "updatedAt": "2026-03-17T07:52:41.377Z"
+  },
+  {
+    "currency": "CNYKRW",
+    "rates": [
+      {
+        "date": "20251217",
+        "open": 209.35,
+        "high": 211.44,
+        "low": 207.25,
+        "close": 209.35
+      },
+      {
+        "date": "20251218",
+        "open": 209.35,
+        "high": 212.34,
+        "low": 208.13,
+        "close": 210.24
+      },
+      {
+        "date": "20251219",
+        "open": 210.24,
+        "high": 212.13,
+        "low": 207.92,
+        "close": 210.03
+      },
+      {
+        "date": "20251222",
+        "open": 210.03,
+        "high": 212.21,
+        "low": 208,
+        "close": 210.11
+      },
+      {
+        "date": "20251223",
+        "open": 210.11,
+        "high": 212.43,
+        "low": 208.22,
+        "close": 210.33
+      },
+      {
+        "date": "20251224",
+        "open": 210.33,
+        "high": 213.21,
+        "low": 208.98,
+        "close": 211.1
+      },
+      {
+        "date": "20251226",
+        "open": 211.1,
+        "high": 210.45,
+        "low": 206.28,
+        "close": 208.37
+      },
+      {
+        "date": "20251229",
+        "open": 208.37,
+        "high": 207.43,
+        "low": 203.32,
+        "close": 205.38
+      },
+      {
+        "date": "20251230",
+        "open": 205.38,
+        "high": 206.57,
+        "low": 202.48,
+        "close": 204.53
+      },
+      {
+        "date": "20251231",
+        "open": 204.53,
+        "high": 206.8,
+        "low": 202.71,
+        "close": 204.76
+      },
+      {
+        "date": "20260102",
+        "open": 204.76,
+        "high": 206.8,
+        "low": 202.71,
+        "close": 204.76
+      },
+      {
+        "date": "20260105",
+        "open": 204.76,
+        "high": 208.98,
+        "low": 204.85,
+        "close": 206.92
+      },
+      {
+        "date": "20260106",
+        "open": 206.92,
+        "high": 209.59,
+        "low": 205.44,
+        "close": 207.52
+      },
+      {
+        "date": "20260107",
+        "open": 207.52,
+        "high": 209.33,
+        "low": 205.18,
+        "close": 207.26
+      },
+      {
+        "date": "20260108",
+        "open": 207.26,
+        "high": 209.54,
+        "low": 205.39,
+        "close": 207.47
+      },
+      {
+        "date": "20260109",
+        "open": 207.47,
+        "high": 209.33,
+        "low": 205.18,
+        "close": 207.26
+      },
+      {
+        "date": "20260112",
+        "open": 207.26,
+        "high": 210.52,
+        "low": 206.35,
+        "close": 208.44
+      },
+      {
+        "date": "20260113",
+        "open": 208.44,
+        "high": 212.74,
+        "low": 208.53,
+        "close": 210.64
+      },
+      {
+        "date": "20260114",
+        "open": 210.64,
+        "high": 213.36,
+        "low": 209.13,
+        "close": 211.25
+      },
+      {
+        "date": "20260115",
+        "open": 211.25,
+        "high": 213.94,
+        "low": 209.71,
+        "close": 211.83
+      },
+      {
+        "date": "20260116",
+        "open": 211.83,
+        "high": 213.29,
+        "low": 209.06,
+        "close": 211.18
+      },
+      {
+        "date": "20260119",
+        "open": 211.18,
+        "high": 213.74,
+        "low": 209.51,
+        "close": 211.63
+      },
+      {
+        "date": "20260120",
+        "open": 211.63,
+        "high": 213.98,
+        "low": 209.75,
+        "close": 211.87
+      },
+      {
+        "date": "20260121",
+        "open": 211.87,
+        "high": 214.6,
+        "low": 210.35,
+        "close": 212.48
+      },
+      {
+        "date": "20260122",
+        "open": 212.48,
+        "high": 213.54,
+        "low": 209.31,
+        "close": 211.43
+      },
+      {
+        "date": "20260123",
+        "open": 211.43,
+        "high": 213.37,
+        "low": 209.14,
+        "close": 211.26
+      },
+      {
+        "date": "20260126",
+        "open": 211.26,
+        "high": 213.03,
+        "low": 208.82,
+        "close": 210.93
+      },
+      {
+        "date": "20260127",
+        "open": 210.93,
+        "high": 209.28,
+        "low": 205.13,
+        "close": 207.21
+      },
+      {
+        "date": "20260128",
+        "open": 207.21,
+        "high": 210.26,
+        "low": 206.09,
+        "close": 208.18
+      },
+      {
+        "date": "20260129",
+        "open": 208.18,
+        "high": 207.83,
+        "low": 203.72,
+        "close": 205.78
+      },
+      {
+        "date": "20260130",
+        "open": 205.78,
+        "high": 207.51,
+        "low": 203.4,
+        "close": 205.46
+      },
+      {
+        "date": "20260202",
+        "open": 205.46,
+        "high": 208.85,
+        "low": 204.72,
+        "close": 206.79
+      },
+      {
+        "date": "20260203",
+        "open": 206.79,
+        "high": 211.96,
+        "low": 207.77,
+        "close": 209.87
+      },
+      {
+        "date": "20260204",
+        "open": 209.87,
+        "high": 210.98,
+        "low": 206.81,
+        "close": 208.9
+      },
+      {
+        "date": "20260205",
+        "open": 208.9,
+        "high": 211.32,
+        "low": 207.13,
+        "close": 209.23
+      },
+      {
+        "date": "20260206",
+        "open": 209.23,
+        "high": 212.96,
+        "low": 208.75,
+        "close": 210.86
+      },
+      {
+        "date": "20260209",
+        "open": 210.86,
+        "high": 213.93,
+        "low": 209.7,
+        "close": 211.82
+      },
+      {
+        "date": "20260210",
+        "open": 211.82,
+        "high": 213.51,
+        "low": 209.28,
+        "close": 211.4
+      },
+      {
+        "date": "20260211",
+        "open": 211.4,
+        "high": 212.94,
+        "low": 208.73,
+        "close": 210.84
+      },
+      {
+        "date": "20260212",
+        "open": 210.84,
+        "high": 212.76,
+        "low": 208.55,
+        "close": 210.66
+      },
+      {
+        "date": "20260213",
+        "open": 210.66,
+        "high": 211.35,
+        "low": 207.16,
+        "close": 209.26
+      },
+      {
+        "date": "20260219",
+        "open": 209.26,
+        "high": 211.04,
+        "low": 206.87,
+        "close": 208.96
+      },
+      {
+        "date": "20260220",
+        "open": 208.96,
+        "high": 212.34,
+        "low": 208.13,
+        "close": 210.24
+      },
+      {
+        "date": "20260223",
+        "open": 210.24,
+        "high": 212.14,
+        "low": 207.93,
+        "close": 210.04
+      },
+      {
+        "date": "20260224",
+        "open": 210.04,
+        "high": 211.67,
+        "low": 207.48,
+        "close": 209.58
+      },
+      {
+        "date": "20260225",
+        "open": 209.58,
+        "high": 211.89,
+        "low": 207.7,
+        "close": 209.8
+      },
+      {
+        "date": "20260226",
+        "open": 209.8,
+        "high": 211.36,
+        "low": 207.17,
+        "close": 209.27
+      },
+      {
+        "date": "20260227",
+        "open": 209.27,
+        "high": 209.98,
+        "low": 205.83,
+        "close": 207.91
+      },
+      {
+        "date": "20260303",
+        "open": 207.91,
+        "high": 211.6,
+        "low": 207.41,
+        "close": 209.51
+      },
+      {
+        "date": "20260304",
+        "open": 209.51,
+        "high": 214.94,
+        "low": 210.69,
+        "close": 212.82
+      },
+      {
+        "date": "20260305",
+        "open": 212.82,
+        "high": 215.84,
+        "low": 211.57,
+        "close": 213.71
+      },
+      {
+        "date": "20260306",
+        "open": 213.71,
+        "high": 214.82,
+        "low": 210.57,
+        "close": 212.7
+      },
+      {
+        "date": "20260309",
+        "open": 212.7,
+        "high": 215.42,
+        "low": 211.15,
+        "close": 213.29
+      },
+      {
+        "date": "20260310",
+        "open": 213.29,
+        "high": 217.82,
+        "low": 213.51,
+        "close": 215.67
+      },
+      {
+        "date": "20260311",
+        "open": 215.67,
+        "high": 216.07,
+        "low": 211.8,
+        "close": 213.94
+      },
+      {
+        "date": "20260312",
+        "open": 213.94,
+        "high": 215.93,
+        "low": 211.66,
+        "close": 213.8
+      },
+      {
+        "date": "20260313",
+        "open": 213.8,
+        "high": 217.31,
+        "low": 213,
+        "close": 215.16
+      },
+      {
+        "date": "20260316",
+        "open": 215.16,
+        "high": 218.38,
+        "low": 214.05,
+        "close": 216.22
+      },
+      {
+        "date": "20260317",
+        "open": 216.22,
+        "high": 219.13,
+        "low": 214.8,
+        "close": 216.97
+      }
+    ],
+    "signal": {
+      "currency": "CNYKRW",
+      "signal": "NEUTRAL",
+      "strength": "WEAK",
+      "score": -9,
+      "indicators": [
+        {
+          "name": "RSI(14)",
+          "value": 66.73259716918047,
+          "signal": "SELL",
+          "description": "약한 과매수 (66.7)"
+        },
+        {
+          "name": "EMA(5/20)",
+          "value": 2.7325006507128933,
+          "signal": "BUY",
+          "description": "단기 > 장기 (215.6 > 212.8)"
+        },
+        {
+          "name": "MACD(12/26/9)",
+          "value": 0.5040422361142636,
+          "signal": "BUY",
+          "description": "히스토그램 양(+0.50)"
+        },
+        {
+          "name": "Bollinger(20/2)",
+          "value": 0.9633005333582881,
+          "signal": "SELL",
+          "description": "상단 터치 (현재: 217.0, 상단: 217.4)"
+        },
+        {
+          "name": "ADX(14)",
+          "value": 17.787,
+          "signal": "NEUTRAL",
+          "description": "횡보 (ADX 17.8 < 20) — 추세 신호 신뢰도 낮음"
+        },
+        {
+          "name": "신호 연속성",
+          "value": 5,
+          "signal": "NEUTRAL",
+          "description": "전일 방향 반전 (-10)"
+        },
+        {
+          "name": "VIX 공포지수",
+          "value": 24.229999542236328,
+          "signal": "BUY",
+          "description": "리스크 오프 (VIX 24.2) — 외화 강세 우위"
+        }
+      ],
+      "currentRate": 216.97,
+      "targetBuy": 215.04,
+      "targetSell": 219.54,
+      "targetBuyEffective": 219.34,
+      "targetSellEffective": 215.15,
+      "stopLoss": 218.26,
+      "spreadPct": 2,
+      "effectiveBuyRate": 221.31,
+      "effectiveSellRate": 212.63,
+      "breakEvenPct": 4,
+      "netProfitPct": -1.91,
+      "calculatedAt": "2026-03-17T07:52:53.490Z"
     },
     "macro": {
-      "vix": 24.209999084472656,
+      "vix": 24.229999542236328,
       "vixPrev": 21.149999618530273,
       "us10y": 4.220000267028809,
       "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:48:35.561Z"
+      "fetchedAt": "2026-03-17T07:52:05.414Z"
     },
-    "updatedAt": "2026-03-17T07:48:42.381Z"
->>>>>>> Stashed changes
+    "updatedAt": "2026-03-17T07:52:53.490Z"
   },
   {
     "currency": "GBPKRW",
     "rates": [
       {
-        "date": "20251215",
-        "open": 1968.51,
-        "high": 1988.19,
-        "low": 1948.82,
-        "close": 1968.51
-      },
-      {
-        "date": "20251216",
-        "open": 1968.51,
-        "high": 1991.92,
-        "low": 1952.47,
-        "close": 1972.2
-      },
-      {
         "date": "20251217",
-        "open": 1972.2,
+        "open": 1976.77,
         "high": 1996.53,
         "low": 1957,
         "close": 1976.77
@@ -2014,26 +2377,26 @@
     "signal": {
       "currency": "GBPKRW",
       "signal": "BUY",
-      "strength": "MODERATE",
-      "score": 41,
+      "strength": "WEAK",
+      "score": 26,
       "indicators": [
         {
           "name": "RSI(14)",
-          "value": 55.69544480394021,
+          "value": 55.59277570796105,
           "signal": "NEUTRAL",
-          "description": "중립 (55.7)"
+          "description": "중립 (55.6)"
         },
         {
           "name": "EMA(5/20)",
-          "value": 9.367152823721199,
+          "value": 9.41755266768314,
           "signal": "BUY",
-          "description": "단기 > 장기 (1978.8 > 1969.4)"
+          "description": "단기 > 장기 (1978.8 > 1969.3)"
         },
         {
           "name": "MACD(12/26/9)",
-          "value": 3.61308872740973,
+          "value": 3.55668099575262,
           "signal": "BUY",
-          "description": "히스토그램 양(+3.61)"
+          "description": "히스토그램 양(+3.56)"
         },
         {
           "name": "Bollinger(20/2)",
@@ -2043,15 +2406,9 @@
         },
         {
           "name": "ADX(14)",
-          "value": 9.6828,
+          "value": 9.4865,
           "signal": "NEUTRAL",
-          "description": "횡보 (ADX 9.7 < 20) — 추세 신호 신뢰도 낮음"
-        },
-        {
-          "name": "EMA(60) 추세",
-          "value": 1.1181421331658732,
-          "signal": "BUY",
-          "description": "장기 상승 추세 (현재 1.12% > EMA60)"
+          "description": "횡보 (ADX 9.5 < 20) — 추세 신호 신뢰도 낮음"
         },
         {
           "name": "신호 연속성",
@@ -2061,11 +2418,7 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
-          "value": 24.239999771118164,
-=======
-          "value": 24.209999084472656,
->>>>>>> Stashed changes
+          "value": 24.229999542236328,
           "signal": "BUY",
           "description": "리스크 오프 (VIX 24.2) — 외화 강세 우위"
         }
@@ -2081,50 +2434,23 @@
       "effectiveSellRate": 1956.63,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.33,
-<<<<<<< Updated upstream
-      "calculatedAt": "2026-03-17T07:44:48.746Z"
+      "calculatedAt": "2026-03-17T07:53:05.459Z"
     },
     "macro": {
-      "vix": 24.239999771118164,
+      "vix": 24.229999542236328,
       "vixPrev": 21.149999618530273,
       "us10y": 4.220000267028809,
       "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:44:39.053Z"
+      "fetchedAt": "2026-03-17T07:52:05.414Z"
     },
-    "updatedAt": "2026-03-17T07:44:48.746Z"
-=======
-      "calculatedAt": "2026-03-17T07:48:46.354Z"
-    },
-    "macro": {
-      "vix": 24.209999084472656,
-      "vixPrev": 21.149999618530273,
-      "us10y": 4.220000267028809,
-      "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:48:35.561Z"
-    },
-    "updatedAt": "2026-03-17T07:48:46.354Z"
->>>>>>> Stashed changes
+    "updatedAt": "2026-03-17T07:53:05.459Z"
   },
   {
     "currency": "CADKRW",
     "rates": [
       {
-        "date": "20251215",
-        "open": 1069.28,
-        "high": 1079.97,
-        "low": 1058.58,
-        "close": 1069.28
-      },
-      {
-        "date": "20251216",
-        "open": 1069.28,
-        "high": 1081.45,
-        "low": 1060.04,
-        "close": 1070.75
-      },
-      {
         "date": "20251217",
-        "open": 1070.75,
+        "open": 1070.52,
         "high": 1081.22,
         "low": 1059.81,
         "close": 1070.52
@@ -2539,26 +2865,26 @@
     "signal": {
       "currency": "CADKRW",
       "signal": "BUY",
-      "strength": "MODERATE",
-      "score": 41,
+      "strength": "WEAK",
+      "score": 26,
       "indicators": [
         {
           "name": "RSI(14)",
-          "value": 59.769173151639094,
+          "value": 59.67657474732047,
           "signal": "NEUTRAL",
-          "description": "중립 (59.8)"
+          "description": "중립 (59.7)"
         },
         {
           "name": "EMA(5/20)",
-          "value": 11.897162520142729,
+          "value": 11.923762601795033,
           "signal": "BUY",
-          "description": "단기 > 장기 (1087.0 > 1075.1)"
+          "description": "단기 > 장기 (1087.0 > 1075.0)"
         },
         {
           "name": "MACD(12/26/9)",
-          "value": 2.576411343519629,
+          "value": 2.534166042151824,
           "signal": "BUY",
-          "description": "히스토그램 양(+2.58)"
+          "description": "히스토그램 양(+2.53)"
         },
         {
           "name": "Bollinger(20/2)",
@@ -2568,15 +2894,9 @@
         },
         {
           "name": "ADX(14)",
-          "value": 14.6975,
+          "value": 14.3618,
           "signal": "NEUTRAL",
-          "description": "횡보 (ADX 14.7 < 20) — 추세 신호 신뢰도 낮음"
-        },
-        {
-          "name": "EMA(60) 추세",
-          "value": 2.644005656647222,
-          "signal": "BUY",
-          "description": "장기 상승 추세 (현재 2.64% > EMA60)"
+          "description": "횡보 (ADX 14.4 < 20) — 추세 신호 신뢰도 낮음"
         },
         {
           "name": "신호 연속성",
@@ -2586,11 +2906,7 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
-          "value": 24.239999771118164,
-=======
-          "value": 24.209999084472656,
->>>>>>> Stashed changes
+          "value": 24.229999542236328,
           "signal": "BUY",
           "description": "리스크 오프 (VIX 24.2) — 외화 강세 우위"
         }
@@ -2606,50 +2922,23 @@
       "effectiveSellRate": 1073.84,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.25,
-<<<<<<< Updated upstream
-      "calculatedAt": "2026-03-17T07:44:50.535Z"
+      "calculatedAt": "2026-03-17T07:53:17.489Z"
     },
     "macro": {
-      "vix": 24.239999771118164,
+      "vix": 24.229999542236328,
       "vixPrev": 21.149999618530273,
       "us10y": 4.220000267028809,
       "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:44:39.053Z"
+      "fetchedAt": "2026-03-17T07:52:05.414Z"
     },
-    "updatedAt": "2026-03-17T07:44:50.535Z"
-=======
-      "calculatedAt": "2026-03-17T07:48:48.337Z"
-    },
-    "macro": {
-      "vix": 24.209999084472656,
-      "vixPrev": 21.149999618530273,
-      "us10y": 4.220000267028809,
-      "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:48:35.561Z"
-    },
-    "updatedAt": "2026-03-17T07:48:48.337Z"
->>>>>>> Stashed changes
+    "updatedAt": "2026-03-17T07:53:17.489Z"
   },
   {
     "currency": "HKDKRW",
     "rates": [
       {
-        "date": "20251215",
-        "open": 189.17,
-        "high": 191.06,
-        "low": 187.27,
-        "close": 189.17
-      },
-      {
-        "date": "20251216",
-        "open": 189.17,
-        "high": 191.31,
-        "low": 187.52,
-        "close": 189.42
-      },
-      {
         "date": "20251217",
-        "open": 189.42,
+        "open": 189.27,
         "high": 191.16,
         "low": 187.37,
         "close": 189.27
@@ -2961,723 +3250,77 @@
         "high": 186.26,
         "low": 182.57,
         "close": 184.42
-      },
-      {
-        "date": "20260225",
-        "open": 184.42,
-        "high": 186.66,
-        "low": 182.97,
-        "close": 184.82
-      },
-      {
-        "date": "20260226",
-        "open": 184.82,
-        "high": 185.38,
-        "low": 181.71,
-        "close": 183.55
-      },
-      {
-        "date": "20260227",
-        "open": 183.55,
-        "high": 183.9,
-        "low": 180.25,
-        "close": 182.08
-      },
-      {
-        "date": "20260303",
-        "open": 182.08,
-        "high": 185.35,
-        "low": 181.68,
-        "close": 183.52
-      },
-      {
-        "date": "20260304",
-        "open": 183.52,
-        "high": 189.51,
-        "low": 185.76,
-        "close": 187.64
-      },
-      {
-        "date": "20260305",
-        "open": 187.64,
-        "high": 191.06,
-        "low": 187.27,
-        "close": 189.17
-      },
-      {
-        "date": "20260306",
-        "open": 189.17,
-        "high": 189.14,
-        "low": 185.39,
-        "close": 187.27
-      },
-      {
-        "date": "20260309",
-        "open": 187.27,
-        "high": 190.37,
-        "low": 186.6,
-        "close": 188.49
-      },
-      {
-        "date": "20260310",
-        "open": 188.49,
-        "high": 192.82,
-        "low": 189.01,
-        "close": 190.92
-      },
-      {
-        "date": "20260311",
-        "open": 190.92,
-        "high": 190.13,
-        "low": 186.36,
-        "close": 188.25
-      },
-      {
-        "date": "20260312",
-        "open": 188.25,
-        "high": 189.37,
-        "low": 185.62,
-        "close": 187.5
-      },
-      {
-        "date": "20260313",
-        "open": 187.5,
-        "high": 190.96,
-        "low": 187.17,
-        "close": 189.07
-      },
-      {
-        "date": "20260316",
-        "open": 189.07,
-        "high": 192.19,
-        "low": 188.38,
-        "close": 190.29
-      },
-      {
-        "date": "20260317",
-        "open": 190.29,
-        "high": 192.96,
-        "low": 189.13,
-        "close": 191.05
       }
     ],
     "signal": {
       "currency": "HKDKRW",
-      "signal": "BUY",
+      "signal": "NEUTRAL",
       "strength": "WEAK",
-      "score": 26,
+      "score": 14,
       "indicators": [
         {
           "name": "RSI(14)",
-          "value": 60.43222814618826,
-          "signal": "SELL",
-          "description": "약한 과매수 (60.4)"
+          "value": 41.368983357798655,
+          "signal": "NEUTRAL",
+          "description": "중립 (41.4)"
         },
         {
           "name": "EMA(5/20)",
-          "value": 2.0212268988052244,
-          "signal": "BUY",
-          "description": "단기 > 장기 (189.7 > 187.7)"
+          "value": -0.8069134915417919,
+          "signal": "SELL",
+          "description": "단기 < 장기 (185.1 < 185.9)"
         },
         {
           "name": "MACD(12/26/9)",
-          "value": 0.5408638386327445,
-          "signal": "BUY",
-          "description": "히스토그램 양(+0.54)"
+          "value": -0.144433284229317,
+          "signal": "SELL",
+          "description": "히스토그램 음(-0.14)"
         },
         {
           "name": "Bollinger(20/2)",
-          "value": 0.9235794423353224,
-          "signal": "SELL",
-          "description": "상단 터치 (현재: 191.1, 상단: 191.8)"
+          "value": 0.28586359366465636,
+          "signal": "BUY",
+          "description": "하단 근접 (위치: 29%)"
         },
         {
           "name": "ADX(14)",
-          "value": 15.0949,
+          "value": 12.3918,
           "signal": "NEUTRAL",
-          "description": "횡보 (ADX 15.1 < 20) — 추세 신호 신뢰도 낮음"
-        },
-        {
-          "name": "EMA(60) 추세",
-          "value": 2.1022512775211557,
-          "signal": "BUY",
-          "description": "장기 상승 추세 (현재 2.10% > EMA60)"
+          "description": "횡보 (ADX 12.4 < 20) — 추세 신호 신뢰도 낮음"
         },
         {
           "name": "신호 연속성",
-          "value": 20,
-          "signal": "BUY",
+          "value": -20,
+          "signal": "SELL",
           "description": "전일 방향 일치 (+10)"
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
-          "value": 24.239999771118164,
-=======
-          "value": 24.209999084472656,
->>>>>>> Stashed changes
+          "value": 24.229999542236328,
           "signal": "BUY",
           "description": "리스크 오프 (VIX 24.2) — 외화 강세 우위"
         }
       ],
-      "currentRate": 191.05,
-      "targetBuy": 188.47,
-      "targetSell": 194.49,
-      "targetBuyEffective": 192.24,
-      "targetSellEffective": 190.6,
-      "stopLoss": 189.33,
+      "currentRate": 184.42,
+      "targetBuy": 183.01,
+      "targetSell": 186.29,
+      "targetBuyEffective": 186.67,
+      "targetSellEffective": 182.57,
+      "stopLoss": 185.36,
       "spreadPct": 2,
-      "effectiveBuyRate": 194.87,
-      "effectiveSellRate": 187.23,
+      "effectiveBuyRate": 188.11,
+      "effectiveSellRate": 180.73,
       "breakEvenPct": 4,
-      "netProfitPct": -0.85,
-<<<<<<< Updated upstream
-      "calculatedAt": "2026-03-17T07:44:52.303Z"
+      "netProfitPct": -2.2,
+      "calculatedAt": "2026-03-17T07:53:29.209Z"
     },
     "macro": {
-      "vix": 24.239999771118164,
+      "vix": 24.229999542236328,
       "vixPrev": 21.149999618530273,
       "us10y": 4.220000267028809,
       "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:44:39.053Z"
+      "fetchedAt": "2026-03-17T07:52:05.414Z"
     },
-    "updatedAt": "2026-03-17T07:44:52.303Z"
-=======
-      "calculatedAt": "2026-03-17T07:48:50.327Z"
-    },
-    "macro": {
-      "vix": 24.209999084472656,
-      "vixPrev": 21.149999618530273,
-      "us10y": 4.220000267028809,
-      "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:48:35.561Z"
-    },
-    "updatedAt": "2026-03-17T07:48:50.327Z"
->>>>>>> Stashed changes
-  },
-  {
-    "currency": "CNYKRW",
-    "rates": [
-      {
-        "date": "20251215",
-        "open": 208.85,
-        "high": 210.93,
-        "low": 206.76,
-        "close": 208.85
-      },
-      {
-        "date": "20251216",
-        "open": 208.85,
-        "high": 211.17,
-        "low": 206.98,
-        "close": 209.08
-      },
-      {
-        "date": "20251217",
-        "open": 209.08,
-        "high": 211.44,
-        "low": 207.25,
-        "close": 209.35
-      },
-      {
-        "date": "20251218",
-        "open": 209.35,
-        "high": 212.34,
-        "low": 208.13,
-        "close": 210.24
-      },
-      {
-        "date": "20251219",
-        "open": 210.24,
-        "high": 212.13,
-        "low": 207.92,
-        "close": 210.03
-      },
-      {
-        "date": "20251222",
-        "open": 210.03,
-        "high": 212.21,
-        "low": 208,
-        "close": 210.11
-      },
-      {
-        "date": "20251223",
-        "open": 210.11,
-        "high": 212.43,
-        "low": 208.22,
-        "close": 210.33
-      },
-      {
-        "date": "20251224",
-        "open": 210.33,
-        "high": 213.21,
-        "low": 208.98,
-        "close": 211.1
-      },
-      {
-        "date": "20251226",
-        "open": 211.1,
-        "high": 210.45,
-        "low": 206.28,
-        "close": 208.37
-      },
-      {
-        "date": "20251229",
-        "open": 208.37,
-        "high": 207.43,
-        "low": 203.32,
-        "close": 205.38
-      },
-      {
-        "date": "20251230",
-        "open": 205.38,
-        "high": 206.57,
-        "low": 202.48,
-        "close": 204.53
-      },
-      {
-        "date": "20251231",
-        "open": 204.53,
-        "high": 206.8,
-        "low": 202.71,
-        "close": 204.76
-      },
-      {
-        "date": "20260102",
-        "open": 204.76,
-        "high": 206.8,
-        "low": 202.71,
-        "close": 204.76
-      },
-      {
-        "date": "20260105",
-        "open": 204.76,
-        "high": 208.98,
-        "low": 204.85,
-        "close": 206.92
-      },
-      {
-        "date": "20260106",
-        "open": 206.92,
-        "high": 209.59,
-        "low": 205.44,
-        "close": 207.52
-      },
-      {
-        "date": "20260107",
-        "open": 207.52,
-        "high": 209.33,
-        "low": 205.18,
-        "close": 207.26
-      },
-      {
-        "date": "20260108",
-        "open": 207.26,
-        "high": 209.54,
-        "low": 205.39,
-        "close": 207.47
-      },
-      {
-        "date": "20260109",
-        "open": 207.47,
-        "high": 209.33,
-        "low": 205.18,
-        "close": 207.26
-      },
-      {
-        "date": "20260112",
-        "open": 207.26,
-        "high": 210.52,
-        "low": 206.35,
-        "close": 208.44
-      },
-      {
-        "date": "20260113",
-        "open": 208.44,
-        "high": 212.74,
-        "low": 208.53,
-        "close": 210.64
-      },
-      {
-        "date": "20260114",
-        "open": 210.64,
-        "high": 213.36,
-        "low": 209.13,
-        "close": 211.25
-      },
-      {
-        "date": "20260115",
-        "open": 211.25,
-        "high": 213.94,
-        "low": 209.71,
-        "close": 211.83
-      },
-      {
-        "date": "20260116",
-        "open": 211.83,
-        "high": 213.29,
-        "low": 209.06,
-        "close": 211.18
-      },
-      {
-        "date": "20260119",
-        "open": 211.18,
-        "high": 213.74,
-        "low": 209.51,
-        "close": 211.63
-      },
-      {
-        "date": "20260120",
-        "open": 211.63,
-        "high": 213.98,
-        "low": 209.75,
-        "close": 211.87
-      },
-      {
-        "date": "20260121",
-        "open": 211.87,
-        "high": 214.6,
-        "low": 210.35,
-        "close": 212.48
-      },
-      {
-        "date": "20260122",
-        "open": 212.48,
-        "high": 213.54,
-        "low": 209.31,
-        "close": 211.43
-      },
-      {
-        "date": "20260123",
-        "open": 211.43,
-        "high": 213.37,
-        "low": 209.14,
-        "close": 211.26
-      },
-      {
-        "date": "20260126",
-        "open": 211.26,
-        "high": 213.03,
-        "low": 208.82,
-        "close": 210.93
-      },
-      {
-        "date": "20260127",
-        "open": 210.93,
-        "high": 209.28,
-        "low": 205.13,
-        "close": 207.21
-      },
-      {
-        "date": "20260128",
-        "open": 207.21,
-        "high": 210.26,
-        "low": 206.09,
-        "close": 208.18
-      },
-      {
-        "date": "20260129",
-        "open": 208.18,
-        "high": 207.83,
-        "low": 203.72,
-        "close": 205.78
-      },
-      {
-        "date": "20260130",
-        "open": 205.78,
-        "high": 207.51,
-        "low": 203.4,
-        "close": 205.46
-      },
-      {
-        "date": "20260202",
-        "open": 205.46,
-        "high": 208.85,
-        "low": 204.72,
-        "close": 206.79
-      },
-      {
-        "date": "20260203",
-        "open": 206.79,
-        "high": 211.96,
-        "low": 207.77,
-        "close": 209.87
-      },
-      {
-        "date": "20260204",
-        "open": 209.87,
-        "high": 210.98,
-        "low": 206.81,
-        "close": 208.9
-      },
-      {
-        "date": "20260205",
-        "open": 208.9,
-        "high": 211.32,
-        "low": 207.13,
-        "close": 209.23
-      },
-      {
-        "date": "20260206",
-        "open": 209.23,
-        "high": 212.96,
-        "low": 208.75,
-        "close": 210.86
-      },
-      {
-        "date": "20260209",
-        "open": 210.86,
-        "high": 213.93,
-        "low": 209.7,
-        "close": 211.82
-      },
-      {
-        "date": "20260210",
-        "open": 211.82,
-        "high": 213.51,
-        "low": 209.28,
-        "close": 211.4
-      },
-      {
-        "date": "20260211",
-        "open": 211.4,
-        "high": 212.94,
-        "low": 208.73,
-        "close": 210.84
-      },
-      {
-        "date": "20260212",
-        "open": 210.84,
-        "high": 212.76,
-        "low": 208.55,
-        "close": 210.66
-      },
-      {
-        "date": "20260213",
-        "open": 210.66,
-        "high": 211.35,
-        "low": 207.16,
-        "close": 209.26
-      },
-      {
-        "date": "20260219",
-        "open": 209.26,
-        "high": 211.04,
-        "low": 206.87,
-        "close": 208.96
-      },
-      {
-        "date": "20260220",
-        "open": 208.96,
-        "high": 212.34,
-        "low": 208.13,
-        "close": 210.24
-      },
-      {
-        "date": "20260223",
-        "open": 210.24,
-        "high": 212.14,
-        "low": 207.93,
-        "close": 210.04
-      },
-      {
-        "date": "20260224",
-        "open": 210.04,
-        "high": 211.67,
-        "low": 207.48,
-        "close": 209.58
-      },
-      {
-        "date": "20260225",
-        "open": 209.58,
-        "high": 211.89,
-        "low": 207.7,
-        "close": 209.8
-      },
-      {
-        "date": "20260226",
-        "open": 209.8,
-        "high": 211.36,
-        "low": 207.17,
-        "close": 209.27
-      },
-      {
-        "date": "20260227",
-        "open": 209.27,
-        "high": 209.98,
-        "low": 205.83,
-        "close": 207.91
-      },
-      {
-        "date": "20260303",
-        "open": 207.91,
-        "high": 211.6,
-        "low": 207.41,
-        "close": 209.51
-      },
-      {
-        "date": "20260304",
-        "open": 209.51,
-        "high": 214.94,
-        "low": 210.69,
-        "close": 212.82
-      },
-      {
-        "date": "20260305",
-        "open": 212.82,
-        "high": 215.84,
-        "low": 211.57,
-        "close": 213.71
-      },
-      {
-        "date": "20260306",
-        "open": 213.71,
-        "high": 214.82,
-        "low": 210.57,
-        "close": 212.7
-      },
-      {
-        "date": "20260309",
-        "open": 212.7,
-        "high": 215.42,
-        "low": 211.15,
-        "close": 213.29
-      },
-      {
-        "date": "20260310",
-        "open": 213.29,
-        "high": 217.82,
-        "low": 213.51,
-        "close": 215.67
-      },
-      {
-        "date": "20260311",
-        "open": 215.67,
-        "high": 216.07,
-        "low": 211.8,
-        "close": 213.94
-      },
-      {
-        "date": "20260312",
-        "open": 213.94,
-        "high": 215.93,
-        "low": 211.66,
-        "close": 213.8
-      },
-      {
-        "date": "20260313",
-        "open": 213.8,
-        "high": 217.31,
-        "low": 213,
-        "close": 215.16
-      },
-      {
-        "date": "20260316",
-        "open": 215.16,
-        "high": 218.38,
-        "low": 214.05,
-        "close": 216.22
-      },
-      {
-        "date": "20260317",
-        "open": 216.22,
-        "high": 219.13,
-        "low": 214.8,
-        "close": 216.97
-      }
-    ],
-    "signal": {
-      "currency": "CNYKRW",
-      "signal": "BUY",
-      "strength": "WEAK",
-      "score": 26,
-      "indicators": [
-        {
-          "name": "RSI(14)",
-          "value": 66.87242138147519,
-          "signal": "SELL",
-          "description": "약한 과매수 (66.9)"
-        },
-        {
-          "name": "EMA(5/20)",
-          "value": 2.72512549612955,
-          "signal": "BUY",
-          "description": "단기 > 장기 (215.6 > 212.8)"
-        },
-        {
-          "name": "MACD(12/26/9)",
-          "value": 0.509981243218216,
-          "signal": "BUY",
-          "description": "히스토그램 양(+0.51)"
-        },
-        {
-          "name": "Bollinger(20/2)",
-          "value": 0.9633005333582881,
-          "signal": "SELL",
-          "description": "상단 터치 (현재: 217.0, 상단: 217.4)"
-        },
-        {
-          "name": "ADX(14)",
-          "value": 18.1767,
-          "signal": "NEUTRAL",
-          "description": "횡보 (ADX 18.2 < 20) — 추세 신호 신뢰도 낮음"
-        },
-        {
-          "name": "EMA(60) 추세",
-          "value": 3.2452123816839697,
-          "signal": "BUY",
-          "description": "장기 상승 추세 (현재 3.25% > EMA60)"
-        },
-        {
-          "name": "신호 연속성",
-          "value": 5,
-          "signal": "BUY",
-          "description": "전일 방향 일치 (+10)"
-        },
-        {
-          "name": "VIX 공포지수",
-<<<<<<< Updated upstream
-          "value": 24.239999771118164,
-=======
-          "value": 24.209999084472656,
->>>>>>> Stashed changes
-          "signal": "BUY",
-          "description": "리스크 오프 (VIX 24.2) — 외화 강세 우위"
-        }
-      ],
-      "currentRate": 216.97,
-      "targetBuy": 215.04,
-      "targetSell": 219.54,
-      "targetBuyEffective": 219.34,
-      "targetSellEffective": 215.15,
-      "stopLoss": 215.68,
-      "spreadPct": 2,
-      "effectiveBuyRate": 221.31,
-      "effectiveSellRate": 212.63,
-      "breakEvenPct": 4,
-      "netProfitPct": -1.91,
-<<<<<<< Updated upstream
-      "calculatedAt": "2026-03-17T07:44:46.964Z"
-    },
-    "macro": {
-      "vix": 24.239999771118164,
-      "vixPrev": 21.149999618530273,
-      "us10y": 4.220000267028809,
-      "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:44:39.053Z"
-    },
-    "updatedAt": "2026-03-17T07:44:46.964Z"
-=======
-      "calculatedAt": "2026-03-17T07:48:44.373Z"
-    },
-    "macro": {
-      "vix": 24.209999084472656,
-      "vixPrev": 21.149999618530273,
-      "us10y": 4.220000267028809,
-      "us10yPrev": 4.056000232696533,
-      "fetchedAt": "2026-03-17T07:48:35.561Z"
-    },
-    "updatedAt": "2026-03-17T07:48:44.373Z"
->>>>>>> Stashed changes
+    "updatedAt": "2026-03-17T07:53:29.209Z"
   }
 ]
