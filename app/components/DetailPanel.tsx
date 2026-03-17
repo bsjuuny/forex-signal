@@ -38,6 +38,14 @@ export default function DetailPanel({ data, liveRate }: Props) {
         <p className="text-xs text-zinc-400 leading-relaxed">
           {STRENGTH_LABEL[signal.strength]} {colors.label} 신호 · 총 {signal.indicators.length}개 지표 종합 분석
         </p>
+        <div className="mt-2 flex items-center gap-2">
+          <span className="text-[10px] text-zinc-500 bg-zinc-950 px-1.5 py-0.5 rounded border border-zinc-800 font-mono">
+            시그널 산출가: {signal.currentRate.toLocaleString('ko-KR')} (수출입은행)
+          </span>
+          <span className="text-[10px] text-zinc-600 italic">
+            {new Date(signal.calculatedAt).toLocaleString('ko-KR', { hour: '2-digit', minute: '2-digit' })} 갱신
+          </span>
+        </div>
         {signal.strength === 'STRONG' && (
           <p className={`mt-2 text-xs font-semibold ${colors.text} opacity-90`}>
             ✦ STRONG 신호 구간은 방향성 적중률이 높습니다.
@@ -64,7 +72,7 @@ export default function DetailPanel({ data, liveRate }: Props) {
             {signal.targetBuy.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
           </div>
           <div className="text-[10px] text-rose-300/70 font-mono tabular-nums mt-1">
-            실지불 {signal.targetBuyEffective.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
+            실지불 {signal.targetBuyEffective?.toLocaleString('ko-KR', { maximumFractionDigits: 2 }) ?? '0'}
           </div>
         </div>
         <div className="rounded-lg bg-zinc-900 border border-zinc-800 p-3 text-center">
@@ -74,10 +82,15 @@ export default function DetailPanel({ data, liveRate }: Props) {
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             )}
           </div>
-          <div className="text-[10px] text-zinc-600 mb-1">기준율</div>
+          <div className="text-[10px] text-zinc-600 mb-1">{liveRate != null ? '실시간 환율' : '기준율'}</div>
           <div className="font-mono font-bold text-white tabular-nums">
             {displayRate.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
           </div>
+          {liveRate != null && (
+            <div className="text-[9px] text-emerald-500/80 font-mono mt-1 uppercase tracking-wider">
+              Connected Live
+            </div>
+          )}
         </div>
         <div className="rounded-lg bg-zinc-900 border border-zinc-800 p-3 text-center">
           <div className="text-xs text-zinc-500 mb-0.5">목표 매도가</div>
@@ -86,7 +99,7 @@ export default function DetailPanel({ data, liveRate }: Props) {
             {signal.targetSell.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
           </div>
           <div className="text-[10px] text-blue-300/70 font-mono tabular-nums mt-1">
-            실수령 {signal.targetSellEffective.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
+            실수령 {signal.targetSellEffective?.toLocaleString('ko-KR', { maximumFractionDigits: 2 }) ?? '0'}
           </div>
         </div>
         <div className="rounded-lg bg-amber-950/40 border border-amber-800/30 p-3 text-center">

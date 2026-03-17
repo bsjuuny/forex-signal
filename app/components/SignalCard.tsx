@@ -52,16 +52,24 @@ export default function SignalCard({ signal, liveRate, isSelected, onClick }: Pr
               {displayRate.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
             </div>
             {liveRate != null && (
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+              <div className="flex items-center gap-1.5 ml-1">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                <span className="text-[10px] text-zinc-500 font-medium uppercase tracking-tighter">Live</span>
+              </div>
             )}
           </div>
-          {change != null ? (
-            <div className={`text-xs mt-0.5 font-mono tabular-nums ${change >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
-              {change >= 0 ? '+' : ''}{change.toFixed(2)}% 전일比
+          {liveRate != null ? (
+            <div className="flex items-center gap-2 mt-0.5">
+              <span className="text-[10px] text-zinc-600 bg-zinc-900 px-1.5 py-0.5 rounded border border-zinc-800">
+                시그널가 {signal.currentRate.toLocaleString('ko-KR')}
+              </span>
+              <div className={`text-xs font-mono tabular-nums ${change! >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+                {change! >= 0 ? '+' : ''}{change!.toFixed(2)}%
+              </div>
             </div>
           ) : (
             <div className="text-xs text-zinc-600 mt-0.5">
-              {new Date(signal.calculatedAt).toLocaleString('ko-KR', {
+              기준: {new Date(signal.calculatedAt).toLocaleString('ko-KR', {
                 month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit',
               })}
             </div>
@@ -117,6 +125,11 @@ export function SwipeTab({ signal, liveRate, isSelected, onClick }: SwipeTabProp
       <span className="text-[11px] font-mono tabular-nums text-zinc-300 leading-none">
         {displayRate.toLocaleString('ko-KR', { maximumFractionDigits: 0 })}
       </span>
+      {liveRate != null && (
+        <span className="text-[9px] text-zinc-600 font-mono leading-none">
+          Live
+        </span>
+      )}
     </button>
   );
 }
