@@ -460,19 +460,13 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
-          "value": 22.510000228881836,
+          "value": 22.90999984741211,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 22.5) — 외화 강세 우위"
-=======
-          "value": 22.719999313354492,
-          "signal": "BUY",
-          "description": "리스크 오프 (VIX 22.7) — 외화 강세 우위"
->>>>>>> Stashed changes
+          "description": "리스크 오프 (VIX 22.9) — 외화 강세 우위"
         },
         {
           "name": "US10Y 국채금리",
-          "value": 4.199999809265137,
+          "value": 4.202000141143799,
           "signal": "BUY",
           "description": "미국채 10Y 금리 상승 (+0.12%) → USD 강세"
         }
@@ -488,29 +482,16 @@
       "effectiveSellRate": 1469.82,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.39,
-<<<<<<< Updated upstream
-      "calculatedAt": "2026-03-17T15:46:45.491Z"
+      "calculatedAt": "2026-03-17T16:19:59.915Z"
     },
     "macro": {
-      "vix": 22.510000228881836,
-=======
-      "calculatedAt": "2026-03-17T15:48:36.699Z"
-    },
-    "macro": {
-      "vix": 22.719999313354492,
->>>>>>> Stashed changes
+      "vix": 22.90999984741211,
       "vixPrev": 21.149999618530273,
-      "us10y": 4.199999809265137,
+      "us10y": 4.202000141143799,
       "us10yPrev": 4.079999923706055,
-<<<<<<< Updated upstream
-      "fetchedAt": "2026-03-17T15:46:44.326Z"
+      "fetchedAt": "2026-03-17T16:19:47.992Z"
     },
-    "updatedAt": "2026-03-17T15:46:45.491Z"
-=======
-      "fetchedAt": "2026-03-17T15:48:35.509Z"
-    },
-    "updatedAt": "2026-03-17T15:48:36.699Z"
->>>>>>> Stashed changes
+    "updatedAt": "2026-03-17T16:19:59.915Z"
   },
   {
     "currency": "EURKRW",
@@ -973,15 +954,9 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
-          "value": 22.510000228881836,
+          "value": 22.90999984741211,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 22.5) — 외화 강세 우위"
-=======
-          "value": 22.719999313354492,
-          "signal": "BUY",
-          "description": "리스크 오프 (VIX 22.7) — 외화 강세 우위"
->>>>>>> Stashed changes
+          "description": "리스크 오프 (VIX 22.9) — 외화 강세 우위"
         }
       ],
       "currentRate": 1720.03,
@@ -995,29 +970,16 @@
       "effectiveSellRate": 1689.93,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.45,
-<<<<<<< Updated upstream
-      "calculatedAt": "2026-03-17T15:46:46.590Z"
+      "calculatedAt": "2026-03-17T16:20:11.809Z"
     },
     "macro": {
-      "vix": 22.510000228881836,
-=======
-      "calculatedAt": "2026-03-17T15:48:37.801Z"
-    },
-    "macro": {
-      "vix": 22.719999313354492,
->>>>>>> Stashed changes
+      "vix": 22.90999984741211,
       "vixPrev": 21.149999618530273,
-      "us10y": 4.199999809265137,
+      "us10y": 4.202000141143799,
       "us10yPrev": 4.079999923706055,
-<<<<<<< Updated upstream
-      "fetchedAt": "2026-03-17T15:46:44.326Z"
+      "fetchedAt": "2026-03-17T16:19:47.992Z"
     },
-    "updatedAt": "2026-03-17T15:46:46.590Z"
-=======
-      "fetchedAt": "2026-03-17T15:48:35.509Z"
-    },
-    "updatedAt": "2026-03-17T15:48:37.801Z"
->>>>>>> Stashed changes
+    "updatedAt": "2026-03-17T16:20:11.809Z"
   },
   {
     "currency": "JPYKRW",
@@ -1480,15 +1442,9 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
-          "value": 22.510000228881836,
+          "value": 22.90999984741211,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 22.5) — 외화 강세 우위"
-=======
-          "value": 22.719999313354492,
-          "signal": "BUY",
-          "description": "리스크 오프 (VIX 22.7) — 외화 강세 우위"
->>>>>>> Stashed changes
+          "description": "리스크 오프 (VIX 22.9) — 외화 강세 우위"
         }
       ],
       "currentRate": 939.82,
@@ -1502,29 +1458,16 @@
       "effectiveSellRate": 923.37,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.24,
-<<<<<<< Updated upstream
-      "calculatedAt": "2026-03-17T15:46:47.690Z"
+      "calculatedAt": "2026-03-17T16:20:23.740Z"
     },
     "macro": {
-      "vix": 22.510000228881836,
-=======
-      "calculatedAt": "2026-03-17T15:48:38.902Z"
-    },
-    "macro": {
-      "vix": 22.719999313354492,
->>>>>>> Stashed changes
+      "vix": 22.90999984741211,
       "vixPrev": 21.149999618530273,
-      "us10y": 4.199999809265137,
+      "us10y": 4.202000141143799,
       "us10yPrev": 4.079999923706055,
-<<<<<<< Updated upstream
-      "fetchedAt": "2026-03-17T15:46:44.326Z"
+      "fetchedAt": "2026-03-17T16:19:47.992Z"
     },
-    "updatedAt": "2026-03-17T15:46:47.690Z"
-=======
-      "fetchedAt": "2026-03-17T15:48:35.509Z"
-    },
-    "updatedAt": "2026-03-17T15:48:38.902Z"
->>>>>>> Stashed changes
+    "updatedAt": "2026-03-17T16:20:23.740Z"
   },
   {
     "currency": "CNYKRW",
@@ -1987,15 +1930,9 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
-          "value": 22.510000228881836,
+          "value": 22.90999984741211,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 22.5) — 외화 강세 우위"
-=======
-          "value": 22.719999313354492,
-          "signal": "BUY",
-          "description": "리스크 오프 (VIX 22.7) — 외화 강세 우위"
->>>>>>> Stashed changes
+          "description": "리스크 오프 (VIX 22.9) — 외화 강세 우위"
         }
       ],
       "currentRate": 216.97,
@@ -2009,29 +1946,16 @@
       "effectiveSellRate": 212.63,
       "breakEvenPct": 4,
       "netProfitPct": -1.91,
-<<<<<<< Updated upstream
-      "calculatedAt": "2026-03-17T15:46:48.790Z"
+      "calculatedAt": "2026-03-17T16:20:35.651Z"
     },
     "macro": {
-      "vix": 22.510000228881836,
-=======
-      "calculatedAt": "2026-03-17T15:48:39.989Z"
-    },
-    "macro": {
-      "vix": 22.719999313354492,
->>>>>>> Stashed changes
+      "vix": 22.90999984741211,
       "vixPrev": 21.149999618530273,
-      "us10y": 4.199999809265137,
+      "us10y": 4.202000141143799,
       "us10yPrev": 4.079999923706055,
-<<<<<<< Updated upstream
-      "fetchedAt": "2026-03-17T15:46:44.326Z"
+      "fetchedAt": "2026-03-17T16:19:47.992Z"
     },
-    "updatedAt": "2026-03-17T15:46:48.790Z"
-=======
-      "fetchedAt": "2026-03-17T15:48:35.509Z"
-    },
-    "updatedAt": "2026-03-17T15:48:39.989Z"
->>>>>>> Stashed changes
+    "updatedAt": "2026-03-17T16:20:35.651Z"
   },
   {
     "currency": "GBPKRW",
@@ -2494,15 +2418,9 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
-          "value": 22.510000228881836,
+          "value": 22.90999984741211,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 22.5) — 외화 강세 우위"
-=======
-          "value": 22.719999313354492,
-          "signal": "BUY",
-          "description": "리스크 오프 (VIX 22.7) — 외화 강세 우위"
->>>>>>> Stashed changes
+          "description": "리스크 오프 (VIX 22.9) — 외화 강세 우위"
         }
       ],
       "currentRate": 1991.48,
@@ -2516,29 +2434,16 @@
       "effectiveSellRate": 1956.63,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.33,
-<<<<<<< Updated upstream
-      "calculatedAt": "2026-03-17T15:46:49.894Z"
+      "calculatedAt": "2026-03-17T16:20:47.603Z"
     },
     "macro": {
-      "vix": 22.510000228881836,
-=======
-      "calculatedAt": "2026-03-17T15:48:41.085Z"
-    },
-    "macro": {
-      "vix": 22.719999313354492,
->>>>>>> Stashed changes
+      "vix": 22.90999984741211,
       "vixPrev": 21.149999618530273,
-      "us10y": 4.199999809265137,
+      "us10y": 4.202000141143799,
       "us10yPrev": 4.079999923706055,
-<<<<<<< Updated upstream
-      "fetchedAt": "2026-03-17T15:46:44.326Z"
+      "fetchedAt": "2026-03-17T16:19:47.992Z"
     },
-    "updatedAt": "2026-03-17T15:46:49.894Z"
-=======
-      "fetchedAt": "2026-03-17T15:48:35.509Z"
-    },
-    "updatedAt": "2026-03-17T15:48:41.085Z"
->>>>>>> Stashed changes
+    "updatedAt": "2026-03-17T16:20:47.603Z"
   },
   {
     "currency": "CADKRW",
@@ -3001,15 +2906,9 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
-          "value": 22.510000228881836,
+          "value": 22.90999984741211,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 22.5) — 외화 강세 우위"
-=======
-          "value": 22.719999313354492,
-          "signal": "BUY",
-          "description": "리스크 오프 (VIX 22.7) — 외화 강세 우위"
->>>>>>> Stashed changes
+          "description": "리스크 오프 (VIX 22.9) — 외화 강세 우위"
         }
       ],
       "currentRate": 1092.97,
@@ -3023,29 +2922,16 @@
       "effectiveSellRate": 1073.84,
       "breakEvenPct": 3.5,
       "netProfitPct": -0.25,
-<<<<<<< Updated upstream
-      "calculatedAt": "2026-03-17T15:46:50.995Z"
+      "calculatedAt": "2026-03-17T16:20:59.547Z"
     },
     "macro": {
-      "vix": 22.510000228881836,
-=======
-      "calculatedAt": "2026-03-17T15:48:42.172Z"
-    },
-    "macro": {
-      "vix": 22.719999313354492,
->>>>>>> Stashed changes
+      "vix": 22.90999984741211,
       "vixPrev": 21.149999618530273,
-      "us10y": 4.199999809265137,
+      "us10y": 4.202000141143799,
       "us10yPrev": 4.079999923706055,
-<<<<<<< Updated upstream
-      "fetchedAt": "2026-03-17T15:46:44.326Z"
+      "fetchedAt": "2026-03-17T16:19:47.992Z"
     },
-    "updatedAt": "2026-03-17T15:46:50.995Z"
-=======
-      "fetchedAt": "2026-03-17T15:48:35.509Z"
-    },
-    "updatedAt": "2026-03-17T15:48:42.172Z"
->>>>>>> Stashed changes
+    "updatedAt": "2026-03-17T16:20:59.547Z"
   },
   {
     "currency": "HKDKRW",
@@ -3508,15 +3394,9 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
-          "value": 22.510000228881836,
+          "value": 22.90999984741211,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 22.5) — 외화 강세 우위"
-=======
-          "value": 22.719999313354492,
-          "signal": "BUY",
-          "description": "리스크 오프 (VIX 22.7) — 외화 강세 우위"
->>>>>>> Stashed changes
+          "description": "리스크 오프 (VIX 22.9) — 외화 강세 우위"
         }
       ],
       "currentRate": 191.05,
@@ -3530,28 +3410,15 @@
       "effectiveSellRate": 187.23,
       "breakEvenPct": 4,
       "netProfitPct": -0.85,
-<<<<<<< Updated upstream
-      "calculatedAt": "2026-03-17T15:46:52.096Z"
+      "calculatedAt": "2026-03-17T16:21:11.459Z"
     },
     "macro": {
-      "vix": 22.510000228881836,
-=======
-      "calculatedAt": "2026-03-17T15:48:43.269Z"
-    },
-    "macro": {
-      "vix": 22.719999313354492,
->>>>>>> Stashed changes
+      "vix": 22.90999984741211,
       "vixPrev": 21.149999618530273,
-      "us10y": 4.199999809265137,
+      "us10y": 4.202000141143799,
       "us10yPrev": 4.079999923706055,
-<<<<<<< Updated upstream
-      "fetchedAt": "2026-03-17T15:46:44.326Z"
+      "fetchedAt": "2026-03-17T16:19:47.992Z"
     },
-    "updatedAt": "2026-03-17T15:46:52.096Z"
-=======
-      "fetchedAt": "2026-03-17T15:48:35.509Z"
-    },
-    "updatedAt": "2026-03-17T15:48:43.269Z"
->>>>>>> Stashed changes
+    "updatedAt": "2026-03-17T16:21:11.459Z"
   }
 ]
