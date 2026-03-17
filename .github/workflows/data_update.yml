@@ -55,6 +55,7 @@ jobs:
           git push
 
       - name: Send Telegram notification
+        continue-on-error: true
         run: npm run notify
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
