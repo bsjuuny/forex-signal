@@ -460,9 +460,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 21.649999618530273,
+          "value": 21.530000686645508,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 21.6) — 외화 강세 우위"
+          "description": "리스크 오프 (VIX 21.5) — 외화 강세 우위"
         },
         {
           "name": "US10Y 국채금리",
@@ -482,16 +482,16 @@
       "effectiveSellRate": 1469.82,
       "breakEvenPct": 3.5,
       "netProfitPct": 1.84,
-      "calculatedAt": "2026-03-18T09:38:37.406Z"
+      "calculatedAt": "2026-03-18T10:37:48.265Z"
     },
     "macro": {
-      "vix": 21.649999618530273,
+      "vix": 21.530000686645508,
       "vixPrev": 23.75,
       "us10y": 4.202000141143799,
       "us10yPrev": 4.079999923706055,
-      "fetchedAt": "2026-03-18T09:38:36.136Z"
+      "fetchedAt": "2026-03-18T10:37:46.980Z"
     },
-    "updatedAt": "2026-03-18T09:38:37.406Z"
+    "updatedAt": "2026-03-18T10:37:48.265Z"
   },
   {
     "currency": "EURKRW",
@@ -954,9 +954,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 21.649999618530273,
+          "value": 21.530000686645508,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 21.6) — 외화 강세 우위"
+          "description": "리스크 오프 (VIX 21.5) — 외화 강세 우위"
         }
       ],
       "currentRate": 1720.03,
@@ -970,16 +970,16 @@
       "effectiveSellRate": 1689.93,
       "breakEvenPct": 3.5,
       "netProfitPct": 1.74,
-      "calculatedAt": "2026-03-18T09:38:38.593Z"
+      "calculatedAt": "2026-03-18T10:37:49.492Z"
     },
     "macro": {
-      "vix": 21.649999618530273,
+      "vix": 21.530000686645508,
       "vixPrev": 23.75,
       "us10y": 4.202000141143799,
       "us10yPrev": 4.079999923706055,
-      "fetchedAt": "2026-03-18T09:38:36.136Z"
+      "fetchedAt": "2026-03-18T10:37:46.980Z"
     },
-    "updatedAt": "2026-03-18T09:38:38.593Z"
+    "updatedAt": "2026-03-18T10:37:49.492Z"
   },
   {
     "currency": "JPYKRW",
@@ -1442,9 +1442,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 21.649999618530273,
+          "value": 21.530000686645508,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 21.6) — 외화 강세 우위"
+          "description": "리스크 오프 (VIX 21.5) — 외화 강세 우위"
         }
       ],
       "currentRate": 939.82,
@@ -1458,16 +1458,16 @@
       "effectiveSellRate": 923.37,
       "breakEvenPct": 3.5,
       "netProfitPct": 2.09,
-      "calculatedAt": "2026-03-18T09:38:39.774Z"
+      "calculatedAt": "2026-03-18T10:37:50.699Z"
     },
     "macro": {
-      "vix": 21.649999618530273,
+      "vix": 21.530000686645508,
       "vixPrev": 23.75,
       "us10y": 4.202000141143799,
       "us10yPrev": 4.079999923706055,
-      "fetchedAt": "2026-03-18T09:38:36.136Z"
+      "fetchedAt": "2026-03-18T10:37:46.980Z"
     },
-    "updatedAt": "2026-03-18T09:38:39.774Z"
+    "updatedAt": "2026-03-18T10:37:50.699Z"
   },
   {
     "currency": "CNYKRW",
@@ -1930,9 +1930,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 21.649999618530273,
+          "value": 21.530000686645508,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 21.6) — 외화 강세 우위"
+          "description": "리스크 오프 (VIX 21.5) — 외화 강세 우위"
         }
       ],
       "currentRate": 216.97,
@@ -1946,16 +1946,16 @@
       "effectiveSellRate": 212.63,
       "breakEvenPct": 4,
       "netProfitPct": -0.46,
-      "calculatedAt": "2026-03-18T09:38:40.955Z"
+      "calculatedAt": "2026-03-18T10:37:51.918Z"
     },
     "macro": {
-      "vix": 21.649999618530273,
+      "vix": 21.530000686645508,
       "vixPrev": 23.75,
       "us10y": 4.202000141143799,
       "us10yPrev": 4.079999923706055,
-      "fetchedAt": "2026-03-18T09:38:36.136Z"
+      "fetchedAt": "2026-03-18T10:37:46.980Z"
     },
-    "updatedAt": "2026-03-18T09:38:40.955Z"
+    "updatedAt": "2026-03-18T10:37:51.918Z"
   },
   {
     "currency": "GBPKRW",
@@ -2418,9 +2418,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 21.649999618530273,
+          "value": 21.530000686645508,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 21.6) — 외화 강세 우위"
+          "description": "리스크 오프 (VIX 21.5) — 외화 강세 우위"
         }
       ],
       "currentRate": 1991.48,
@@ -2434,16 +2434,16 @@
       "effectiveSellRate": 1956.63,
       "breakEvenPct": 3.5,
       "netProfitPct": 1.94,
-      "calculatedAt": "2026-03-18T09:38:42.146Z"
+      "calculatedAt": "2026-03-18T10:37:53.115Z"
     },
     "macro": {
-      "vix": 21.649999618530273,
+      "vix": 21.530000686645508,
       "vixPrev": 23.75,
       "us10y": 4.202000141143799,
       "us10yPrev": 4.079999923706055,
-      "fetchedAt": "2026-03-18T09:38:36.136Z"
+      "fetchedAt": "2026-03-18T10:37:46.980Z"
     },
-    "updatedAt": "2026-03-18T09:38:42.146Z"
+    "updatedAt": "2026-03-18T10:37:53.115Z"
   },
   {
     "currency": "CADKRW",
@@ -2906,9 +2906,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 21.649999618530273,
+          "value": 21.530000686645508,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 21.6) — 외화 강세 우위"
+          "description": "리스크 오프 (VIX 21.5) — 외화 강세 우위"
         }
       ],
       "currentRate": 1092.97,
@@ -2922,16 +2922,16 @@
       "effectiveSellRate": 1073.84,
       "breakEvenPct": 3.5,
       "netProfitPct": 2.08,
-      "calculatedAt": "2026-03-18T09:38:43.323Z"
+      "calculatedAt": "2026-03-18T10:37:54.349Z"
     },
     "macro": {
-      "vix": 21.649999618530273,
+      "vix": 21.530000686645508,
       "vixPrev": 23.75,
       "us10y": 4.202000141143799,
       "us10yPrev": 4.079999923706055,
-      "fetchedAt": "2026-03-18T09:38:36.136Z"
+      "fetchedAt": "2026-03-18T10:37:46.980Z"
     },
-    "updatedAt": "2026-03-18T09:38:43.323Z"
+    "updatedAt": "2026-03-18T10:37:54.349Z"
   },
   {
     "currency": "HKDKRW",
@@ -3394,9 +3394,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 21.649999618530273,
+          "value": 21.530000686645508,
           "signal": "BUY",
-          "description": "리스크 오프 (VIX 21.6) — 외화 강세 우위"
+          "description": "리스크 오프 (VIX 21.5) — 외화 강세 우위"
         }
       ],
       "currentRate": 191.05,
@@ -3410,15 +3410,15 @@
       "effectiveSellRate": 187.23,
       "breakEvenPct": 4,
       "netProfitPct": 1.39,
-      "calculatedAt": "2026-03-18T09:38:44.523Z"
+      "calculatedAt": "2026-03-18T10:37:55.558Z"
     },
     "macro": {
-      "vix": 21.649999618530273,
+      "vix": 21.530000686645508,
       "vixPrev": 23.75,
       "us10y": 4.202000141143799,
       "us10yPrev": 4.079999923706055,
-      "fetchedAt": "2026-03-18T09:38:36.136Z"
+      "fetchedAt": "2026-03-18T10:37:46.980Z"
     },
-    "updatedAt": "2026-03-18T09:38:44.523Z"
+    "updatedAt": "2026-03-18T10:37:55.558Z"
   }
 ]
