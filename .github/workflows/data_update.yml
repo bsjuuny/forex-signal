@@ -1,9 +1,9 @@
 name: FX Data Update & Deploy
 
 on:
-  schedule:
-    # 평일 매시 45분 실행 (KST 기준 = UTC 기준 동일 분, 평일 UTC Mon-Fri)
-    - cron: '45 * * * 1-5'
+  # schedule은 비활성화 — PM2 스케줄러(run-forex-signal.mjs)가 동일 작업을 수행하므로 중복 방지
+  # schedule:
+  #   - cron: '45 * * * 1-5'
   workflow_dispatch:
   push:
     branches: [main]
