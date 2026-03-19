@@ -502,16 +502,16 @@
       "effectiveSellRate": 1460,
       "breakEvenPct": 3.5,
       "netProfitPct": 1.53,
-      "calculatedAt": "2026-03-19T21:45:30.074Z"
+      "calculatedAt": "2026-03-19T22:45:24.203Z"
     },
     "macro": {
       "vix": 24.059999465942383,
       "vixPrev": 29.489999771118164,
       "us10y": 4.281000137329102,
       "us10yPrev": 4.132999897003174,
-      "fetchedAt": "2026-03-19T21:45:28.919Z"
+      "fetchedAt": "2026-03-19T22:45:23.054Z"
     },
-    "updatedAt": "2026-03-19T21:45:30.074Z"
+    "updatedAt": "2026-03-19T22:45:24.203Z"
   },
   {
     "currency": "EURKRW",
@@ -1010,16 +1010,16 @@
       "effectiveSellRate": 1672.86,
       "breakEvenPct": 3.5,
       "netProfitPct": 1.74,
-      "calculatedAt": "2026-03-19T21:45:31.149Z"
+      "calculatedAt": "2026-03-19T22:45:25.266Z"
     },
     "macro": {
       "vix": 24.059999465942383,
       "vixPrev": 29.489999771118164,
       "us10y": 4.281000137329102,
       "us10yPrev": 4.132999897003174,
-      "fetchedAt": "2026-03-19T21:45:28.919Z"
+      "fetchedAt": "2026-03-19T22:45:23.054Z"
     },
-    "updatedAt": "2026-03-19T21:45:31.149Z"
+    "updatedAt": "2026-03-19T22:45:25.266Z"
   },
   {
     "currency": "JPYKRW",
@@ -1518,16 +1518,16 @@
       "effectiveSellRate": 913.44,
       "breakEvenPct": 3.5,
       "netProfitPct": 1.94,
-      "calculatedAt": "2026-03-19T21:45:32.214Z"
+      "calculatedAt": "2026-03-19T22:45:26.348Z"
     },
     "macro": {
       "vix": 24.059999465942383,
       "vixPrev": 29.489999771118164,
       "us10y": 4.281000137329102,
       "us10yPrev": 4.132999897003174,
-      "fetchedAt": "2026-03-19T21:45:28.919Z"
+      "fetchedAt": "2026-03-19T22:45:23.054Z"
     },
-    "updatedAt": "2026-03-19T21:45:32.214Z"
+    "updatedAt": "2026-03-19T22:45:26.348Z"
   },
   {
     "currency": "CNYKRW",
@@ -2026,16 +2026,16 @@
       "effectiveSellRate": 211.67,
       "breakEvenPct": 4,
       "netProfitPct": -0.63,
-      "calculatedAt": "2026-03-19T21:45:33.269Z"
+      "calculatedAt": "2026-03-19T22:45:27.428Z"
     },
     "macro": {
       "vix": 24.059999465942383,
       "vixPrev": 29.489999771118164,
       "us10y": 4.281000137329102,
       "us10yPrev": 4.132999897003174,
-      "fetchedAt": "2026-03-19T21:45:28.919Z"
+      "fetchedAt": "2026-03-19T22:45:23.054Z"
     },
-    "updatedAt": "2026-03-19T21:45:33.269Z"
+    "updatedAt": "2026-03-19T22:45:27.428Z"
   },
   {
     "currency": "GBPKRW",
@@ -2534,16 +2534,16 @@
       "effectiveSellRate": 1935.88,
       "breakEvenPct": 3.5,
       "netProfitPct": 1.82,
-      "calculatedAt": "2026-03-19T21:45:34.308Z"
+      "calculatedAt": "2026-03-19T22:45:28.514Z"
     },
     "macro": {
       "vix": 24.059999465942383,
       "vixPrev": 29.489999771118164,
       "us10y": 4.281000137329102,
       "us10yPrev": 4.132999897003174,
-      "fetchedAt": "2026-03-19T21:45:28.919Z"
+      "fetchedAt": "2026-03-19T22:45:23.054Z"
     },
-    "updatedAt": "2026-03-19T21:45:34.308Z"
+    "updatedAt": "2026-03-19T22:45:28.514Z"
   },
   {
     "currency": "CADKRW",
@@ -3042,16 +3042,16 @@
       "effectiveSellRate": 1062.86,
       "breakEvenPct": 3.5,
       "netProfitPct": 2.02,
-      "calculatedAt": "2026-03-19T21:45:35.350Z"
+      "calculatedAt": "2026-03-19T22:45:29.600Z"
     },
     "macro": {
       "vix": 24.059999465942383,
       "vixPrev": 29.489999771118164,
       "us10y": 4.281000137329102,
       "us10yPrev": 4.132999897003174,
-      "fetchedAt": "2026-03-19T21:45:28.919Z"
+      "fetchedAt": "2026-03-19T22:45:23.054Z"
     },
-    "updatedAt": "2026-03-19T21:45:35.350Z"
+    "updatedAt": "2026-03-19T22:45:29.601Z"
   },
   {
     "currency": "HKDKRW",
@@ -3550,15 +3550,15 @@
       "effectiveSellRate": 185.8,
       "breakEvenPct": 4,
       "netProfitPct": 1.11,
-      "calculatedAt": "2026-03-19T21:45:36.402Z"
+      "calculatedAt": "2026-03-19T22:45:30.674Z"
     },
     "macro": {
       "vix": 24.059999465942383,
       "vixPrev": 29.489999771118164,
       "us10y": 4.281000137329102,
       "us10yPrev": 4.132999897003174,
-      "fetchedAt": "2026-03-19T21:45:28.919Z"
+      "fetchedAt": "2026-03-19T22:45:23.054Z"
     },
-    "updatedAt": "2026-03-19T21:45:36.402Z"
+    "updatedAt": "2026-03-19T22:45:30.674Z"
   }
 ]
