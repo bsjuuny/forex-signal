@@ -428,49 +428,56 @@
         "high": 1500.86,
         "low": 1471.14,
         "close": 1486
+      },
+      {
+        "date": "20260320",
+        "open": 1486,
+        "high": 1514.69,
+        "low": 1484.7,
+        "close": 1499.7
       }
     ],
     "signal": {
       "currency": "USDKRW",
       "signal": "BUY",
       "strength": "MODERATE",
-      "score": 56,
+      "score": 47,
       "indicators": [
         {
           "name": "RSI(14)",
-          "value": 56.92049846440025,
-          "signal": "NEUTRAL",
-          "description": "중립 (56.9)"
+          "value": 61.15361345271601,
+          "signal": "SELL",
+          "description": "약한 과매수 (61.2)"
         },
         {
           "name": "EMA(5/20)",
-          "value": 15.224302101115882,
+          "value": 16.857824476554697,
           "signal": "BUY",
-          "description": "단기 > 장기 (1486.7 > 1471.5)"
+          "description": "단기 > 장기 (1491.1 > 1474.2)"
         },
         {
           "name": "MACD(12/26/9)",
-          "value": 3.171081597980452,
+          "value": 3.3239035319033103,
           "signal": "BUY",
-          "description": "히스토그램 양(+3.17)"
+          "description": "히스토그램 양(+3.32)"
         },
         {
           "name": "Bollinger(20/2)",
-          "value": 0.7529297479557496,
+          "value": 0.8662502627057037,
           "signal": "SELL",
-          "description": "상단 근접 (위치: 75%)"
+          "description": "상단 근접 (위치: 87%)"
         },
         {
           "name": "ADX(14)",
-          "value": 15.1466,
+          "value": 15.7255,
           "signal": "NEUTRAL",
-          "description": "횡보 (ADX 15.1 < 20) — 추세 신호 신뢰도 낮음"
+          "description": "횡보 (ADX 15.7 < 20) — 추세 신호 신뢰도 낮음"
         },
         {
           "name": "EMA(60) 추세",
-          "value": 1.751969723683363,
+          "value": 2.599568418666715,
           "signal": "BUY",
-          "description": "장기 상승 추세 (현재 1.75% > EMA60)"
+          "description": "장기 상승 추세 (현재 2.60% > EMA60)"
         },
         {
           "name": "신호 연속성",
@@ -491,27 +498,27 @@
           "description": "미국채 10Y 금리 상승 (+0.15%) → USD 강세"
         }
       ],
-      "currentRate": 1486,
-      "targetBuy": 1454.83,
-      "targetSell": 1529.64,
-      "targetBuyEffective": 1480.29,
-      "targetSellEffective": 1502.87,
-      "stopLoss": 1467.3,
+      "currentRate": 1499.7,
+      "targetBuy": 1467.99,
+      "targetSell": 1544.1,
+      "targetBuyEffective": 1493.68,
+      "targetSellEffective": 1517.07,
+      "stopLoss": 1480.67,
       "spreadPct": 1.75,
-      "effectiveBuyRate": 1512.01,
-      "effectiveSellRate": 1460,
+      "effectiveBuyRate": 1525.94,
+      "effectiveSellRate": 1473.46,
       "breakEvenPct": 3.5,
-      "netProfitPct": 1.53,
-      "calculatedAt": "2026-03-20T00:45:34.593Z"
+      "netProfitPct": 1.57,
+      "calculatedAt": "2026-03-20T02:41:33.367Z"
     },
     "macro": {
       "vix": 24.059999465942383,
       "vixPrev": 29.489999771118164,
       "us10y": 4.281000137329102,
       "us10yPrev": 4.132999897003174,
-      "fetchedAt": "2026-03-20T00:45:33.225Z"
+      "fetchedAt": "2026-03-20T02:41:32.028Z"
     },
-    "updatedAt": "2026-03-20T00:45:34.593Z"
+    "updatedAt": "2026-03-20T02:41:33.367Z"
   },
   {
     "currency": "EURKRW",
@@ -942,55 +949,62 @@
         "high": 1719.68,
         "low": 1685.63,
         "close": 1702.66
+      },
+      {
+        "date": "20260320",
+        "open": 1702.66,
+        "high": 1753.94,
+        "low": 1719.21,
+        "close": 1736.58
       }
     ],
     "signal": {
       "currency": "EURKRW",
-      "signal": "NEUTRAL",
-      "strength": "WEAK",
-      "score": -3,
+      "signal": "BUY",
+      "strength": "MODERATE",
+      "score": 35,
       "indicators": [
         {
           "name": "RSI(14)",
-          "value": 47.76860318678395,
+          "value": 56.764422406398666,
           "signal": "NEUTRAL",
-          "description": "중립 (47.8)"
+          "description": "중립 (56.8)"
         },
         {
           "name": "EMA(5/20)",
-          "value": 1.09412935691239,
+          "value": 7.330116795224967,
           "signal": "BUY",
-          "description": "단기 > 장기 (1710.0 > 1708.9)"
+          "description": "단기 > 장기 (1718.8 > 1711.5)"
         },
         {
           "name": "MACD(12/26/9)",
-          "value": 1.1102134888612354,
+          "value": 2.6944601994309334,
           "signal": "BUY",
-          "description": "히스토그램 양(+1.11)"
+          "description": "히스토그램 양(+2.69)"
         },
         {
           "name": "Bollinger(20/2)",
-          "value": 0.4645337944662587,
-          "signal": "NEUTRAL",
-          "description": "중간 구간 (위치: 46%)"
+          "value": 1.014803681784569,
+          "signal": "SELL",
+          "description": "상단 터치 (현재: 1736.6, 상단: 1735.7)"
         },
         {
           "name": "ADX(14)",
-          "value": 8.4458,
+          "value": 8.8791,
           "signal": "NEUTRAL",
-          "description": "횡보 (ADX 8.4 < 20) — 추세 신호 신뢰도 낮음"
+          "description": "횡보 (ADX 8.9 < 20) — 추세 신호 신뢰도 낮음"
         },
         {
           "name": "EMA(60) 추세",
-          "value": -0.5374066474548742,
-          "signal": "SELL",
-          "description": "장기 하락 추세 (현재 0.54% < EMA60)"
+          "value": 1.3960568581834887,
+          "signal": "BUY",
+          "description": "장기 상승 추세 (현재 1.40% > EMA60)"
         },
         {
           "name": "신호 연속성",
           "value": 20,
-          "signal": "NEUTRAL",
-          "description": "전일 방향 반전 (-10)"
+          "signal": "BUY",
+          "description": "전일 방향 일치 (+10)"
         },
         {
           "name": "VIX 공포지수",
@@ -999,27 +1013,27 @@
           "description": "리스크 오프 (VIX 24.1) — 외화 강세 우위"
         }
       ],
-      "currentRate": 1702.66,
-      "targetBuy": 1665.43,
-      "targetSell": 1754.78,
-      "targetBuyEffective": 1694.58,
-      "targetSellEffective": 1724.07,
-      "stopLoss": 1725,
+      "currentRate": 1736.58,
+      "targetBuy": 1693.26,
+      "targetSell": 1797.23,
+      "targetBuyEffective": 1722.89,
+      "targetSellEffective": 1765.78,
+      "stopLoss": 1710.59,
       "spreadPct": 1.75,
-      "effectiveBuyRate": 1732.46,
-      "effectiveSellRate": 1672.86,
+      "effectiveBuyRate": 1766.97,
+      "effectiveSellRate": 1706.19,
       "breakEvenPct": 3.5,
-      "netProfitPct": 1.74,
-      "calculatedAt": "2026-03-20T00:45:35.900Z"
+      "netProfitPct": 2.49,
+      "calculatedAt": "2026-03-20T02:41:34.650Z"
     },
     "macro": {
       "vix": 24.059999465942383,
       "vixPrev": 29.489999771118164,
       "us10y": 4.281000137329102,
       "us10yPrev": 4.132999897003174,
-      "fetchedAt": "2026-03-20T00:45:33.225Z"
+      "fetchedAt": "2026-03-20T02:41:32.028Z"
     },
-    "updatedAt": "2026-03-20T00:45:35.901Z"
+    "updatedAt": "2026-03-20T02:41:34.650Z"
   },
   {
     "currency": "JPYKRW",
@@ -1450,55 +1464,62 @@
         "high": 939,
         "low": 920.41,
         "close": 929.71
+      },
+      {
+        "date": "20260320",
+        "open": 929.71,
+        "high": 959.42,
+        "low": 940.43,
+        "close": 949.93
       }
     ],
     "signal": {
       "currency": "JPYKRW",
-      "signal": "NEUTRAL",
-      "strength": "WEAK",
-      "score": -3,
+      "signal": "BUY",
+      "strength": "MODERATE",
+      "score": 35,
       "indicators": [
         {
           "name": "RSI(14)",
-          "value": 48.31700637331712,
+          "value": 57.44129865092611,
           "signal": "NEUTRAL",
-          "description": "중립 (48.3)"
+          "description": "중립 (57.4)"
         },
         {
           "name": "EMA(5/20)",
-          "value": 1.1522692874005998,
+          "value": 4.950098844046124,
           "signal": "BUY",
-          "description": "단기 > 장기 (933.5 > 932.4)"
+          "description": "단기 > 장기 (939.0 > 934.0)"
         },
         {
           "name": "MACD(12/26/9)",
-          "value": 0.5447566161587148,
+          "value": 1.5175165115734046,
           "signal": "BUY",
-          "description": "히스토그램 양(+0.54)"
+          "description": "히스토그램 양(+1.52)"
         },
         {
           "name": "Bollinger(20/2)",
-          "value": 0.4746124822905701,
-          "signal": "NEUTRAL",
-          "description": "중간 구간 (위치: 47%)"
+          "value": 0.9885086283522999,
+          "signal": "SELL",
+          "description": "상단 터치 (현재: 949.9, 상단: 950.4)"
         },
         {
           "name": "ADX(14)",
-          "value": 8.0747,
+          "value": 8.6307,
           "signal": "NEUTRAL",
-          "description": "횡보 (ADX 8.1 < 20) — 추세 신호 신뢰도 낮음"
+          "description": "횡보 (ADX 8.6 < 20) — 추세 신호 신뢰도 낮음"
         },
         {
           "name": "EMA(60) 추세",
-          "value": -0.26584345364245804,
-          "signal": "SELL",
-          "description": "장기 하락 추세 (현재 0.27% < EMA60)"
+          "value": 1.8396970019742127,
+          "signal": "BUY",
+          "description": "장기 상승 추세 (현재 1.84% > EMA60)"
         },
         {
           "name": "신호 연속성",
           "value": 20,
-          "signal": "NEUTRAL",
-          "description": "전일 방향 반전 (-10)"
+          "signal": "BUY",
+          "description": "전일 방향 일치 (+10)"
         },
         {
           "name": "VIX 공포지수",
@@ -1507,27 +1528,27 @@
           "description": "리스크 오프 (VIX 24.1) — 외화 강세 우위"
         }
       ],
-      "currentRate": 929.71,
-      "targetBuy": 908.61,
-      "targetSell": 959.25,
-      "targetBuyEffective": 924.51,
-      "targetSellEffective": 942.47,
-      "stopLoss": 942.37,
+      "currentRate": 949.93,
+      "targetBuy": 925.14,
+      "targetSell": 984.64,
+      "targetBuyEffective": 941.33,
+      "targetSellEffective": 967.41,
+      "stopLoss": 935.05,
       "spreadPct": 1.75,
-      "effectiveBuyRate": 945.98,
-      "effectiveSellRate": 913.44,
+      "effectiveBuyRate": 966.55,
+      "effectiveSellRate": 933.31,
       "breakEvenPct": 3.5,
-      "netProfitPct": 1.94,
-      "calculatedAt": "2026-03-20T00:45:37.195Z"
+      "netProfitPct": 2.77,
+      "calculatedAt": "2026-03-20T02:41:35.913Z"
     },
     "macro": {
       "vix": 24.059999465942383,
       "vixPrev": 29.489999771118164,
       "us10y": 4.281000137329102,
       "us10yPrev": 4.132999897003174,
-      "fetchedAt": "2026-03-20T00:45:33.225Z"
+      "fetchedAt": "2026-03-20T02:41:32.028Z"
     },
-    "updatedAt": "2026-03-20T00:45:37.195Z"
+    "updatedAt": "2026-03-20T02:41:35.913Z"
   },
   {
     "currency": "CNYKRW",
@@ -1958,49 +1979,56 @@
         "high": 218.14,
         "low": 213.83,
         "close": 215.99
+      },
+      {
+        "date": "20260320",
+        "open": 215.99,
+        "high": 219.42,
+        "low": 215.07,
+        "close": 217.25
       }
     ],
     "signal": {
       "currency": "CNYKRW",
       "signal": "BUY",
       "strength": "MODERATE",
-      "score": 32,
+      "score": 30,
       "indicators": [
         {
           "name": "RSI(14)",
-          "value": 62.16135711556407,
+          "value": 65.49031506769282,
           "signal": "SELL",
-          "description": "약한 과매수 (62.2)"
+          "description": "약한 과매수 (65.5)"
         },
         {
           "name": "EMA(5/20)",
-          "value": 2.4991243492594037,
+          "value": 2.566760159585499,
           "signal": "BUY",
-          "description": "단기 > 장기 (216.0 > 213.5)"
+          "description": "단기 > 장기 (216.4 > 213.8)"
         },
         {
           "name": "MACD(12/26/9)",
-          "value": 0.3776379854965881,
+          "value": 0.3618191553728116,
           "signal": "BUY",
-          "description": "히스토그램 양(+0.38)"
+          "description": "히스토그램 양(+0.36)"
         },
         {
           "name": "Bollinger(20/2)",
-          "value": 0.7921021585796031,
+          "value": 0.8602897820594995,
           "signal": "SELL",
-          "description": "상단 근접 (위치: 79%)"
+          "description": "상단 근접 (위치: 86%)"
         },
         {
           "name": "ADX(14)",
-          "value": 19.2797,
+          "value": 20.1838,
           "signal": "NEUTRAL",
-          "description": "횡보 (ADX 19.3 < 20) — 추세 신호 신뢰도 낮음"
+          "description": "보통 추세 (ADX 20.2)"
         },
         {
           "name": "EMA(60) 추세",
-          "value": 2.6702994642288904,
+          "value": 3.158663454153509,
           "signal": "BUY",
-          "description": "장기 상승 추세 (현재 2.67% > EMA60)"
+          "description": "장기 상승 추세 (현재 3.16% > EMA60)"
         },
         {
           "name": "신호 연속성",
@@ -2015,27 +2043,27 @@
           "description": "리스크 오프 (VIX 24.1) — 외화 강세 우위"
         }
       ],
-      "currentRate": 215.99,
-      "targetBuy": 212.95,
-      "targetSell": 220.24,
-      "targetBuyEffective": 217.21,
-      "targetSellEffective": 215.84,
-      "stopLoss": 214.17,
+      "currentRate": 217.25,
+      "targetBuy": 214.28,
+      "targetSell": 221.41,
+      "targetBuyEffective": 218.56,
+      "targetSellEffective": 216.98,
+      "stopLoss": 215.47,
       "spreadPct": 2,
-      "effectiveBuyRate": 220.31,
-      "effectiveSellRate": 211.67,
+      "effectiveBuyRate": 221.59,
+      "effectiveSellRate": 212.91,
       "breakEvenPct": 4,
-      "netProfitPct": -0.63,
-      "calculatedAt": "2026-03-20T00:45:38.465Z"
+      "netProfitPct": -0.72,
+      "calculatedAt": "2026-03-20T02:41:37.152Z"
     },
     "macro": {
       "vix": 24.059999465942383,
       "vixPrev": 29.489999771118164,
       "us10y": 4.281000137329102,
       "us10yPrev": 4.132999897003174,
-      "fetchedAt": "2026-03-20T00:45:33.225Z"
+      "fetchedAt": "2026-03-20T02:41:32.028Z"
     },
-    "updatedAt": "2026-03-20T00:45:38.465Z"
+    "updatedAt": "2026-03-20T02:41:37.152Z"
   },
   {
     "currency": "GBPKRW",
@@ -2466,49 +2494,56 @@
         "high": 1990.06,
         "low": 1950.65,
         "close": 1970.36
+      },
+      {
+        "date": "20260320",
+        "open": 1970.36,
+        "high": 2034,
+        "low": 1993.73,
+        "close": 2013.87
       }
     ],
     "signal": {
       "currency": "GBPKRW",
       "signal": "BUY",
       "strength": "MODERATE",
-      "score": 47,
+      "score": 35,
       "indicators": [
         {
           "name": "RSI(14)",
-          "value": 49.81867785254546,
+          "value": 59.117666704661275,
           "signal": "NEUTRAL",
-          "description": "중립 (49.8)"
+          "description": "중립 (59.1)"
         },
         {
           "name": "EMA(5/20)",
-          "value": 7.583371586399835,
+          "value": 15.157148835711041,
           "signal": "BUY",
-          "description": "단기 > 장기 (1979.0 > 1971.4)"
+          "description": "단기 > 장기 (1990.6 > 1975.5)"
         },
         {
           "name": "MACD(12/26/9)",
-          "value": 2.6633794057722424,
+          "value": 4.448059535762669,
           "signal": "BUY",
-          "description": "히스토그램 양(+2.66)"
+          "description": "히스토그램 양(+4.45)"
         },
         {
           "name": "Bollinger(20/2)",
-          "value": 0.5968933667239329,
-          "signal": "NEUTRAL",
-          "description": "중간 구간 (위치: 60%)"
+          "value": 1.0173536741461102,
+          "signal": "SELL",
+          "description": "상단 터치 (현재: 2013.9, 상단: 2012.3)"
         },
         {
           "name": "ADX(14)",
-          "value": 9.0641,
+          "value": 9.7879,
           "signal": "NEUTRAL",
-          "description": "횡보 (ADX 9.1 < 20) — 추세 신호 신뢰도 낮음"
+          "description": "횡보 (ADX 9.8 < 20) — 추세 신호 신뢰도 낮음"
         },
         {
           "name": "EMA(60) 추세",
-          "value": 0.04546810222461798,
+          "value": 2.1791625867932565,
           "signal": "BUY",
-          "description": "장기 상승 추세 (현재 0.05% > EMA60)"
+          "description": "장기 상승 추세 (현재 2.18% > EMA60)"
         },
         {
           "name": "신호 연속성",
@@ -2523,27 +2558,27 @@
           "description": "리스크 오프 (VIX 24.1) — 외화 강세 우위"
         }
       ],
-      "currentRate": 1970.36,
-      "targetBuy": 1926.61,
-      "targetSell": 2031.6,
-      "targetBuyEffective": 1960.33,
-      "targetSellEffective": 1996.05,
-      "stopLoss": 1944.11,
+      "currentRate": 2013.87,
+      "targetBuy": 1962.51,
+      "targetSell": 2085.77,
+      "targetBuyEffective": 1996.86,
+      "targetSellEffective": 2049.27,
+      "stopLoss": 1983.06,
       "spreadPct": 1.75,
-      "effectiveBuyRate": 2004.84,
-      "effectiveSellRate": 1935.88,
+      "effectiveBuyRate": 2049.11,
+      "effectiveSellRate": 1978.63,
       "breakEvenPct": 3.5,
-      "netProfitPct": 1.82,
-      "calculatedAt": "2026-03-20T00:45:39.719Z"
+      "netProfitPct": 2.62,
+      "calculatedAt": "2026-03-20T02:41:38.434Z"
     },
     "macro": {
       "vix": 24.059999465942383,
       "vixPrev": 29.489999771118164,
       "us10y": 4.281000137329102,
       "us10yPrev": 4.132999897003174,
-      "fetchedAt": "2026-03-20T00:45:33.225Z"
+      "fetchedAt": "2026-03-20T02:41:32.028Z"
     },
-    "updatedAt": "2026-03-20T00:45:39.719Z"
+    "updatedAt": "2026-03-20T02:41:38.434Z"
   },
   {
     "currency": "CADKRW",
@@ -2974,49 +3009,56 @@
         "high": 1092.6,
         "low": 1070.97,
         "close": 1081.79
+      },
+      {
+        "date": "20260320",
+        "open": 1081.79,
+        "high": 1102.75,
+        "low": 1080.92,
+        "close": 1091.84
       }
     ],
     "signal": {
       "currency": "CADKRW",
       "signal": "BUY",
       "strength": "MODERATE",
-      "score": 47,
+      "score": 41,
       "indicators": [
         {
           "name": "RSI(14)",
-          "value": 53.65782025046779,
+          "value": 57.86950466286396,
           "signal": "NEUTRAL",
-          "description": "중립 (53.7)"
+          "description": "중립 (57.9)"
         },
         {
           "name": "EMA(5/20)",
-          "value": 8.853854254794896,
+          "value": 9.45883201351171,
           "signal": "BUY",
-          "description": "단기 > 장기 (1085.8 > 1076.9)"
+          "description": "단기 > 장기 (1087.8 > 1078.3)"
         },
         {
           "name": "MACD(12/26/9)",
-          "value": 1.3247219002907968,
+          "value": 1.304368061762034,
           "signal": "BUY",
-          "description": "히스토그램 양(+1.32)"
+          "description": "히스토그램 양(+1.30)"
         },
         {
           "name": "Bollinger(20/2)",
-          "value": 0.6516502371128909,
-          "signal": "NEUTRAL",
-          "description": "중간 구간 (위치: 65%)"
+          "value": 0.7719401885803758,
+          "signal": "SELL",
+          "description": "상단 근접 (위치: 77%)"
         },
         {
           "name": "ADX(14)",
-          "value": 14.0597,
+          "value": 14.2497,
           "signal": "NEUTRAL",
-          "description": "횡보 (ADX 14.1 < 20) — 추세 신호 신뢰도 낮음"
+          "description": "횡보 (ADX 14.2 < 20) — 추세 신호 신뢰도 낮음"
         },
         {
           "name": "EMA(60) 추세",
-          "value": 1.5640441714565443,
+          "value": 2.4233817058472145,
           "signal": "BUY",
-          "description": "장기 상승 추세 (현재 1.56% > EMA60)"
+          "description": "장기 상승 추세 (현재 2.42% > EMA60)"
         },
         {
           "name": "신호 연속성",
@@ -3031,27 +3073,27 @@
           "description": "리스크 오프 (VIX 24.1) — 외화 강세 우위"
         }
       ],
-      "currentRate": 1081.79,
-      "targetBuy": 1056.91,
-      "targetSell": 1116.62,
-      "targetBuyEffective": 1075.41,
-      "targetSellEffective": 1097.08,
-      "stopLoss": 1066.86,
+      "currentRate": 1091.84,
+      "targetBuy": 1066.65,
+      "targetSell": 1127.11,
+      "targetBuyEffective": 1085.32,
+      "targetSellEffective": 1107.38,
+      "stopLoss": 1076.73,
       "spreadPct": 1.75,
-      "effectiveBuyRate": 1100.72,
-      "effectiveSellRate": 1062.86,
+      "effectiveBuyRate": 1110.95,
+      "effectiveSellRate": 1072.73,
       "breakEvenPct": 3.5,
-      "netProfitPct": 2.02,
-      "calculatedAt": "2026-03-20T00:45:40.989Z"
+      "netProfitPct": 2.03,
+      "calculatedAt": "2026-03-20T02:41:39.717Z"
     },
     "macro": {
       "vix": 24.059999465942383,
       "vixPrev": 29.489999771118164,
       "us10y": 4.281000137329102,
       "us10yPrev": 4.132999897003174,
-      "fetchedAt": "2026-03-20T00:45:33.225Z"
+      "fetchedAt": "2026-03-20T02:41:32.028Z"
     },
-    "updatedAt": "2026-03-20T00:45:40.989Z"
+    "updatedAt": "2026-03-20T02:41:39.717Z"
   },
   {
     "currency": "HKDKRW",
@@ -3482,49 +3524,56 @@
         "high": 191.48,
         "low": 187.69,
         "close": 189.59
+      },
+      {
+        "date": "20260320",
+        "open": 189.59,
+        "high": 193.36,
+        "low": 189.53,
+        "close": 191.45
       }
     ],
     "signal": {
       "currency": "HKDKRW",
       "signal": "BUY",
       "strength": "MODERATE",
-      "score": 41,
+      "score": 32,
       "indicators": [
         {
           "name": "RSI(14)",
-          "value": 55.501779999000455,
-          "signal": "NEUTRAL",
-          "description": "중립 (55.5)"
+          "value": 60.0632612328982,
+          "signal": "SELL",
+          "description": "약한 과매수 (60.1)"
         },
         {
           "name": "EMA(5/20)",
-          "value": 1.7149101164027627,
+          "value": 1.9414116459499269,
           "signal": "BUY",
-          "description": "단기 > 장기 (189.8 > 188.1)"
+          "description": "단기 > 장기 (190.4 > 188.4)"
         },
         {
           "name": "MACD(12/26/9)",
-          "value": 0.3806181698805263,
+          "value": 0.40525860603904007,
           "signal": "BUY",
-          "description": "히스토그램 양(+0.38)"
+          "description": "히스토그램 양(+0.41)"
         },
         {
           "name": "Bollinger(20/2)",
-          "value": 0.7251339196262117,
+          "value": 0.8557261120580217,
           "signal": "SELL",
-          "description": "상단 근접 (위치: 73%)"
+          "description": "상단 근접 (위치: 86%)"
         },
         {
           "name": "ADX(14)",
-          "value": 14.73,
+          "value": 15.1842,
           "signal": "NEUTRAL",
-          "description": "횡보 (ADX 14.7 < 20) — 추세 신호 신뢰도 낮음"
+          "description": "횡보 (ADX 15.2 < 20) — 추세 신호 신뢰도 낮음"
         },
         {
           "name": "EMA(60) 추세",
-          "value": 1.3234675721255322,
+          "value": 2.239829995513982,
           "signal": "BUY",
-          "description": "장기 상승 추세 (현재 1.32% > EMA60)"
+          "description": "장기 상승 추세 (현재 2.24% > EMA60)"
         },
         {
           "name": "신호 연속성",
@@ -3539,26 +3588,26 @@
           "description": "리스크 오프 (VIX 24.1) — 외화 강세 우위"
         }
       ],
-      "currentRate": 189.59,
-      "targetBuy": 185.54,
-      "targetSell": 195.26,
-      "targetBuyEffective": 189.25,
-      "targetSellEffective": 191.36,
-      "stopLoss": 187.16,
+      "currentRate": 191.45,
+      "targetBuy": 187.32,
+      "targetSell": 197.24,
+      "targetBuyEffective": 191.06,
+      "targetSellEffective": 193.29,
+      "stopLoss": 188.97,
       "spreadPct": 2,
-      "effectiveBuyRate": 193.38,
-      "effectiveSellRate": 185.8,
+      "effectiveBuyRate": 195.28,
+      "effectiveSellRate": 187.62,
       "breakEvenPct": 4,
-      "netProfitPct": 1.11,
-      "calculatedAt": "2026-03-20T00:45:42.271Z"
+      "netProfitPct": 1.17,
+      "calculatedAt": "2026-03-20T02:41:41.010Z"
     },
     "macro": {
       "vix": 24.059999465942383,
       "vixPrev": 29.489999771118164,
       "us10y": 4.281000137329102,
       "us10yPrev": 4.132999897003174,
-      "fetchedAt": "2026-03-20T00:45:33.225Z"
+      "fetchedAt": "2026-03-20T02:41:32.028Z"
     },
-    "updatedAt": "2026-03-20T00:45:42.271Z"
+    "updatedAt": "2026-03-20T02:41:41.010Z"
   }
 ]
