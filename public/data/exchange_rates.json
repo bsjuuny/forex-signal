@@ -494,11 +494,7 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
           "value": 30.18000030517578,
-=======
-          "value": 30.15999984741211,
->>>>>>> Stashed changes
           "signal": "BUY",
           "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
         },
@@ -526,7 +522,6 @@
       "effectiveSellRate": 1468.74,
       "breakEvenPct": 3.5,
       "netProfitPct": 0.83,
-<<<<<<< Updated upstream
       "calculatedAt": "2026-03-23T10:03:21.177Z"
     },
     "macro": {
@@ -537,18 +532,6 @@
       "fetchedAt": "2026-03-23T10:03:20.141Z"
     },
     "updatedAt": "2026-03-23T10:03:21.177Z"
-=======
-      "calculatedAt": "2026-03-23T10:03:38.089Z"
-    },
-    "macro": {
-      "vix": 30.15999984741211,
-      "vixPrev": 24.93000030517578,
-      "us10y": 4.390999794006348,
-      "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T10:03:37.031Z"
-    },
-    "updatedAt": "2026-03-23T10:03:38.089Z"
->>>>>>> Stashed changes
   },
   {
     "currency": "EURKRW",
@@ -1045,11 +1028,7 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
           "value": 30.18000030517578,
-=======
-          "value": 30.15999984741211,
->>>>>>> Stashed changes
           "signal": "BUY",
           "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
         },
@@ -1071,7 +1050,6 @@
       "effectiveSellRate": 1698.23,
       "breakEvenPct": 3.5,
       "netProfitPct": 2.13,
-<<<<<<< Updated upstream
       "calculatedAt": "2026-03-23T10:03:22.207Z"
     },
     "macro": {
@@ -1082,18 +1060,6 @@
       "fetchedAt": "2026-03-23T10:03:20.141Z"
     },
     "updatedAt": "2026-03-23T10:03:22.207Z"
-=======
-      "calculatedAt": "2026-03-23T10:03:39.133Z"
-    },
-    "macro": {
-      "vix": 30.15999984741211,
-      "vixPrev": 24.93000030517578,
-      "us10y": 4.390999794006348,
-      "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T10:03:37.031Z"
-    },
-    "updatedAt": "2026-03-23T10:03:39.133Z"
->>>>>>> Stashed changes
   },
   {
     "currency": "JPYKRW",
@@ -1590,11 +1556,7 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
           "value": 30.18000030517578,
-=======
-          "value": 30.15999984741211,
->>>>>>> Stashed changes
           "signal": "BUY",
           "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
         },
@@ -1616,7 +1578,6 @@
       "effectiveSellRate": 923.01,
       "breakEvenPct": 3.5,
       "netProfitPct": 2.52,
-<<<<<<< Updated upstream
       "calculatedAt": "2026-03-23T10:03:23.225Z"
     },
     "macro": {
@@ -1627,18 +1588,6 @@
       "fetchedAt": "2026-03-23T10:03:20.141Z"
     },
     "updatedAt": "2026-03-23T10:03:23.225Z"
-=======
-      "calculatedAt": "2026-03-23T10:03:40.187Z"
-    },
-    "macro": {
-      "vix": 30.15999984741211,
-      "vixPrev": 24.93000030517578,
-      "us10y": 4.390999794006348,
-      "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T10:03:37.031Z"
-    },
-    "updatedAt": "2026-03-23T10:03:40.187Z"
->>>>>>> Stashed changes
   },
   {
     "currency": "CNYKRW",
@@ -2135,11 +2084,7 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
           "value": 30.18000030517578,
-=======
-          "value": 30.15999984741211,
->>>>>>> Stashed changes
           "signal": "BUY",
           "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
         },
@@ -2161,7 +2106,6 @@
       "effectiveSellRate": 212.79,
       "breakEvenPct": 4,
       "netProfitPct": -1.39,
-<<<<<<< Updated upstream
       "calculatedAt": "2026-03-23T10:03:24.249Z"
     },
     "macro": {
@@ -2172,18 +2116,6 @@
       "fetchedAt": "2026-03-23T10:03:20.141Z"
     },
     "updatedAt": "2026-03-23T10:03:24.249Z"
-=======
-      "calculatedAt": "2026-03-23T10:03:41.212Z"
-    },
-    "macro": {
-      "vix": 30.15999984741211,
-      "vixPrev": 24.93000030517578,
-      "us10y": 4.390999794006348,
-      "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T10:03:37.031Z"
-    },
-    "updatedAt": "2026-03-23T10:03:41.212Z"
->>>>>>> Stashed changes
   },
   {
     "currency": "GBPKRW",
@@ -2680,11 +2612,7 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
           "value": 30.18000030517578,
-=======
-          "value": 30.15999984741211,
->>>>>>> Stashed changes
           "signal": "BUY",
           "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
         },
@@ -2706,7 +2634,6 @@
       "effectiveSellRate": 1958.2,
       "breakEvenPct": 3.5,
       "netProfitPct": 2.43,
-<<<<<<< Updated upstream
       "calculatedAt": "2026-03-23T10:03:25.270Z"
     },
     "macro": {
@@ -2717,18 +2644,6 @@
       "fetchedAt": "2026-03-23T10:03:20.141Z"
     },
     "updatedAt": "2026-03-23T10:03:25.270Z"
-=======
-      "calculatedAt": "2026-03-23T10:03:42.248Z"
-    },
-    "macro": {
-      "vix": 30.15999984741211,
-      "vixPrev": 24.93000030517578,
-      "us10y": 4.390999794006348,
-      "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T10:03:37.031Z"
-    },
-    "updatedAt": "2026-03-23T10:03:42.248Z"
->>>>>>> Stashed changes
   },
   {
     "currency": "CADKRW",
@@ -3225,11 +3140,7 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
           "value": 30.18000030517578,
-=======
-          "value": 30.15999984741211,
->>>>>>> Stashed changes
           "signal": "BUY",
           "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
         },
@@ -3251,7 +3162,6 @@
       "effectiveSellRate": 1070.32,
       "breakEvenPct": 3.5,
       "netProfitPct": 1.25,
-<<<<<<< Updated upstream
       "calculatedAt": "2026-03-23T10:03:26.294Z"
     },
     "macro": {
@@ -3262,18 +3172,6 @@
       "fetchedAt": "2026-03-23T10:03:20.141Z"
     },
     "updatedAt": "2026-03-23T10:03:26.294Z"
-=======
-      "calculatedAt": "2026-03-23T10:03:43.279Z"
-    },
-    "macro": {
-      "vix": 30.15999984741211,
-      "vixPrev": 24.93000030517578,
-      "us10y": 4.390999794006348,
-      "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T10:03:37.031Z"
-    },
-    "updatedAt": "2026-03-23T10:03:43.279Z"
->>>>>>> Stashed changes
   },
   {
     "currency": "HKDKRW",
@@ -3770,11 +3668,7 @@
         },
         {
           "name": "VIX 공포지수",
-<<<<<<< Updated upstream
           "value": 30.18000030517578,
-=======
-          "value": 30.15999984741211,
->>>>>>> Stashed changes
           "signal": "BUY",
           "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
         },
@@ -3796,7 +3690,6 @@
       "effectiveSellRate": 187.02,
       "breakEvenPct": 4,
       "netProfitPct": 0.33,
-<<<<<<< Updated upstream
       "calculatedAt": "2026-03-23T10:03:27.317Z"
     },
     "macro": {
@@ -3807,17 +3700,5 @@
       "fetchedAt": "2026-03-23T10:03:20.141Z"
     },
     "updatedAt": "2026-03-23T10:03:27.317Z"
-=======
-      "calculatedAt": "2026-03-23T10:03:44.316Z"
-    },
-    "macro": {
-      "vix": 30.15999984741211,
-      "vixPrev": 24.93000030517578,
-      "us10y": 4.390999794006348,
-      "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T10:03:37.031Z"
-    },
-    "updatedAt": "2026-03-23T10:03:44.316Z"
->>>>>>> Stashed changes
   }
 ]

@@ -1,0 +1,5 @@
+# exchange_rates.json: 항상 최신 버전(ours) 우선 — 충돌 방지
+public/data/exchange_rates.json merge=ours
+
+# JSON 파일 LF 유지 (CRLF 변환 방지)
+*.json text eol=lf
