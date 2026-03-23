@@ -522,16 +522,26 @@
       "effectiveSellRate": 1468.74,
       "breakEvenPct": 3.5,
       "netProfitPct": 0.83,
+<<<<<<< Updated upstream
       "calculatedAt": "2026-03-23T10:14:01.764Z"
+=======
+      "calculatedAt": "2026-03-23T10:14:13.462Z"
+>>>>>>> Stashed changes
     },
     "macro": {
       "vix": 30.299999237060547,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
+<<<<<<< Updated upstream
       "fetchedAt": "2026-03-23T10:14:00.679Z"
     },
     "updatedAt": "2026-03-23T10:14:01.764Z"
+=======
+      "fetchedAt": "2026-03-23T10:14:12.372Z"
+    },
+    "updatedAt": "2026-03-23T10:14:13.462Z"
+>>>>>>> Stashed changes
   },
   {
     "currency": "EURKRW",
@@ -1050,16 +1060,26 @@
       "effectiveSellRate": 1698.23,
       "breakEvenPct": 3.5,
       "netProfitPct": 2.13,
+<<<<<<< Updated upstream
       "calculatedAt": "2026-03-23T10:14:02.840Z"
+=======
+      "calculatedAt": "2026-03-23T10:14:14.514Z"
+>>>>>>> Stashed changes
     },
     "macro": {
       "vix": 30.299999237060547,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
+<<<<<<< Updated upstream
       "fetchedAt": "2026-03-23T10:14:00.679Z"
     },
     "updatedAt": "2026-03-23T10:14:02.840Z"
+=======
+      "fetchedAt": "2026-03-23T10:14:12.372Z"
+    },
+    "updatedAt": "2026-03-23T10:14:14.514Z"
+>>>>>>> Stashed changes
   },
   {
     "currency": "JPYKRW",
@@ -1578,16 +1598,26 @@
       "effectiveSellRate": 923.01,
       "breakEvenPct": 3.5,
       "netProfitPct": 2.52,
+<<<<<<< Updated upstream
       "calculatedAt": "2026-03-23T10:14:03.883Z"
+=======
+      "calculatedAt": "2026-03-23T10:14:15.584Z"
+>>>>>>> Stashed changes
     },
     "macro": {
       "vix": 30.299999237060547,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
+<<<<<<< Updated upstream
       "fetchedAt": "2026-03-23T10:14:00.679Z"
     },
     "updatedAt": "2026-03-23T10:14:03.883Z"
+=======
+      "fetchedAt": "2026-03-23T10:14:12.372Z"
+    },
+    "updatedAt": "2026-03-23T10:14:15.584Z"
+>>>>>>> Stashed changes
   },
   {
     "currency": "CNYKRW",
@@ -2106,16 +2136,26 @@
       "effectiveSellRate": 212.79,
       "breakEvenPct": 4,
       "netProfitPct": -1.39,
+<<<<<<< Updated upstream
       "calculatedAt": "2026-03-23T10:14:04.918Z"
+=======
+      "calculatedAt": "2026-03-23T10:14:16.605Z"
+>>>>>>> Stashed changes
     },
     "macro": {
       "vix": 30.299999237060547,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
+<<<<<<< Updated upstream
       "fetchedAt": "2026-03-23T10:14:00.679Z"
     },
     "updatedAt": "2026-03-23T10:14:04.918Z"
+=======
+      "fetchedAt": "2026-03-23T10:14:12.372Z"
+    },
+    "updatedAt": "2026-03-23T10:14:16.605Z"
+>>>>>>> Stashed changes
   },
   {
     "currency": "GBPKRW",
@@ -2634,16 +2674,26 @@
       "effectiveSellRate": 1958.2,
       "breakEvenPct": 3.5,
       "netProfitPct": 2.43,
+<<<<<<< Updated upstream
       "calculatedAt": "2026-03-23T10:14:05.947Z"
+=======
+      "calculatedAt": "2026-03-23T10:14:17.630Z"
+>>>>>>> Stashed changes
     },
     "macro": {
       "vix": 30.299999237060547,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
+<<<<<<< Updated upstream
       "fetchedAt": "2026-03-23T10:14:00.679Z"
     },
     "updatedAt": "2026-03-23T10:14:05.947Z"
+=======
+      "fetchedAt": "2026-03-23T10:14:12.372Z"
+    },
+    "updatedAt": "2026-03-23T10:14:17.630Z"
+>>>>>>> Stashed changes
   },
   {
     "currency": "CADKRW",
@@ -3162,16 +3212,26 @@
       "effectiveSellRate": 1070.32,
       "breakEvenPct": 3.5,
       "netProfitPct": 1.25,
+<<<<<<< Updated upstream
       "calculatedAt": "2026-03-23T10:14:06.982Z"
+=======
+      "calculatedAt": "2026-03-23T10:14:18.659Z"
+>>>>>>> Stashed changes
     },
     "macro": {
       "vix": 30.299999237060547,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
+<<<<<<< Updated upstream
       "fetchedAt": "2026-03-23T10:14:00.679Z"
     },
     "updatedAt": "2026-03-23T10:14:06.982Z"
+=======
+      "fetchedAt": "2026-03-23T10:14:12.372Z"
+    },
+    "updatedAt": "2026-03-23T10:14:18.659Z"
+>>>>>>> Stashed changes
   },
   {
     "currency": "HKDKRW",
@@ -3690,15 +3750,25 @@
       "effectiveSellRate": 187.02,
       "breakEvenPct": 4,
       "netProfitPct": 0.33,
+<<<<<<< Updated upstream
       "calculatedAt": "2026-03-23T10:14:08.050Z"
+=======
+      "calculatedAt": "2026-03-23T10:14:19.697Z"
+>>>>>>> Stashed changes
     },
     "macro": {
       "vix": 30.299999237060547,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
+<<<<<<< Updated upstream
       "fetchedAt": "2026-03-23T10:14:00.679Z"
     },
     "updatedAt": "2026-03-23T10:14:08.050Z"
+=======
+      "fetchedAt": "2026-03-23T10:14:12.372Z"
+    },
+    "updatedAt": "2026-03-23T10:14:19.697Z"
+>>>>>>> Stashed changes
   }
 ]
