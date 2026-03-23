@@ -42,3 +42,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .ts-out/
+
+# 수집 데이터 — git 충돌 방지를 위해 추적하지 않음 (deploy 시 생성)
+/public/data/exchange_rates.json
+/public/data/base_rates.json
