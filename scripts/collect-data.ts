@@ -192,6 +192,11 @@ async function main() {
     else merged.push(r);
   }
 
+  if (merged.length === 0) {
+    console.warn('[collect-data] 경고: 수집 결과가 없습니다. 기존 파일을 보존합니다.');
+    return;
+  }
+
   fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(merged, null, 2));
 
