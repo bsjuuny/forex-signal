@@ -447,8 +447,8 @@
     "signal": {
       "currency": "USDKRW",
       "signal": "BUY",
-      "strength": "STRONG",
-      "score": 66,
+      "strength": "MODERATE",
+      "score": 56,
       "indicators": [
         {
           "name": "RSI(14)",
@@ -494,9 +494,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 30.200000762939453,
+          "value": 29.809999465942383,
           "signal": "BUY",
-          "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
+          "description": "리스크 오프 (VIX 29.8) — 외화 강세 우위"
         },
         {
           "name": "US10Y 국채금리",
@@ -522,16 +522,16 @@
       "effectiveSellRate": 1468.74,
       "breakEvenPct": 3.5,
       "netProfitPct": 0.83,
-      "calculatedAt": "2026-03-23T08:45:26.703Z"
+      "calculatedAt": "2026-03-23T08:56:48.050Z"
     },
     "macro": {
-      "vix": 30.200000762939453,
+      "vix": 29.809999465942383,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T08:45:25.604Z"
+      "fetchedAt": "2026-03-23T08:56:46.992Z"
     },
-    "updatedAt": "2026-03-23T08:45:26.703Z"
+    "updatedAt": "2026-03-23T08:56:48.050Z"
   },
   {
     "currency": "EURKRW",
@@ -982,7 +982,7 @@
       "currency": "EURKRW",
       "signal": "BUY",
       "strength": "MODERATE",
-      "score": 51,
+      "score": 41,
       "indicators": [
         {
           "name": "RSI(14)",
@@ -1028,9 +1028,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 30.200000762939453,
+          "value": 29.809999465942383,
           "signal": "BUY",
-          "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
+          "description": "리스크 오프 (VIX 29.8) — 외화 강세 우위"
         },
         {
           "name": "주말 갭",
@@ -1050,16 +1050,16 @@
       "effectiveSellRate": 1698.23,
       "breakEvenPct": 3.5,
       "netProfitPct": 2.13,
-      "calculatedAt": "2026-03-23T08:45:27.804Z"
+      "calculatedAt": "2026-03-23T08:56:49.109Z"
     },
     "macro": {
-      "vix": 30.200000762939453,
+      "vix": 29.809999465942383,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T08:45:25.604Z"
+      "fetchedAt": "2026-03-23T08:56:46.992Z"
     },
-    "updatedAt": "2026-03-23T08:45:27.804Z"
+    "updatedAt": "2026-03-23T08:56:49.109Z"
   },
   {
     "currency": "JPYKRW",
@@ -1510,7 +1510,7 @@
       "currency": "JPYKRW",
       "signal": "BUY",
       "strength": "MODERATE",
-      "score": 51,
+      "score": 41,
       "indicators": [
         {
           "name": "RSI(14)",
@@ -1556,9 +1556,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 30.200000762939453,
+          "value": 29.809999465942383,
           "signal": "BUY",
-          "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
+          "description": "리스크 오프 (VIX 29.8) — 외화 강세 우위"
         },
         {
           "name": "주말 갭",
@@ -1578,16 +1578,16 @@
       "effectiveSellRate": 923.01,
       "breakEvenPct": 3.5,
       "netProfitPct": 2.52,
-      "calculatedAt": "2026-03-23T08:45:28.917Z"
+      "calculatedAt": "2026-03-23T08:56:50.166Z"
     },
     "macro": {
-      "vix": 30.200000762939453,
+      "vix": 29.809999465942383,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T08:45:25.604Z"
+      "fetchedAt": "2026-03-23T08:56:46.992Z"
     },
-    "updatedAt": "2026-03-23T08:45:28.917Z"
+    "updatedAt": "2026-03-23T08:56:50.166Z"
   },
   {
     "currency": "CNYKRW",
@@ -2038,7 +2038,7 @@
       "currency": "CNYKRW",
       "signal": "BUY",
       "strength": "MODERATE",
-      "score": 40,
+      "score": 30,
       "indicators": [
         {
           "name": "RSI(14)",
@@ -2084,9 +2084,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 30.200000762939453,
+          "value": 29.809999465942383,
           "signal": "BUY",
-          "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
+          "description": "리스크 오프 (VIX 29.8) — 외화 강세 우위"
         },
         {
           "name": "주말 갭",
@@ -2106,16 +2106,16 @@
       "effectiveSellRate": 212.79,
       "breakEvenPct": 4,
       "netProfitPct": -1.39,
-      "calculatedAt": "2026-03-23T08:45:29.952Z"
+      "calculatedAt": "2026-03-23T08:56:51.220Z"
     },
     "macro": {
-      "vix": 30.200000762939453,
+      "vix": 29.809999465942383,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T08:45:25.604Z"
+      "fetchedAt": "2026-03-23T08:56:46.992Z"
     },
-    "updatedAt": "2026-03-23T08:45:29.952Z"
+    "updatedAt": "2026-03-23T08:56:51.220Z"
   },
   {
     "currency": "GBPKRW",
@@ -2566,7 +2566,7 @@
       "currency": "GBPKRW",
       "signal": "BUY",
       "strength": "MODERATE",
-      "score": 51,
+      "score": 41,
       "indicators": [
         {
           "name": "RSI(14)",
@@ -2612,9 +2612,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 30.200000762939453,
+          "value": 29.809999465942383,
           "signal": "BUY",
-          "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
+          "description": "리스크 오프 (VIX 29.8) — 외화 강세 우위"
         },
         {
           "name": "주말 갭",
@@ -2634,16 +2634,16 @@
       "effectiveSellRate": 1958.2,
       "breakEvenPct": 3.5,
       "netProfitPct": 2.43,
-      "calculatedAt": "2026-03-23T08:45:30.994Z"
+      "calculatedAt": "2026-03-23T08:56:52.274Z"
     },
     "macro": {
-      "vix": 30.200000762939453,
+      "vix": 29.809999465942383,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T08:45:25.604Z"
+      "fetchedAt": "2026-03-23T08:56:46.992Z"
     },
-    "updatedAt": "2026-03-23T08:45:30.994Z"
+    "updatedAt": "2026-03-23T08:56:52.274Z"
   },
   {
     "currency": "CADKRW",
@@ -3094,7 +3094,7 @@
       "currency": "CADKRW",
       "signal": "BUY",
       "strength": "MODERATE",
-      "score": 51,
+      "score": 41,
       "indicators": [
         {
           "name": "RSI(14)",
@@ -3140,9 +3140,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 30.200000762939453,
+          "value": 29.809999465942383,
           "signal": "BUY",
-          "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
+          "description": "리스크 오프 (VIX 29.8) — 외화 강세 우위"
         },
         {
           "name": "주말 갭",
@@ -3162,16 +3162,16 @@
       "effectiveSellRate": 1070.32,
       "breakEvenPct": 3.5,
       "netProfitPct": 1.25,
-      "calculatedAt": "2026-03-23T08:45:32.064Z"
+      "calculatedAt": "2026-03-23T08:56:53.316Z"
     },
     "macro": {
-      "vix": 30.200000762939453,
+      "vix": 29.809999465942383,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T08:45:25.604Z"
+      "fetchedAt": "2026-03-23T08:56:46.992Z"
     },
-    "updatedAt": "2026-03-23T08:45:32.064Z"
+    "updatedAt": "2026-03-23T08:56:53.316Z"
   },
   {
     "currency": "HKDKRW",
@@ -3622,7 +3622,7 @@
       "currency": "HKDKRW",
       "signal": "BUY",
       "strength": "MODERATE",
-      "score": 51,
+      "score": 41,
       "indicators": [
         {
           "name": "RSI(14)",
@@ -3668,9 +3668,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 30.200000762939453,
+          "value": 29.809999465942383,
           "signal": "BUY",
-          "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
+          "description": "리스크 오프 (VIX 29.8) — 외화 강세 우위"
         },
         {
           "name": "주말 갭",
@@ -3690,15 +3690,15 @@
       "effectiveSellRate": 187.02,
       "breakEvenPct": 4,
       "netProfitPct": 0.33,
-      "calculatedAt": "2026-03-23T08:45:33.135Z"
+      "calculatedAt": "2026-03-23T08:56:54.382Z"
     },
     "macro": {
-      "vix": 30.200000762939453,
+      "vix": 29.809999465942383,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T08:45:25.604Z"
+      "fetchedAt": "2026-03-23T08:56:46.992Z"
     },
-    "updatedAt": "2026-03-23T08:45:33.135Z"
+    "updatedAt": "2026-03-23T08:56:54.382Z"
   }
 ]
