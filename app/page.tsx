@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import ClientDashboard from './components/ClientDashboard';
 import WeekendGate from './components/WeekendGate';
+import DisclaimerModal from './components/DisclaimerModal';
 import { StoredRateData } from '@/lib/signals';
 
 async function getData(): Promise<StoredRateData[]> {
@@ -20,7 +21,14 @@ export default async function Home() {
 
   return (
     <WeekendGate>
+      <DisclaimerModal />
       <main className="min-h-screen bg-zinc-950 text-white">
+        {/* 면책 배너 */}
+        <div className="bg-amber-950/40 border-b border-amber-800/30 px-4 py-1.5 text-center">
+          <p className="text-[11px] text-amber-400/80">
+            본 서비스는 투자자문업 미등록 기술적 분석 정보 제공 서비스입니다. 투자 권유가 아니며 투자 손실의 책임은 본인에게 있습니다.
+          </p>
+        </div>
         {/* 헤더 */}
         <header className="border-b border-zinc-800/80 bg-zinc-950/90 backdrop-blur-md sticky top-0 z-10">
           <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
