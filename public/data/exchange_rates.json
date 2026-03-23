@@ -494,9 +494,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 30.350000381469727,
+          "value": 30.18000030517578,
           "signal": "BUY",
-          "description": "공포 구간 (VIX 30.4) — KRW 약세 압력"
+          "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
         },
         {
           "name": "US10Y 국채금리",
@@ -522,16 +522,16 @@
       "effectiveSellRate": 1468.74,
       "breakEvenPct": 3.5,
       "netProfitPct": 0.83,
-      "calculatedAt": "2026-03-23T08:25:40.280Z"
+      "calculatedAt": "2026-03-23T08:29:14.035Z"
     },
     "macro": {
-      "vix": 30.350000381469727,
+      "vix": 30.18000030517578,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T08:25:39.119Z"
+      "fetchedAt": "2026-03-23T08:29:12.941Z"
     },
-    "updatedAt": "2026-03-23T08:25:40.281Z"
+    "updatedAt": "2026-03-23T08:29:14.035Z"
   },
   {
     "currency": "EURKRW",
@@ -1028,9 +1028,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 30.350000381469727,
+          "value": 30.18000030517578,
           "signal": "BUY",
-          "description": "공포 구간 (VIX 30.4) — KRW 약세 압력"
+          "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
         },
         {
           "name": "주말 갭",
@@ -1050,16 +1050,16 @@
       "effectiveSellRate": 1698.23,
       "breakEvenPct": 3.5,
       "netProfitPct": 2.13,
-      "calculatedAt": "2026-03-23T08:25:41.346Z"
+      "calculatedAt": "2026-03-23T08:29:15.123Z"
     },
     "macro": {
-      "vix": 30.350000381469727,
+      "vix": 30.18000030517578,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T08:25:39.119Z"
+      "fetchedAt": "2026-03-23T08:29:12.941Z"
     },
-    "updatedAt": "2026-03-23T08:25:41.346Z"
+    "updatedAt": "2026-03-23T08:29:15.123Z"
   },
   {
     "currency": "JPYKRW",
@@ -1556,9 +1556,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 30.350000381469727,
+          "value": 30.18000030517578,
           "signal": "BUY",
-          "description": "공포 구간 (VIX 30.4) — KRW 약세 압력"
+          "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
         },
         {
           "name": "주말 갭",
@@ -1578,16 +1578,16 @@
       "effectiveSellRate": 923.01,
       "breakEvenPct": 3.5,
       "netProfitPct": 2.52,
-      "calculatedAt": "2026-03-23T08:25:42.425Z"
+      "calculatedAt": "2026-03-23T08:29:16.196Z"
     },
     "macro": {
-      "vix": 30.350000381469727,
+      "vix": 30.18000030517578,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T08:25:39.119Z"
+      "fetchedAt": "2026-03-23T08:29:12.941Z"
     },
-    "updatedAt": "2026-03-23T08:25:42.425Z"
+    "updatedAt": "2026-03-23T08:29:16.196Z"
   },
   {
     "currency": "CNYKRW",
@@ -2084,9 +2084,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 30.350000381469727,
+          "value": 30.18000030517578,
           "signal": "BUY",
-          "description": "공포 구간 (VIX 30.4) — KRW 약세 압력"
+          "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
         },
         {
           "name": "주말 갭",
@@ -2106,16 +2106,16 @@
       "effectiveSellRate": 212.79,
       "breakEvenPct": 4,
       "netProfitPct": -1.39,
-      "calculatedAt": "2026-03-23T08:25:43.492Z"
+      "calculatedAt": "2026-03-23T08:29:17.315Z"
     },
     "macro": {
-      "vix": 30.350000381469727,
+      "vix": 30.18000030517578,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T08:25:39.119Z"
+      "fetchedAt": "2026-03-23T08:29:12.941Z"
     },
-    "updatedAt": "2026-03-23T08:25:43.492Z"
+    "updatedAt": "2026-03-23T08:29:17.315Z"
   },
   {
     "currency": "GBPKRW",
@@ -2612,9 +2612,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 30.350000381469727,
+          "value": 30.18000030517578,
           "signal": "BUY",
-          "description": "공포 구간 (VIX 30.4) — KRW 약세 압력"
+          "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
         },
         {
           "name": "주말 갭",
@@ -2634,16 +2634,16 @@
       "effectiveSellRate": 1958.2,
       "breakEvenPct": 3.5,
       "netProfitPct": 2.43,
-      "calculatedAt": "2026-03-23T08:25:44.564Z"
+      "calculatedAt": "2026-03-23T08:29:18.400Z"
     },
     "macro": {
-      "vix": 30.350000381469727,
+      "vix": 30.18000030517578,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T08:25:39.119Z"
+      "fetchedAt": "2026-03-23T08:29:12.941Z"
     },
-    "updatedAt": "2026-03-23T08:25:44.564Z"
+    "updatedAt": "2026-03-23T08:29:18.400Z"
   },
   {
     "currency": "CADKRW",
@@ -3140,9 +3140,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 30.350000381469727,
+          "value": 30.18000030517578,
           "signal": "BUY",
-          "description": "공포 구간 (VIX 30.4) — KRW 약세 압력"
+          "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
         },
         {
           "name": "주말 갭",
@@ -3162,16 +3162,16 @@
       "effectiveSellRate": 1070.32,
       "breakEvenPct": 3.5,
       "netProfitPct": 1.25,
-      "calculatedAt": "2026-03-23T08:25:45.662Z"
+      "calculatedAt": "2026-03-23T08:29:19.485Z"
     },
     "macro": {
-      "vix": 30.350000381469727,
+      "vix": 30.18000030517578,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T08:25:39.119Z"
+      "fetchedAt": "2026-03-23T08:29:12.941Z"
     },
-    "updatedAt": "2026-03-23T08:25:45.662Z"
+    "updatedAt": "2026-03-23T08:29:19.485Z"
   },
   {
     "currency": "HKDKRW",
@@ -3668,9 +3668,9 @@
         },
         {
           "name": "VIX 공포지수",
-          "value": 30.350000381469727,
+          "value": 30.18000030517578,
           "signal": "BUY",
-          "description": "공포 구간 (VIX 30.4) — KRW 약세 압력"
+          "description": "공포 구간 (VIX 30.2) — KRW 약세 압력"
         },
         {
           "name": "주말 갭",
@@ -3690,15 +3690,15 @@
       "effectiveSellRate": 187.02,
       "breakEvenPct": 4,
       "netProfitPct": 0.33,
-      "calculatedAt": "2026-03-23T08:25:46.745Z"
+      "calculatedAt": "2026-03-23T08:29:20.552Z"
     },
     "macro": {
-      "vix": 30.350000381469727,
+      "vix": 30.18000030517578,
       "vixPrev": 24.93000030517578,
       "us10y": 4.390999794006348,
       "us10yPrev": 4.136000156402588,
-      "fetchedAt": "2026-03-23T08:25:39.119Z"
+      "fetchedAt": "2026-03-23T08:29:12.941Z"
     },
-    "updatedAt": "2026-03-23T08:25:46.745Z"
+    "updatedAt": "2026-03-23T08:29:20.553Z"
   }
 ]
