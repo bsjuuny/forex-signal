@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
   env: {
     NEXT_PUBLIC_IS_DEV: isProd ? '' : 'true',
     NEXT_PUBLIC_BUILD_TIME: new Date().toISOString(),
-    NEXT_PUBLIC_KOREAEXIM_API_KEY: process.env.KOREAEXIM_API_KEY ?? '',
+    NEXT_PUBLIC_BASE_PATH: isProd ? '/forex-signal' : '',
   },
 };
 

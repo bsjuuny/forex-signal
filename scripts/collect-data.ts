@@ -16,6 +16,104 @@ import { calculateSignal, StoredRateData } from '../lib/signals';
 import { fetchMacroData, MacroData } from '../lib/macro-api';
 
 const OUTPUT_PATH = path.join(process.cwd(), 'public', 'data', 'exchange_rates.json');
+const BASE_RATES_PATH = path.join(process.cwd(), 'public', 'data', 'base_rates.json');
+
+const CURRENCY_MAP: Record<string, string> = {
+  USDKRW: 'USD',
+  EURKRW: 'EUR',
+  JPYKRW: 'JPY(100)',
+  CNYKRW: 'CNH',
+  GBPKRW: 'GBP',
+  CADKRW: 'CAD',
+  HKDKRW: 'HKD',
+};
+
+const LIVE_CALC: Record<string, (r: Record<string, number>) => number> = {
+  USDKRW: r => r.KRW,
+  EURKRW: r => r.KRW / r.EUR,
+  JPYKRW: r => (r.KRW / r.JPY) * 100,
+  CNYKRW: r => r.KRW / r.CNY,
+  GBPKRW: r => r.KRW / r.GBP,
+  CADKRW: r => r.KRW / r.CAD,
+  HKDKRW: r => r.KRW / r.HKD,
+};
+
+function parseRateStr(s: string): number {
+  return parseFloat((s ?? '').replace(/,/g, '')) || 0;
+}
+
+function toDateStr(date: Date): string {
+  return date.toISOString().slice(0, 10).replace(/-/g, '');
+}
+
+async function collectBaseRates(): Promise<void> {
+  const apiKey = process.env.KOREAEXIM_API_KEY;
+  if (!apiKey) return;
+
+  const now = new Date(Date.now() + 9 * 60 * 60 * 1000);
+  const today = toDateStr(now);
+
+  try {
+    console.log('  [기준율] Koreaexim + exchangerate-api.com 동시 수집 중...');
+
+    const [eximRes, liveRes] = await Promise.all([
+      fetch(`https://oapi.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=${apiKey}&searchdate=${today}&data=AP01`),
+      fetch('https://api.exchangerate-api.com/v4/latest/USD'),
+    ]);
+
+    if (!eximRes.ok || !liveRes.ok) {
+      console.warn('  [기준율] API 호출 실패 — base_rates.json 생략');
+      return;
+    }
+
+    const eximData = await eximRes.json();
+    const liveData = await liveRes.json();
+    const liveRates = liveData.rates as Record<string, number>;
+
+    const eximRates: Record<string, number> = {};
+    if (Array.isArray(eximData)) {
+      for (const [code, curUnit] of Object.entries(CURRENCY_MAP)) {
+        const row = eximData.find((r: { cur_unit: string }) => r.cur_unit === curUnit);
+        if (row) {
+          const rate = parseRateStr(row.deal_bas_r);
+          if (rate > 0) eximRates[code] = rate;
+        }
+      }
+    }
+
+    if (Object.keys(eximRates).length === 0) {
+      console.warn('  [기준율] Koreaexim 데이터 없음 (주말/공휴일?) — base_rates.json 생략');
+      return;
+    }
+
+    const liveSnapshot: Record<string, number> = {};
+    for (const [code, calc] of Object.entries(LIVE_CALC)) {
+      const val = calc(liveRates);
+      if (isFinite(val) && val > 0) {
+        liveSnapshot[code] = Math.round(val * 100) / 100;
+      }
+    }
+
+    const offset: Record<string, number> = {};
+    for (const code of Object.keys(eximRates)) {
+      if (liveSnapshot[code]) {
+        offset[code] = Math.round((eximRates[code] - liveSnapshot[code]) * 100) / 100;
+      }
+    }
+
+    fs.writeFileSync(BASE_RATES_PATH, JSON.stringify({
+      eximRates,
+      liveSnapshot,
+      offset,
+      date: today,
+      fetchedAt: new Date().toISOString(),
+    }, null, 2));
+
+    console.log(`  [기준율] 저장 완료 → base_rates.json (offset 예: USDKRW ${offset.USDKRW ?? 'N/A'})`);
+  } catch (err) {
+    console.warn('  [기준율] 수집 오류 — 건너뜀:', err instanceof Error ? err.message : err);
+  }
+}
 
 function formatDate(date: Date): string {
   return date.toISOString().slice(0, 10).replace(/-/g, '');
@@ -29,6 +127,9 @@ async function main() {
   }
 
   console.log('[collect-data] 환율 데이터 수집 시작...');
+
+  // 기준율 수집 (Koreaexim + exchangerate-api.com offset)
+  await collectBaseRates();
 
   // 거시 지표 수집 (실패해도 계속 진행)
   console.log('  [매크로] VIX / 미국채 10Y 수집 중...');
