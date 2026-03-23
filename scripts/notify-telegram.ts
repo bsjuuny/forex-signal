@@ -13,6 +13,7 @@ import { StoredRateData } from '../lib/signals';
 import { fetchLiveRates, LiveRates } from '../lib/live-rates';
 
 const DATA_PATH = path.join(process.cwd(), 'public', 'data', 'exchange_rates.json');
+const BASE_RATES_PATH = path.join(process.cwd(), 'public', 'data', 'base_rates.json');
 
 const CURRENCY_INFO: Record<string, { flag: string; label: string }> = {
   USDKRW: { flag: '🇺🇸', label: 'USD/KRW' },
@@ -133,12 +134,22 @@ async function main() {
     process.exit(1);
   }
 
+  // base_rates.json의 eximRates 우선 사용 (Koreaexim 기준율)
   let liveRates: LiveRates = {};
   try {
-    liveRates = await fetchLiveRates();
-    console.log('[notify] 실시간 환율 조회 완료');
+    if (fs.existsSync(BASE_RATES_PATH)) {
+      const base = JSON.parse(fs.readFileSync(BASE_RATES_PATH, 'utf-8'));
+      if (base?.eximRates && Object.keys(base.eximRates).length > 0) {
+        liveRates = base.eximRates;
+        console.log('[notify] Koreaexim 기준율 사용');
+      }
+    }
+    if (Object.keys(liveRates).length === 0) {
+      liveRates = await fetchLiveRates();
+      console.log('[notify] 실시간 환율 조회 완료 (exchangerate-api.com)');
+    }
   } catch {
-    console.warn('[notify] 실시간 환율 조회 실패 — 시그널 기준 환율 사용');
+    console.warn('[notify] 환율 조회 실패 — 시그널 기준 환율 사용');
   }
 
   const message = buildMessage(data, liveRates);
