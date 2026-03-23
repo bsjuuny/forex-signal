@@ -24,6 +24,7 @@ export default function Calculator({ signal, liveRate, tts, ttb }: Props) {
 
   // 우대환율 계산기 상태
   const [prefPct, setPrefPct] = useState(50);
+  const [prefInput, setPrefInput] = useState('50');
   const [buyFx, setBuyFx] = useState(true); // true=외화살때, false=외화팔때
   const [prefAmount, setPrefAmount] = useState('');
 
@@ -51,6 +52,15 @@ export default function Calculator({ signal, liveRate, tts, ttb }: Props) {
   const prefConverted = buyFx
     ? prefNumAmount / prefUnitRate   // KRW → 외화
     : prefNumAmount * prefUnitRate;  // 외화 → KRW
+
+  // 목표가에 우대율 적용
+  const applyPref = (targetBase: number) =>
+    buyFx
+      ? targetBase + (targetBase * signal.spreadPct / 100) * (1 - prefPct / 100)
+      : targetBase - (targetBase * signal.spreadPct / 100) * (1 - prefPct / 100);
+  const prefCurrentRate = prefRate;
+  const prefTargetBuy  = applyPref(signal.targetBuy);
+  const prefTargetSell = applyPref(signal.targetSell);
 
   // 환율 계산
   const numAmount = parseFloat(amount) || 0;
@@ -149,16 +159,16 @@ export default function Calculator({ signal, liveRate, tts, ttb }: Props) {
               </button>
             </div>
 
-            {/* 우대율 선택 */}
+            {/* 우대율 선택 + 직접 입력 */}
             <div>
               <div className="text-xs text-zinc-500 mb-1.5">우대율</div>
               <div className="flex gap-1.5">
                 {PREFERENTIAL_OPTIONS.map(p => (
                   <button
                     key={p}
-                    onClick={() => setPrefPct(p)}
+                    onClick={() => { setPrefPct(p); setPrefInput(String(p)); }}
                     className={`flex-1 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
-                      prefPct === p
+                      prefPct === p && PREFERENTIAL_OPTIONS.includes(prefPct)
                         ? 'bg-amber-500/20 border border-amber-500/50 text-amber-400'
                         : 'bg-zinc-800 border border-zinc-700 text-zinc-500 hover:text-zinc-300'
                     }`}
@@ -166,10 +176,59 @@ export default function Calculator({ signal, liveRate, tts, ttb }: Props) {
                     {p === 0 ? '일반' : `${p}%`}
                   </button>
                 ))}
+                <div className="relative flex items-center shrink-0">
+                  <input
+                    type="number"
+                    min="0" max="100"
+                    value={prefInput}
+                    onChange={e => {
+                      setPrefInput(e.target.value);
+                      const v = Math.min(100, Math.max(0, parseFloat(e.target.value) || 0));
+                      setPrefPct(v);
+                    }}
+                    className="w-14 bg-zinc-800 border border-zinc-700 rounded-lg px-2 py-1.5 text-white font-mono text-xs text-center focus:outline-none focus:border-amber-500/50 transition-colors"
+                    placeholder="직접"
+                  />
+                  <span className="absolute right-2 text-zinc-500 text-[10px] pointer-events-none">%</span>
+                </div>
               </div>
             </div>
 
-            {/* 금액 입력 */}
+            {/* 환율 및 목표가 요약 */}
+            <div className="rounded-lg bg-zinc-800/50 border border-zinc-700/50 p-3 flex flex-col gap-1.5">
+              <div className="flex justify-between text-xs">
+                <span className="text-zinc-500">매매기준율</span>
+                <span className="font-mono text-zinc-400 tabular-nums">{baseRate.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}</span>
+              </div>
+              <div className="flex justify-between text-xs">
+                <span className="text-zinc-500">{buyFx ? '전신환 매도율 (일반)' : '전신환 매입율 (일반)'}</span>
+                <span className="font-mono text-zinc-400 tabular-nums">{(buyFx ? effectiveTts : effectiveTtb).toLocaleString('ko-KR', { maximumFractionDigits: 2 })}</span>
+              </div>
+              <div className="h-px bg-zinc-700/60 my-0.5" />
+              <div className="flex justify-between text-xs">
+                <span className="text-amber-400 font-semibold">현재가 ({prefPct === 0 ? '일반' : `${prefPct}% 우대`})</span>
+                <span className="font-mono font-bold text-amber-400 tabular-nums">{prefCurrentRate.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}</span>
+              </div>
+              <div className="h-px bg-zinc-700/60 my-0.5" />
+              <div className="flex justify-between text-xs">
+                <span className="text-zinc-400">목표 매수가 → 우대 적용</span>
+                <span className="font-mono text-zinc-300 tabular-nums">
+                  {signal.targetBuy.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
+                  <span className="text-zinc-600 mx-1">→</span>
+                  <span className="text-emerald-400">{prefTargetBuy.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}</span>
+                </span>
+              </div>
+              <div className="flex justify-between text-xs">
+                <span className="text-zinc-400">목표 매도가 → 우대 적용</span>
+                <span className="font-mono text-zinc-300 tabular-nums">
+                  {signal.targetSell.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
+                  <span className="text-zinc-600 mx-1">→</span>
+                  <span className="text-blue-400">{prefTargetSell.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}</span>
+                </span>
+              </div>
+            </div>
+
+            {/* 금액 계산 */}
             <div className="flex items-end gap-2">
               <div className="flex-1">
                 <div className="text-xs text-zinc-500 mb-1.5">
@@ -193,23 +252,6 @@ export default function Calculator({ signal, liveRate, tts, ttb }: Props) {
                     ? prefConverted.toLocaleString('ko-KR', { maximumFractionDigits: buyFx ? 4 : 0 })
                     : <span className="text-zinc-700">—</span>}
                 </div>
-              </div>
-            </div>
-
-            {/* 환율 요약 */}
-            <div className="rounded-lg bg-zinc-800/50 border border-zinc-700/50 p-3 flex flex-col gap-1.5">
-              <div className="flex justify-between text-xs">
-                <span className="text-zinc-500">매매기준율</span>
-                <span className="font-mono text-zinc-400 tabular-nums">{baseRate.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}</span>
-              </div>
-              <div className="flex justify-between text-xs">
-                <span className="text-zinc-500">{buyFx ? '전신환 매도율 (일반)' : '전신환 매입율 (일반)'}</span>
-                <span className="font-mono text-zinc-400 tabular-nums">{(buyFx ? effectiveTts : effectiveTtb).toLocaleString('ko-KR', { maximumFractionDigits: 2 })}</span>
-              </div>
-              <div className="h-px bg-zinc-700/60" />
-              <div className="flex justify-between text-xs">
-                <span className="text-amber-400 font-semibold">{prefPct === 0 ? '일반' : `${prefPct}% 우대`} 적용 환율</span>
-                <span className="font-mono font-bold text-amber-400 tabular-nums">{prefRate.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}</span>
               </div>
             </div>
           </div>
