@@ -20,6 +20,7 @@ const STRENGTH_LABEL = {
 
 export default function DetailPanel({ data, liveRate }: Props) {
   const { signal, rates } = data;
+  const latestCandle = rates[rates.length - 1];
   const colors = SIGNAL_COLORS[signal.signal];
   const displayRate = liveRate ?? signal.currentRate;
 
@@ -158,7 +159,7 @@ export default function DetailPanel({ data, liveRate }: Props) {
       </div>
 
       {/* 계산기 */}
-      <Calculator signal={signal} liveRate={liveRate} />
+      <Calculator signal={signal} liveRate={liveRate} tts={latestCandle?.high} ttb={latestCandle?.low} />
 
       {/* 금요일 주말 갭 경고 */}
       {isFriday && (
