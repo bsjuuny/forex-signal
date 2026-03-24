@@ -12,6 +12,7 @@ dotenv.config({ path: '.env.local' });
 import fs from 'fs';
 import path from 'path';
 import { getExchangeRateHistory, SUPPORTED_CURRENCIES } from '../lib/koreaexim-api';
+import { getExchangeRate as getKisRate } from '../lib/kis-api';
 import { calculateSignal, StoredRateData } from '../lib/signals';
 import { fetchMacroData, MacroData } from '../lib/macro-api';
 
@@ -143,6 +144,44 @@ async function collectBaseRates(): Promise<void> {
   }
 }
 
+async function collectKisSnapshot(): Promise<void> {
+  if (!process.env.KIS_APP_KEY || !process.env.KIS_APP_SECRET) {
+    console.warn('  [KIS] 키 없음 — 생략');
+    return;
+  }
+
+  console.log('  [KIS] 실시간 환율 스냅샷 수집 중...');
+  const snapshot: Record<string, number> = {};
+
+  for (const { code } of SUPPORTED_CURRENCIES) {
+    try {
+      const rate = await getKisRate(code);
+      if (rate > 0) snapshot[code] = rate;
+      await new Promise(r => setTimeout(r, 200));
+    } catch (e) {
+      console.warn(`  [KIS] ${code} 실패:`, e instanceof Error ? e.message : e);
+    }
+  }
+
+  if (Object.keys(snapshot).length === 0) {
+    console.warn('  [KIS] 스냅샷 수집 실패 — 생략');
+    return;
+  }
+
+  let existing: Record<string, unknown> = {};
+  if (fs.existsSync(BASE_RATES_PATH)) {
+    try { existing = JSON.parse(fs.readFileSync(BASE_RATES_PATH, 'utf-8')); } catch {}
+  }
+
+  fs.writeFileSync(BASE_RATES_PATH, JSON.stringify({
+    ...existing,
+    liveSnapshot: snapshot,
+    snapshotAt: new Date().toISOString(),
+  }, null, 2));
+
+  console.log(`  [KIS] 스냅샷 저장 완료 — USDKRW: ${snapshot.USDKRW ?? 'N/A'}`);
+}
+
 function formatDate(date: Date): string {
   return date.toISOString().slice(0, 10).replace(/-/g, '');
 }
@@ -156,7 +195,10 @@ async function main() {
 
   console.log('[collect-data] 환율 데이터 수집 시작...');
 
-  // 기준율 수집 (Koreaexim + exchangerate-api.com offset)
+  // KIS 실시간 스냅샷 수집 (매 실행마다)
+  await collectKisSnapshot();
+
+  // 기준율 수집 (Koreaexim, 11시 이후 하루 1회)
   await collectBaseRates();
 
   // 거시 지표 수집 (실패해도 계속 진행)
