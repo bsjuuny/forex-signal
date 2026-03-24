@@ -6,47 +6,65 @@
  *   KIS_APP_KEY      - 앱 키
  *   KIS_APP_SECRET   - 앱 시크릿
  *   KIS_IS_REAL      - "true" 이면 실전투자, 없으면 모의투자
+ *
+ * 토큰 캐시: c:/github/.kis_token_cache.json (today-signal과 공유)
  */
 
-function getBaseUrl() {
-  return process.env.KIS_IS_REAL === 'true'
-    ? 'https://openapi.koreainvestment.com:9443'
-    : 'https://openapivts.koreainvestment.com:29443';
+import fs from 'fs';
+import path from 'path';
+
+const BASE_URL = 'https://openapi.koreainvestment.com:9443';
+
+// today-signal과 공유하는 토큰 캐시 파일
+const TOKEN_CACHE_PATH = path.join('c:/github', '.kis_token_cache.json');
+
+interface TokenCache { value: string; expiresAt: number; }
+
+let _token: TokenCache | null = null;
+let _tokenPromise: Promise<string> | null = null;
+
+function loadTokenCache(): TokenCache | null {
+  try {
+    if (!fs.existsSync(TOKEN_CACHE_PATH)) return null;
+    const cache = JSON.parse(fs.readFileSync(TOKEN_CACHE_PATH, 'utf-8')) as TokenCache;
+    if (Date.now() < cache.expiresAt) return cache;
+  } catch {}
+  return null;
 }
 
-let cachedToken: { token: string; expiresAt: number } | null = null;
-let tokenFetchPromise: Promise<string> | null = null;
+function saveTokenCache(cache: TokenCache) {
+  try { fs.writeFileSync(TOKEN_CACHE_PATH, JSON.stringify(cache)); } catch {}
+}
 
-/** OAuth2 접근토큰 발급 */
-export async function getAccessToken(): Promise<string> {
-  if (cachedToken && Date.now() < cachedToken.expiresAt) {
-    return cachedToken.token;
+async function issueToken(retry = true): Promise<string> {
+  const res = await fetch(`${BASE_URL}/oauth2/tokenP`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ grant_type: 'client_credentials', appkey: process.env.KIS_APP_KEY, appsecret: process.env.KIS_APP_SECRET }),
+  });
+  const body = await res.text().catch(() => '');
+  if (!res.ok) {
+    if (retry && body.includes('EGW00133')) {
+      console.warn('[KIS] 토큰 발급 1분 제한 — 65초 대기 후 재시도...');
+      await new Promise(r => setTimeout(r, 65000));
+      return issueToken(false);
+    }
+    throw new Error(`KIS 토큰 발급 실패: ${res.status}\n${body.slice(0, 200)}`);
   }
+  const data = JSON.parse(body);
+  _token = { value: data.access_token, expiresAt: Date.now() + (data.expires_in - 60) * 1000 };
+  saveTokenCache(_token);
+  return _token.value;
+}
 
-  if (tokenFetchPromise) return tokenFetchPromise;
-
-  tokenFetchPromise = (async () => {
-    const res = await fetch(`${getBaseUrl()}/oauth2/tokenP`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        grant_type: 'client_credentials',
-        appkey: process.env.KIS_APP_KEY,
-        appsecret: process.env.KIS_APP_SECRET,
-      }),
-    });
-
-    if (!res.ok) throw new Error(`KIS 토큰 발급 실패: ${res.status}`);
-    const data = await res.json();
-
-    cachedToken = {
-      token: data.access_token,
-      expiresAt: Date.now() + (data.expires_in - 60) * 1000,
-    };
-    return cachedToken.token;
-  })().finally(() => { tokenFetchPromise = null; });
-
-  return tokenFetchPromise;
+/** OAuth2 접근토큰 발급 (메모리 → 파일 → 신규 발급 순서로 캐시 확인) */
+export async function getAccessToken(): Promise<string> {
+  if (_token && Date.now() < _token.expiresAt) return _token.value;
+  const cached = loadTokenCache();
+  if (cached) { _token = cached; return _token.value; }
+  if (_tokenPromise) return _tokenPromise;
+  _tokenPromise = issueToken().finally(() => { _tokenPromise = null; });
+  return _tokenPromise;
 }
 
 /** KIS API 공통 헤더 */
@@ -62,7 +80,7 @@ async function getHeaders(trId: string) {
   };
 }
 
-// KIS 통화코드 매핑 (3자리 → KIS FID_INPUT_ISCD)
+// KIS 통화코드 매핑
 const KIS_CURRENCY_CODE: Record<string, string> = {
   USDKRW: 'USD',
   EURKRW: 'EUR',
@@ -73,7 +91,7 @@ const KIS_CURRENCY_CODE: Record<string, string> = {
   HKDKRW: 'HKD',
 };
 
-// JPY는 KIS가 1엔 기준으로 반환 → 100엔 기준으로 변환 필요
+// JPY는 KIS가 1엔 기준 반환 → 100엔 기준으로 변환
 const JPY_MULTIPLIER: Record<string, number> = {
   JPYKRW: 100,
 };
@@ -110,7 +128,7 @@ export async function getExchangeRateHistory(
   });
 
   const res = await fetch(
-    `${getBaseUrl()}/uapi/overseas-price/v1/quotations/inquire-daily-chartprice?${params}`,
+    `${BASE_URL}/uapi/overseas-price/v1/quotations/inquire-daily-chartprice?${params}`,
     { headers }
   );
 
@@ -140,6 +158,5 @@ export async function getExchangeRateHistory(
 export async function getExchangeRate(currencyCode: string): Promise<number> {
   const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
   const candles = await getExchangeRateHistory(currencyCode, today, today);
-  const close = candles[candles.length - 1]?.close ?? 0;
-  return close;
+  return candles[candles.length - 1]?.close ?? 0;
 }
