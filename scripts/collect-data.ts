@@ -53,8 +53,19 @@ async function collectBaseRates(): Promise<void> {
   const now = new Date(Date.now() + 9 * 60 * 60 * 1000);
   const today = toDateStr(now);
 
+  // 오늘 이미 수집한 경우 건너뜀 (기준율은 하루 1회만 발행됨)
+  if (fs.existsSync(BASE_RATES_PATH)) {
+    try {
+      const existing = JSON.parse(fs.readFileSync(BASE_RATES_PATH, 'utf-8'));
+      if (existing.date === today) {
+        console.log('  [기준율] 오늘 이미 수집됨 — 생략');
+        return;
+      }
+    } catch {}
+  }
+
   try {
-    console.log('  [기준율] Koreaexim + exchangerate-api.com 동시 수집 중...');
+    console.log('  [기준율] Koreaexim + open.er-api 동시 수집 중...');
 
     const [eximRes, liveRes] = await Promise.all([
       fetch(`https://oapi.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=${apiKey}&searchdate=${today}&data=AP01`),
@@ -74,14 +85,20 @@ async function collectBaseRates(): Promise<void> {
     }
     const liveRates = liveData.rates as Record<string, number>;
 
+    if (!Array.isArray(eximData)) {
+      console.warn('  [기준율] Koreaexim 응답이 배열이 아님:', JSON.stringify(eximData).slice(0, 200));
+      return;
+    }
+
     const eximRates: Record<string, number> = {};
-    if (Array.isArray(eximData)) {
-      for (const [code, curUnit] of Object.entries(CURRENCY_MAP)) {
-        const row = eximData.find((r: { cur_unit: string }) => r.cur_unit === curUnit);
-        if (row) {
-          const rate = parseRateStr(row.deal_bas_r);
-          if (rate > 0) eximRates[code] = rate;
-        }
+    const validRows = eximData.filter((r: { result: number }) => r.result === 1);
+    console.log(`  [기준율] Koreaexim 응답 ${eximData.length}행, result=1: ${validRows.length}행`);
+
+    for (const [code, curUnit] of Object.entries(CURRENCY_MAP)) {
+      const row = validRows.find((r: { cur_unit: string }) => r.cur_unit === curUnit);
+      if (row) {
+        const rate = parseRateStr(row.deal_bas_r);
+        if (rate > 0) eximRates[code] = rate;
       }
     }
 
