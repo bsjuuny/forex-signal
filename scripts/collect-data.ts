@@ -52,6 +52,13 @@ async function collectBaseRates(): Promise<void> {
 
   const now = new Date(Date.now() + 9 * 60 * 60 * 1000);
   const today = toDateStr(now);
+  const kstHour = now.getUTCHours(); // now는 이미 +9h 적용된 값
+
+  // 오전 11시 이전에는 수출입은행 기준율 미발표 — 건너뜀
+  if (kstHour < 11) {
+    console.log(`  [기준율] KST ${kstHour}시 — 11시 이후 발표 예정, 생략`);
+    return;
+  }
 
   // 오늘 이미 수집한 경우 건너뜀 (기준율은 하루 1회만 발행됨)
   if (fs.existsSync(BASE_RATES_PATH)) {
