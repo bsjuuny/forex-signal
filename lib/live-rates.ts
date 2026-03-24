@@ -18,11 +18,12 @@ const CALC: Record<string, (r: Record<string, number>) => number> = {
 export type LiveRates = Record<string, number>;
 
 export async function fetchLiveRates(): Promise<LiveRates> {
-  const res = await fetch('https://api.exchangerate-api.com/v4/latest/USD', {
+  const res = await fetch('https://open.er-api.com/v6/latest/USD', {
     cache: 'no-store',
   });
-  if (!res.ok) throw new Error(`ExchangeRate-API error ${res.status}`);
+  if (!res.ok) throw new Error(`open.er-api error ${res.status}`);
   const data = await res.json();
+  if (data.result !== 'success') throw new Error('open.er-api: not success');
   const r = data.rates as Record<string, number>;
 
   const result: LiveRates = {};

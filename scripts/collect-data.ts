@@ -58,7 +58,7 @@ async function collectBaseRates(): Promise<void> {
 
     const [eximRes, liveRes] = await Promise.all([
       fetch(`https://oapi.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=${apiKey}&searchdate=${today}&data=AP01`),
-      fetch('https://api.exchangerate-api.com/v4/latest/USD'),
+      fetch('https://open.er-api.com/v6/latest/USD'),
     ]);
 
     if (!eximRes.ok || !liveRes.ok) {
@@ -68,6 +68,10 @@ async function collectBaseRates(): Promise<void> {
 
     const eximData = await eximRes.json();
     const liveData = await liveRes.json();
+    if (liveData.result !== 'success') {
+      console.warn('  [기준율] open.er-api 응답 오류 — base_rates.json 생략');
+      return;
+    }
     const liveRates = liveData.rates as Record<string, number>;
 
     const eximRates: Record<string, number> = {};
