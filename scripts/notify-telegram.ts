@@ -82,43 +82,21 @@ function buildMessage(data: StoredRateData[], liveRates: LiveRates): string {
   return lines.join('\n');
 }
 
-async function sendTelegram(text: string, attempt = 1): Promise<void> {
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
-
-  if (!token || !chatId) {
-    console.error('[notify] TELEGRAM_BOT_TOKEN 또는 TELEGRAM_CHAT_ID가 없습니다.');
-    process.exit(1);
-  }
-
-  const url = `https://api.telegram.org/bot${token}/sendMessage`;
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 15000); // 15초 timeout
-
+async function sendTelegram(text: string): Promise<void> {
   try {
-    const res = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML' }),
-      signal: controller.signal,
+    console.log('[notify] 텔레그램 알림 전송 시도 메시지 (Global Hub)...');
+    const notifyScript = 'C:/github/antigravity-bot/scripts/notify.mjs';
+    const cmd = `node ${notifyScript} --prefix "📈 [Forex-Signal]" --html --force`;
+    
+    require('child_process').execSync(cmd, {
+      input: text,
+      encoding: 'utf-8',
+      windowsHide: true
     });
-
-    if (!res.ok) {
-      const body = await res.text();
-      throw new Error(`Telegram API 오류 ${res.status}: ${body}`);
-    }
-
+    
     console.log('[notify] 텔레그램 알림 전송 완료');
-  } catch (err) {
-    if (attempt < 3) {
-      const delay = attempt * 5000; // 5초, 10초
-      console.warn(`[notify] 전송 실패 (${attempt}회차), ${delay / 1000}초 후 재시도...`);
-      await new Promise(r => setTimeout(r, delay));
-      return sendTelegram(text, attempt + 1);
-    }
-    throw err;
-  } finally {
-    clearTimeout(timeout);
+  } catch (err: any) {
+    console.warn('[notify] 텔레그램 알림 전송 실패:', err.message);
   }
 }
 
