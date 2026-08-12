@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FX Signal
 
-## Getting Started
+환율 이력과 기술적 지표를 종합해 원화 기준 주요 통화의 매수·중립·매도 신호를 보여주는 대시보드입니다.
 
-First, run the development server:
+[서비스 바로가기](https://bsjuuny.github.io/forex-signal/)
+
+## 주요 기능
+
+- USD, EUR, JPY, CNY, GBP, CAD, HKD 환율 모니터링
+- RSI, EMA, MACD, 볼린저밴드 기반 종합 신호와 강도 계산
+- 목표 매수가·매도가·손절가와 스프레드 반영 손익 표시
+- 환율 변환, 우대환율, 예상 수익 계산기
+- 환율 데이터 갱신과 Telegram 요약 알림
+- 정적 사이트 빌드 및 GitHub Pages 자동 배포
+
+## 기술 스택
+
+- Next.js 16 / React 19 / TypeScript
+- Tailwind CSS 4
+- Lightweight Charts
+- 한국수출입은행 환율 API
+- GitHub Actions / GitHub Pages
+
+## 로컬 실행
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 `http://localhost:3000`을 엽니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 주요 명령어
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run data:update # 환율 데이터와 신호 갱신
+npm run notify      # Telegram 요약 알림
+npm run build       # 정적 사이트 빌드
+```
 
-## Learn More
+데이터 갱신에는 `KOREAEXIM_API_KEY` 등 별도의 환경 변수가 필요합니다.
 
-To learn more about Next.js, take a look at the following resources:
+## 안내
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+표시되는 신호와 목표가는 참고용이며 금융상품 매매를 권유하지 않습니다.
