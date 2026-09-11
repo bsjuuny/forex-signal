@@ -125,8 +125,9 @@ export async function getExchangeRateHistory(
       }
       // API 레이트 리밋 방지
       await new Promise(r => setTimeout(r, 150));
-    } catch {
+    } catch (err) {
       // 해당 날짜 건너뜀 (공휴일 등)
+      console.warn(`    [KOREAEXIM] ${date} 건너뜀:`, err instanceof Error ? err.message : err);
     }
   }
 
