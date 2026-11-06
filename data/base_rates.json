@@ -1,0 +1,31 @@
+{
+  "eximRates": {
+    "USDKRW": 1342,
+    "EURKRW": 1505.86,
+    "JPYKRW": 852.31,
+    "CNYKRW": 201.34,
+    "GBPKRW": 1805.46,
+    "CADKRW": 957.37,
+    "HKDKRW": 171.14
+  },
+  "liveSnapshot": {
+    "USDKRW": 1347.69,
+    "EURKRW": 1513.45,
+    "JPYKRW": 853.86,
+    "CNYKRW": 201.67,
+    "GBPKRW": 1814.06,
+    "CADKRW": 963.25,
+    "HKDKRW": 171.84
+  },
+  "offset": {
+    "USDKRW": -5.69,
+    "EURKRW": -7.59,
+    "JPYKRW": -1.55,
+    "CNYKRW": -0.33,
+    "GBPKRW": -8.6,
+    "CADKRW": -5.88,
+    "HKDKRW": -0.7
+  },
+  "date": "20261106",
+  "fetchedAt": "2026-11-06T02:13:06.866Z"
+}
