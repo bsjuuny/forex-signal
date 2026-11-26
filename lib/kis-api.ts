@@ -55,6 +55,8 @@ class TokenRateLimitError extends Error {}
 async function issueTokenHttp(): Promise<{ access_token: string; expires_in: number }> {
   const res = await fetch(`${BASE_URL}/oauth2/tokenP`, {
     method: 'POST',
+    // 공유 락을 쥔 채 부르므로 반드시 끝나야 한다(락은 30초 지나면 남이 지울 수 있다).
+    signal: AbortSignal.timeout(15000),
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ grant_type: 'client_credentials', appkey: process.env.KIS_APP_KEY, appsecret: process.env.KIS_APP_SECRET }),
   });
@@ -84,7 +86,7 @@ async function issueToken(): Promise<string> {
       }
       const data = await issueTokenHttp();
       save(data.access_token, data.expires_in);
-      _token = { value: data.access_token, expiresAt: Date.now() + (data.expires_in - 60) * 1000 };
+      _token = { value: data.access_token, expiresAt: Date.now() + (data.expires_in - 300) * 1000 }; // 공유 캐시와 같은 5분 여유
       return _token.value;
     },
   );
