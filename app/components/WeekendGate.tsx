@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useSyncExternalStore } from 'react';
 
 function WeekendNotice() {
   return (
@@ -47,14 +47,20 @@ interface Props {
 
 const IS_DEV = process.env.NEXT_PUBLIC_IS_DEV === 'true';
 
-export default function WeekendGate({ children }: Props) {
-  const [isWeekend, setIsWeekend] = useState<boolean | null>(null);
+// 구독할 변경 이벤트가 없다. 요일은 렌더 시점에 브라우저 시계로 한 번 읽는다.
+const subscribe = () => () => {};
 
-  useEffect(() => {
-    if (IS_DEV) { setIsWeekend(false); return; }
-    const day = new Date().getDay(); // 0=일, 6=토
-    setIsWeekend(day === 0 || day === 6);
-  }, []);
+function getIsWeekend(): boolean {
+  if (IS_DEV) return false;
+  const day = new Date().getDay(); // 0=일, 6=토
+  return day === 0 || day === 6;
+}
+
+// 서버(정적 빌드)와 하이드레이션 중에는 요일을 알 수 없으므로 null로 둔다.
+const getServerIsWeekend = () => null;
+
+export default function WeekendGate({ children }: Props) {
+  const isWeekend = useSyncExternalStore<boolean | null>(subscribe, getIsWeekend, getServerIsWeekend);
 
   if (isWeekend === null) return <div className="min-h-screen bg-zinc-950" />;
   if (isWeekend) return <WeekendNotice />;

@@ -1,24 +1,25 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 
 const STORAGE_KEY = 'fx-signal-disclaimer-agreed-v1';
 
-export default function DisclaimerModal() {
-  const [show, setShow] = useState(false);
+// 다른 탭의 동의를 실시간으로 따라가지 않으므로 구독할 이벤트가 없다.
+const subscribe = () => () => {};
+const getNeedsAgreement = () => !localStorage.getItem(STORAGE_KEY);
+// 서버(정적 빌드)와 하이드레이션 중에는 모달을 렌더링하지 않는다.
+const getServerNeedsAgreement = () => false;
 
-  useEffect(() => {
-    if (!localStorage.getItem(STORAGE_KEY)) {
-      setShow(true);
-    }
-  }, []);
+export default function DisclaimerModal() {
+  const needsAgreement = useSyncExternalStore(subscribe, getNeedsAgreement, getServerNeedsAgreement);
+  const [agreed, setAgreed] = useState(false);
 
   function handleAgree() {
     localStorage.setItem(STORAGE_KEY, new Date().toISOString());
-    setShow(false);
+    setAgreed(true);
   }
 
-  if (!show) return null;
+  if (!needsAgreement || agreed) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4">

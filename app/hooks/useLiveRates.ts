@@ -10,7 +10,6 @@ export function useLiveRates(intervalMs = 5 * 60_000) {
 
   useEffect(() => {
     let cancelled = false;
-    let timerId: ReturnType<typeof setInterval> | undefined;
 
     async function load() {
       try {
@@ -30,7 +29,7 @@ export function useLiveRates(intervalMs = 5 * 60_000) {
     }
 
     load();
-    timerId = setInterval(load, intervalMs);
+    const timerId = setInterval(load, intervalMs);
     return () => { cancelled = true; clearInterval(timerId); };
   }, [intervalMs]);
 

@@ -7,6 +7,7 @@
 import * as dotenv from 'dotenv';
 dotenv.config({ path: '.env.local' });
 
+import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import { StoredRateData } from '../lib/signals';
@@ -88,15 +89,15 @@ async function sendTelegram(text: string): Promise<void> {
     const notifyScript = 'C:/github/antigravity-bot/scripts/notify.mjs';
     const cmd = `node ${notifyScript} --prefix "📈 [Forex-Signal]" --html --force`;
     
-    require('child_process').execSync(cmd, {
+    execSync(cmd, {
       input: text,
       encoding: 'utf-8',
       windowsHide: true
     });
     
     console.log('[notify] 텔레그램 알림 전송 완료');
-  } catch (err: any) {
-    console.warn('[notify] 텔레그램 알림 전송 실패:', err.message);
+  } catch (err: unknown) {
+    console.warn('[notify] 텔레그램 알림 전송 실패:', err instanceof Error ? err.message : String(err));
   }
 }
 
