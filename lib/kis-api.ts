@@ -50,34 +50,32 @@ async function loadTokenCache(): Promise<TokenCache | null> {
   }
 }
 
+class TokenRateLimitError extends Error {}
+
 async function issueTokenHttp(): Promise<{ access_token: string; expires_in: number }> {
-  let lastError: Error | null = null;
-  for (const retry of [true, false]) {
-    const res = await fetch(`${BASE_URL}/oauth2/tokenP`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ grant_type: 'client_credentials', appkey: process.env.KIS_APP_KEY, appsecret: process.env.KIS_APP_SECRET }),
-    });
-    const body = await res.text().catch(() => '');
-    if (res.ok) return JSON.parse(body);
-    if (retry && body.includes('EGW00133')) {
-      console.warn('[KIS] 토큰 발급 1분 제한 — 65초 대기 후 재시도...');
-      await new Promise(r => setTimeout(r, 65000));
-      continue;
-    }
-    lastError = new Error(`KIS 토큰 발급 실패: ${res.status}\n${body.slice(0, 200)}`);
-    break;
-  }
-  throw lastError;
+  const res = await fetch(`${BASE_URL}/oauth2/tokenP`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ grant_type: 'client_credentials', appkey: process.env.KIS_APP_KEY, appsecret: process.env.KIS_APP_SECRET }),
+  });
+  const body = await res.text().catch(() => '');
+  if (res.ok) return JSON.parse(body);
+  // 1분 제한(EGW00133): 호출한 쪽이 공유 락을 놓은 뒤 기다리도록 구분해서 던진다.
+  if (body.includes('EGW00133')) throw new TokenRateLimitError('KIS 토큰 발급 1분 제한');
+  throw new Error(`KIS 토큰 발급 실패: ${res.status}
+${body.slice(0, 200)}`);
 }
 
 /**
  * 캐시 재확인 → 없으면 발급 → 저장을 공유 락 하나로 원자적으로 수행 (동시 재발급으로
  * 서로의 토큰을 무효화하는 경쟁 방지).
+ * 발급 제한 대기(65초)는 락 밖에서 한다 — 공유 락은 30초가 지나면 오래된 것으로 보고
+ * 다른 프로세스(실거래 엔진 포함)가 지울 수 있어, 락을 쥔 채 기다리면 두 곳이 동시에
+ * 발급해 서로의 토큰을 무효화할 수 있다.
  */
 async function issueToken(): Promise<string> {
   const { withSharedTokenLock } = await sharedCache();
-  return withSharedTokenLock(
+  const attempt = () => withSharedTokenLock(
     { environment: 'live', appKey: process.env.KIS_APP_KEY },
     async ({ cached, save }) => {
       if (cached) {
@@ -90,6 +88,14 @@ async function issueToken(): Promise<string> {
       return _token.value;
     },
   );
+  try {
+    return await attempt();
+  } catch (err) {
+    if (!(err instanceof TokenRateLimitError)) throw err;
+    console.warn('[KIS] 토큰 발급 1분 제한 — 락을 놓고 65초 대기 후 재시도...');
+    await new Promise(r => setTimeout(r, 65000));
+    return attempt(); // 그 사이 다른 프로세스가 발급했으면 락 안에서 cached 로 받는다
+  }
 }
 
 /** OAuth2 접근토큰 발급 (메모리 → 공유 캐시 → 신규 발급 순서로 캐시 확인) */
